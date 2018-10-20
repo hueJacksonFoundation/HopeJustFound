@@ -1,0 +1,27 @@
+{
+    "name": "Status",
+    "fields": [
+        {
+            "fieldName": "approved",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "submitted",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "approvedBy",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [],
+    "changelogDate": "20181020184720",
+    "entityTableName": "status",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

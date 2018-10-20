@@ -1,0 +1,27 @@
+
+{
+    "hopeJustFoundApp": {
+        "goods" : {
+            "home": {
+                "title": "Goods",
+                "createLabel": "Goods を追加",
+                "createOrEditLabel": "Goodsを追加または編集"
+            },
+            "created": "A new Goods is created with identifier {{ param }}",
+            "updated": "A Goods is updated with identifier {{ param }}",
+            "deleted": "A Goods is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Goods {{ id }}を削除してもよろしいですか？"
+            },
+            "detail": {
+                "title": "Goods"
+            },
+            "type": "Type",
+            "condition": "Condition",
+            "description": "Description",
+            "transport": "Transport",
+            "image": "Image",
+            "donation": "Donation"
+        }
+    }
+}

@@ -1,0 +1,27 @@
+
+{
+    "hopeJustFoundApp": {
+        "goods" : {
+            "home": {
+                "title": "Goods",
+                "createLabel": "Criar novo Goods",
+                "createOrEditLabel": "Criar ou editar Goods"
+            },
+            "created": "Um novo Goods foi criado com o identificador {{ param }}",
+            "updated": "Um Goods foi atualizado com o identificador {{ param }}",
+            "deleted": "Um Goods foi deletado com o identificador {{ param }}",
+            "delete": {
+                "question": "Tem certeza de que deseja excluir Goods {{ id }}?"
+            },
+            "detail": {
+                "title": "Goods"
+            },
+            "type": "Type",
+            "condition": "Condition",
+            "description": "Description",
+            "transport": "Transport",
+            "image": "Image",
+            "donation": "Donation"
+        }
+    }
+}

@@ -1,0 +1,28 @@
+
+{
+    "hopeJustFoundApp": {
+        "userContact" : {
+            "home": {
+                "title": "User Contacts",
+                "createLabel": "User Contact-ஐ உருவாக்கு",
+                "createOrEditLabel": "User Contact -ஐ மாற்று (அ) உருவாக்கு"
+            },
+            "created": "User Contact புதிதாக உருவாக்கப்பட்டது, அடையாளம் {{ param }}",
+            "updated": "User Contact மாற்றப்பட்டது, அடையாளம்  {{ param }}",
+            "deleted": "A User Contact நீக்கப்பட்டது, அடையாளம {{ param }}",
+            "delete": {
+                "question": "நீக்குவதற்கு உறுதி செய் User Contact {{ id }}?"
+            },
+            "detail": {
+                "title": "User Contact"
+            },
+            "phoneNumber": "Phone Number",
+            "address": "Address",
+            "city": "City",
+            "state": "State",
+            "zipCode": "Zip Code",
+            "contactDays": "Contact Days",
+            "contactTimes": "Contact Times"
+        }
+    }
+}

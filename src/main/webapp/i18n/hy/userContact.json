@@ -1,0 +1,28 @@
+
+{
+    "hopeJustFoundApp": {
+        "userContact" : {
+            "home": {
+                "title": "User Contacts",
+                "createLabel": "Ստեղծել նոր User Contact",
+                "createOrEditLabel": "Ստեղծել կամ փոփոխել User Contact"
+            },
+            "created": "Նոր User Contact ստեղծված է {{ param }} նունացուցիչով",
+            "updated": "User Contact թարմացվաց է {{ param }} նունացուցիչով",
+            "deleted": "User Contact հեռացված է {{ param }}  նունացուցիչով",
+            "delete": {
+                "question": "Դուք վստահ ե՞ք, որ ցանկանում եք հեռացնել User Contact {{ id }}?"
+            },
+            "detail": {
+                "title": "User Contact"
+            },
+            "phoneNumber": "Phone Number",
+            "address": "Address",
+            "city": "City",
+            "state": "State",
+            "zipCode": "Zip Code",
+            "contactDays": "Contact Days",
+            "contactTimes": "Contact Times"
+        }
+    }
+}

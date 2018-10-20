@@ -1,0 +1,28 @@
+
+{
+    "hopeJustFoundApp": {
+        "donation" : {
+            "home": {
+                "title": "Donations",
+                "createLabel": "नवीन Donation तयार करा",
+                "createOrEditLabel": "Donation तयार किंवा संपादित करा"
+            },
+            "created": "Donation [identifier: {{ param }}] तयार आहे",
+            "updated": "Donation [identifier: {{ param }}] सुधारित केले आहे",
+            "deleted": "Donation [identifier: {{ param }}] हटविले आहे",
+            "delete": {
+                "question": "Donation [id: {{ id }}] काढून टाकण्याबाबत पुष्टी?"
+            },
+            "detail": {
+                "title": "Donation"
+            },
+            "type": "Type",
+            "initialDate": "Initial Date",
+            "expireDate": "Expire Date",
+            "skilled": "Skilled",
+            "unskilled": "Unskilled",
+            "goods": "Goods",
+            "user": "User"
+        }
+    }
+}

@@ -1,0 +1,24 @@
+
+{
+    "hopeJustFoundApp": {
+        "status" : {
+            "home": {
+                "title": "Statuses",
+                "createLabel": "Vytvořit Status",
+                "createOrEditLabel": "Vytvořit nebo upravit Status"
+            },
+            "created": "Byl vytvořen potomek entity Status s identifikátorem {{ param }}",
+            "updated": "Potomek entity Status s identifikátorem {{ param }} byl upravený.",
+            "deleted": "Potomek entity Status s identifikátorem {{ param }} bol smazaný.",
+            "delete": {
+                "question": "Jste si jisti, že chcete smazat Status {{ id }}?"
+            },
+            "detail": {
+                "title": "Status"
+            },
+            "approved": "Approved",
+            "submitted": "Submitted",
+            "approvedBy": "Approved By"
+        }
+    }
+}

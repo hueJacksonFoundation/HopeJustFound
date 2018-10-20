@@ -1,0 +1,58 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="hopeJustFoundApp.unskilled.home.title">Unskilleds</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-unskilled" [routerLink]="['/unskilled/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span  jhiTranslate="hopeJustFoundApp.unskilled.home.createLabel">
+            Create new Unskilled
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="table-responsive" *ngIf="unskilleds">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+            <th><span jhiTranslate="global.field.id">ID</span></th>
+            <th><span jhiTranslate="hopeJustFoundApp.unskilled.climate">Climate</span></th>
+            <th><span jhiTranslate="hopeJustFoundApp.unskilled.intensity">Intensity</span></th>
+            <th><span jhiTranslate="hopeJustFoundApp.unskilled.number">Number</span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let unskilled of unskilleds ;trackBy: trackId">
+                <td><a [routerLink]="['/unskilled', unskilled.id, 'view' ]">{{unskilled.id}}</a></td>
+                <td>{{unskilled.climate}}</td>
+                <td>{{unskilled.intensity}}</td>
+                <td>{{unskilled.number}}</td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['/unskilled', unskilled.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/unskilled', unskilled.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'unskilled/'+ unskilled.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

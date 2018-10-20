@@ -1,0 +1,27 @@
+
+{
+    "hopeJustFoundApp": {
+        "goods" : {
+            "home": {
+                "title": "Goods",
+                "createLabel": "Goods အသစ်ထည့်မည်",
+                "createOrEditLabel": "Goods အသစ်ထည့်ခြင်း (သို့) ပြုပြင်ခြင်း"
+            },
+            "created": "{{ param }} အိုင်ဒီဖြင့် Goods အသစ်တစ်ခုအား ထည့်ပြီးပါပြီ။",
+            "updated": "{{ param }} အိုင်ဒီဖြင့် Goods တစ်ခုအား ပြုပြင်ပြီးပါပြီ။",
+            "deleted": "{{ param }} အိုင်ဒီဖြင့် Goods တစ်ခုအား ဖျက်ပြီးပါပြီ။",
+            "delete": {
+                "question": "Goods {{ id }} အား ဖျက်ပါမည်။ သေချာပါသလား?"
+            },
+            "detail": {
+                "title": "Goods"
+            },
+            "type": "Type",
+            "condition": "Condition",
+            "description": "Description",
+            "transport": "Transport",
+            "image": "Image",
+            "donation": "Donation"
+        }
+    }
+}

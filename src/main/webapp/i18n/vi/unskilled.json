@@ -1,0 +1,25 @@
+
+{
+    "hopeJustFoundApp": {
+        "unskilled" : {
+            "home": {
+                "title": "Unskilleds",
+                "createLabel": "Thêm mới một Unskilled",
+                "createOrEditLabel": "Thêm mới hoặc cập nhật Unskilled"
+            },
+            "created": "Một Unskilled mới được tạo với định danh {{ param }}",
+            "updated": "Một Unskilled cập nhật với định danh {{ param }}",
+            "deleted": "Một Unskilled đã xóa với định danh {{ param }}",
+            "delete": {
+                "question": "Bạn có chắc là muốn xóa Unskilled {{ id }}?"
+            },
+            "detail": {
+                "title": "Unskilled"
+            },
+            "climate": "Climate",
+            "intensity": "Intensity",
+            "number": "Number",
+            "donation": "Donation"
+        }
+    }
+}

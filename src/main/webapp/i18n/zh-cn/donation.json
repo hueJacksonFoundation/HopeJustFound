@@ -1,0 +1,28 @@
+
+{
+    "hopeJustFoundApp": {
+        "donation" : {
+            "home": {
+                "title": "Donations",
+                "createLabel": "创建新 Donation",
+                "createOrEditLabel": "创建或编辑 Donation"
+            },
+            "created": "Donation {{ param }} 创建成功",
+            "updated": "Donation {{ param }} 更新成功",
+            "deleted": "Donation {{ param }} 删除成功",
+            "delete": {
+                "question": "你确定要删除 Donation {{ id }} 吗？"
+            },
+            "detail": {
+                "title": "Donation"
+            },
+            "type": "Type",
+            "initialDate": "Initial Date",
+            "expireDate": "Expire Date",
+            "skilled": "Skilled",
+            "unskilled": "Unskilled",
+            "goods": "Goods",
+            "user": "User"
+        }
+    }
+}

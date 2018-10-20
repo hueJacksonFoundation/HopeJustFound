@@ -1,0 +1,25 @@
+
+{
+    "hopeJustFoundApp": {
+        "skilled" : {
+            "home": {
+                "title": "Skilleds",
+                "createLabel": "Skapa en ny Skilled",
+                "createOrEditLabel": "Skapa eller ändra en Skilled"
+            },
+            "created": "En ny Skilled är skapad med id {{ param }}",
+            "updated": "En Skilled är uppdaterad med id  {{ param }}",
+            "deleted": "En Skilled är borttagen med id  {{ param }}",
+            "delete": {
+                "question": "Är du säker på att du vill ta bort Skilled {{ id }}?"
+            },
+            "detail": {
+                "title": "Skilled"
+            },
+            "experience": "Experience",
+            "type": "Type",
+            "number": "Number",
+            "donation": "Donation"
+        }
+    }
+}

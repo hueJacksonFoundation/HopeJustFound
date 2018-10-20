@@ -1,0 +1,25 @@
+
+{
+    "hopeJustFoundApp": {
+        "skilled" : {
+            "home": {
+                "title": "Skilleds",
+                "createLabel": "创建新 Skilled",
+                "createOrEditLabel": "创建或编辑 Skilled"
+            },
+            "created": "Skilled {{ param }} 创建成功",
+            "updated": "Skilled {{ param }} 更新成功",
+            "deleted": "Skilled {{ param }} 删除成功",
+            "delete": {
+                "question": "你确定要删除 Skilled {{ id }} 吗？"
+            },
+            "detail": {
+                "title": "Skilled"
+            },
+            "experience": "Experience",
+            "type": "Type",
+            "number": "Number",
+            "donation": "Donation"
+        }
+    }
+}

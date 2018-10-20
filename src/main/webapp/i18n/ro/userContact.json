@@ -1,0 +1,28 @@
+
+{
+    "hopeJustFoundApp": {
+        "userContact" : {
+            "home": {
+                "title": "User Contacts",
+                "createLabel": "Creeare o nouă entitate User Contact",
+                "createOrEditLabel": "Creeare sau editare User Contact"
+            },
+            "created": "A fost creată o nouă entitate User Contact cu identificatorul {{ param }}",
+            "updated": "User Contact cu identificatorul {{ param }} a fost actualizată",
+            "deleted": "User Contact cu identificatorul {{ param }} a fost ștearsă",
+            "delete": {
+                "question": "Sunteți sigur că doriți să ștergeți User Contact {{ id }}?"
+            },
+            "detail": {
+                "title": "User Contact"
+            },
+            "phoneNumber": "Phone Number",
+            "address": "Address",
+            "city": "City",
+            "state": "State",
+            "zipCode": "Zip Code",
+            "contactDays": "Contact Days",
+            "contactTimes": "Contact Times"
+        }
+    }
+}

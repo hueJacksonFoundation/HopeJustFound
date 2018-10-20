@@ -1,0 +1,25 @@
+
+{
+    "hopeJustFoundApp": {
+        "skilled" : {
+            "home": {
+                "title": "Skilleds",
+                "createLabel": "Skilled-ஐ உருவாக்கு",
+                "createOrEditLabel": "Skilled -ஐ மாற்று (அ) உருவாக்கு"
+            },
+            "created": "Skilled புதிதாக உருவாக்கப்பட்டது, அடையாளம் {{ param }}",
+            "updated": "Skilled மாற்றப்பட்டது, அடையாளம்  {{ param }}",
+            "deleted": "A Skilled நீக்கப்பட்டது, அடையாளம {{ param }}",
+            "delete": {
+                "question": "நீக்குவதற்கு உறுதி செய் Skilled {{ id }}?"
+            },
+            "detail": {
+                "title": "Skilled"
+            },
+            "experience": "Experience",
+            "type": "Type",
+            "number": "Number",
+            "donation": "Donation"
+        }
+    }
+}

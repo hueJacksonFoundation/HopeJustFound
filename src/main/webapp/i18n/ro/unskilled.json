@@ -1,0 +1,25 @@
+
+{
+    "hopeJustFoundApp": {
+        "unskilled" : {
+            "home": {
+                "title": "Unskilleds",
+                "createLabel": "Creeare o nouă entitate Unskilled",
+                "createOrEditLabel": "Creeare sau editare Unskilled"
+            },
+            "created": "A fost creată o nouă entitate Unskilled cu identificatorul {{ param }}",
+            "updated": "Unskilled cu identificatorul {{ param }} a fost actualizată",
+            "deleted": "Unskilled cu identificatorul {{ param }} a fost ștearsă",
+            "delete": {
+                "question": "Sunteți sigur că doriți să ștergeți Unskilled {{ id }}?"
+            },
+            "detail": {
+                "title": "Unskilled"
+            },
+            "climate": "Climate",
+            "intensity": "Intensity",
+            "number": "Number",
+            "donation": "Donation"
+        }
+    }
+}

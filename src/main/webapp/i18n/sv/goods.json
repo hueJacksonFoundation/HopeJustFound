@@ -1,0 +1,27 @@
+
+{
+    "hopeJustFoundApp": {
+        "goods" : {
+            "home": {
+                "title": "Goods",
+                "createLabel": "Skapa en ny Goods",
+                "createOrEditLabel": "Skapa eller ändra en Goods"
+            },
+            "created": "En ny Goods är skapad med id {{ param }}",
+            "updated": "En Goods är uppdaterad med id  {{ param }}",
+            "deleted": "En Goods är borttagen med id  {{ param }}",
+            "delete": {
+                "question": "Är du säker på att du vill ta bort Goods {{ id }}?"
+            },
+            "detail": {
+                "title": "Goods"
+            },
+            "type": "Type",
+            "condition": "Condition",
+            "description": "Description",
+            "transport": "Transport",
+            "image": "Image",
+            "donation": "Donation"
+        }
+    }
+}

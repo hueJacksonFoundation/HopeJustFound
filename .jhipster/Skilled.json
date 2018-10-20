@@ -1,0 +1,35 @@
+{
+    "name": "Skilled",
+    "fields": [
+        {
+            "fieldName": "experience",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "type",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "number",
+            "fieldType": "Integer"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "donation",
+            "otherEntityName": "donation",
+            "ownerSide": false,
+            "otherEntityRelationshipName": "skilled"
+        }
+    ],
+    "changelogDate": "20181020184718",
+    "entityTableName": "skilled",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

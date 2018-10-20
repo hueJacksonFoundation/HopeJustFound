@@ -1,0 +1,35 @@
+{
+    "name": "Unskilled",
+    "fields": [
+        {
+            "fieldName": "climate",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "intensity",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "number",
+            "fieldType": "Integer"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "donation",
+            "otherEntityName": "donation",
+            "ownerSide": false,
+            "otherEntityRelationshipName": "unskilled"
+        }
+    ],
+    "changelogDate": "20181020184719",
+    "entityTableName": "unskilled",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

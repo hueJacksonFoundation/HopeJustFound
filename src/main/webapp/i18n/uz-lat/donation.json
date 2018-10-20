@@ -1,0 +1,28 @@
+
+{
+    "hopeJustFoundApp": {
+        "donation" : {
+            "home": {
+                "title": "Donations",
+                "createLabel": "Yangi Donation qo`shish",
+                "createOrEditLabel": "Donationni tahrirlash"
+            },
+            "created": "Donation {{ param }} bilan qo`shildi",
+            "updated": "{{ param }}- Donation saqlandi",
+            "deleted": "{{ param }}- Donation o`chirildi",
+            "delete": {
+                "question": "{{ id }}- Donationni o`chirmoqchimisiz? "
+            },
+            "detail": {
+                "title": "Donation"
+            },
+            "type": "Type",
+            "initialDate": "Initial Date",
+            "expireDate": "Expire Date",
+            "skilled": "Skilled",
+            "unskilled": "Unskilled",
+            "goods": "Goods",
+            "user": "User"
+        }
+    }
+}

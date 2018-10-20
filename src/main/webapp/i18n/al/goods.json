@@ -1,0 +1,27 @@
+
+{
+    "hopeJustFoundApp": {
+        "goods" : {
+            "home": {
+                "title": "Goods",
+                "createLabel": "Krijo një të ri Goods",
+                "createOrEditLabel": "Krijo ose përpuno një Goods"
+            },
+            "created": "Një Goods i ri u krijua me identifikues {{ param }}",
+            "updated": "Një Goods u përpunua me identifikues {{ param }}",
+            "deleted": "Një Goods u fshi me identifikues {{ param }}",
+            "delete": {
+                "question": "Jeni i sigurtë që doni të fshini Goods {{ id }}?"
+            },
+            "detail": {
+                "title": "Goods"
+            },
+            "type": "Type",
+            "condition": "Condition",
+            "description": "Description",
+            "transport": "Transport",
+            "image": "Image",
+            "donation": "Donation"
+        }
+    }
+}

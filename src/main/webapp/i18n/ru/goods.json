@@ -1,0 +1,27 @@
+
+{
+    "hopeJustFoundApp": {
+        "goods" : {
+            "home": {
+                "title": "Goods",
+                "createLabel": "Создать новый Goods",
+                "createOrEditLabel": "Создать или отредактировать Goods"
+            },
+            "created": "Новый Goods создан с идентификатором {{ param }}",
+            "updated": "Goods обновлен с идентификатором {{ param }}",
+            "deleted": "Goods удален с идентификатором {{ param }}",
+            "delete": {
+                "question": "Вы уверены что хотите удалить Goods {{ id }}?"
+            },
+            "detail": {
+                "title": "Goods"
+            },
+            "type": "Type",
+            "condition": "Condition",
+            "description": "Description",
+            "transport": "Transport",
+            "image": "Image",
+            "donation": "Donation"
+        }
+    }
+}

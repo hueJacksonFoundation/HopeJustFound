@@ -1,0 +1,25 @@
+
+{
+    "hopeJustFoundApp": {
+        "skilled" : {
+            "home": {
+                "title": "Skilleds",
+                "createLabel": "Yangi Skilled qo`shish",
+                "createOrEditLabel": "Skilledni tahrirlash"
+            },
+            "created": "Skilled {{ param }} bilan qo`shildi",
+            "updated": "{{ param }}- Skilled saqlandi",
+            "deleted": "{{ param }}- Skilled o`chirildi",
+            "delete": {
+                "question": "{{ id }}- Skilledni o`chirmoqchimisiz? "
+            },
+            "detail": {
+                "title": "Skilled"
+            },
+            "experience": "Experience",
+            "type": "Type",
+            "number": "Number",
+            "donation": "Donation"
+        }
+    }
+}

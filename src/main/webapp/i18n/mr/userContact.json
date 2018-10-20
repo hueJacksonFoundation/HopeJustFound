@@ -1,0 +1,28 @@
+
+{
+    "hopeJustFoundApp": {
+        "userContact" : {
+            "home": {
+                "title": "User Contacts",
+                "createLabel": "नवीन User Contact तयार करा",
+                "createOrEditLabel": "User Contact तयार किंवा संपादित करा"
+            },
+            "created": "User Contact [identifier: {{ param }}] तयार आहे",
+            "updated": "User Contact [identifier: {{ param }}] सुधारित केले आहे",
+            "deleted": "User Contact [identifier: {{ param }}] हटविले आहे",
+            "delete": {
+                "question": "User Contact [id: {{ id }}] काढून टाकण्याबाबत पुष्टी?"
+            },
+            "detail": {
+                "title": "User Contact"
+            },
+            "phoneNumber": "Phone Number",
+            "address": "Address",
+            "city": "City",
+            "state": "State",
+            "zipCode": "Zip Code",
+            "contactDays": "Contact Days",
+            "contactTimes": "Contact Times"
+        }
+    }
+}

@@ -1,0 +1,25 @@
+
+{
+    "hopeJustFoundApp": {
+        "unskilled" : {
+            "home": {
+                "title": "Unskilleds",
+                "createLabel": "Egy új Unskilled létrehozása",
+                "createOrEditLabel": "Hozzon létre, vagy módosítson Unskilledt"
+            },
+            "created": "Egy új Unskilled lett létrehozva {{ param }} azonosítóval",
+            "updated": "A Unskilled módosítva lett {{ param }} azonosítóval",
+            "deleted": "A Unskilled törölve lett {{ param }} azonosítóval",
+            "delete": {
+                "question": "Biztos benne, hogy törölni szeretné az Unskilledt {{ id }} azonosítóval?"
+            },
+            "detail": {
+                "title": "Unskilled"
+            },
+            "climate": "Climate",
+            "intensity": "Intensity",
+            "number": "Number",
+            "donation": "Donation"
+        }
+    }
+}

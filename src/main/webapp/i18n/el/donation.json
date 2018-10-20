@@ -1,0 +1,28 @@
+
+{
+    "hopeJustFoundApp": {
+        "donation" : {
+            "home": {
+                "title": "Donations",
+                "createLabel": "Δημιουργήστε ένα νέο Donation",
+                "createOrEditLabel": "Δημιουργήστε η επεξεργαστείτε ένα Donation"
+            },
+            "created": "Ένα νέο Donation έχει δημιουργηθεί με αναγνωριστικό {{ param }}",
+            "updated": "Ένα Donation έχει ενημερωθεί με αναγνωριστικό {{ param }}",
+            "deleted": "Ένα Donation έχει διαγραφτεί με αναγνωριστικό {{ param }}",
+            "delete": {
+                "question": "Είστε βέβαιοι όταν θέλετε να διαγράψετε το ακόλουθο Donation {{ id }};"
+            },
+            "detail": {
+                "title": "Donation"
+            },
+            "type": "Type",
+            "initialDate": "Initial Date",
+            "expireDate": "Expire Date",
+            "skilled": "Skilled",
+            "unskilled": "Unskilled",
+            "goods": "Goods",
+            "user": "User"
+        }
+    }
+}

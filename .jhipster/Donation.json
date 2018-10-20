@@ -1,0 +1,58 @@
+{
+    "name": "Donation",
+    "fields": [
+        {
+            "fieldName": "type",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "initialDate",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "expireDate",
+            "fieldType": "LocalDate"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "skilled",
+            "otherEntityName": "skilled",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "donation(id)"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "unskilled",
+            "otherEntityName": "unskilled",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "donation(id)"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "goods",
+            "otherEntityName": "goods",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "donation(id)"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "user",
+            "otherEntityName": "user",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20181020184716",
+    "entityTableName": "donation",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

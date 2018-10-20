@@ -1,0 +1,28 @@
+
+{
+    "hopeJustFoundApp": {
+        "donation" : {
+            "home": {
+                "title": "Donations",
+                "createLabel": "Lisa uus Donation",
+                "createOrEditLabel": "Lisa või muuda Donation"
+            },
+            "created": "Uus Donation on loodud identifikaatoriga {{ param }}",
+            "updated": "Donation identifikaatoriga {{ param }} on muudetud",
+            "deleted": "Donation identifikaatoriga {{ param }} on kustutatud",
+            "delete": {
+                "question": "Kas olete kindel, et soovite kustutada Donation {{ id }}?"
+            },
+            "detail": {
+                "title": "Donation"
+            },
+            "type": "Type",
+            "initialDate": "Initial Date",
+            "expireDate": "Expire Date",
+            "skilled": "Skilled",
+            "unskilled": "Unskilled",
+            "goods": "Goods",
+            "user": "User"
+        }
+    }
+}

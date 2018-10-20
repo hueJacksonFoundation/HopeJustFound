@@ -1,0 +1,77 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+            <h2 id="jhi-donation-heading" jhiTranslate="hopeJustFoundApp.donation.home.createOrEditLabel">Create or edit a Donation</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!donation.id">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                        [(ngModel)]="donation.id" readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="hopeJustFoundApp.donation.type" for="field_type">Type</label>
+                    <input type="text" class="form-control" name="type" id="field_type"
+                        [(ngModel)]="donation.type" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="hopeJustFoundApp.donation.initialDate" for="field_initialDate">Initial Date</label>
+                    <div class="input-group">
+                        <input id="field_initialDate" type="text" class="form-control" name="initialDate" ngbDatepicker  #initialDateDp="ngbDatepicker" [(ngModel)]="donation.initialDate"
+                        />
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="initialDateDp.toggle()"><fa-icon [icon]="'calendar-alt'"></fa-icon></button>
+                        </span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="hopeJustFoundApp.donation.expireDate" for="field_expireDate">Expire Date</label>
+                    <div class="input-group">
+                        <input id="field_expireDate" type="text" class="form-control" name="expireDate" ngbDatepicker  #expireDateDp="ngbDatepicker" [(ngModel)]="donation.expireDate"
+                        />
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="expireDateDp.toggle()"><fa-icon [icon]="'calendar-alt'"></fa-icon></button>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="hopeJustFoundApp.donation.skilled" for="field_skilled">Skilled</label>
+                    <select class="form-control" id="field_skilled" name="skilled" [(ngModel)]="donation.skilled">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="skilledOption.id === donation.skilled?.id ? donation.skilled : skilledOption" *ngFor="let skilledOption of skilleds; trackBy: trackSkilledById">{{skilledOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="hopeJustFoundApp.donation.unskilled" for="field_unskilled">Unskilled</label>
+                    <select class="form-control" id="field_unskilled" name="unskilled" [(ngModel)]="donation.unskilled">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="unskilledOption.id === donation.unskilled?.id ? donation.unskilled : unskilledOption" *ngFor="let unskilledOption of unskilleds; trackBy: trackUnskilledById">{{unskilledOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="hopeJustFoundApp.donation.goods" for="field_goods">Goods</label>
+                    <select class="form-control" id="field_goods" name="goods" [(ngModel)]="donation.goods">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="goodsOption.id === donation.goods?.id ? donation.goods : goodsOption" *ngFor="let goodsOption of goods; trackBy: trackGoodsById">{{goodsOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="hopeJustFoundApp.donation.user" for="field_user">User</label>
+                    <select class="form-control" id="field_user" name="user" [(ngModel)]="donation.user" >
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="userOption.id === donation.user?.id ? donation.user : userOption" *ngFor="let userOption of users; trackBy: trackUserById">{{userOption.id}}</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

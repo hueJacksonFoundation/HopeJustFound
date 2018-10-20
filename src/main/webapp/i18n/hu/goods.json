@@ -1,0 +1,27 @@
+
+{
+    "hopeJustFoundApp": {
+        "goods" : {
+            "home": {
+                "title": "Goods",
+                "createLabel": "Egy új Goods létrehozása",
+                "createOrEditLabel": "Hozzon létre, vagy módosítson Goodst"
+            },
+            "created": "Egy új Goods lett létrehozva {{ param }} azonosítóval",
+            "updated": "A Goods módosítva lett {{ param }} azonosítóval",
+            "deleted": "A Goods törölve lett {{ param }} azonosítóval",
+            "delete": {
+                "question": "Biztos benne, hogy törölni szeretné az Goodst {{ id }} azonosítóval?"
+            },
+            "detail": {
+                "title": "Goods"
+            },
+            "type": "Type",
+            "condition": "Condition",
+            "description": "Description",
+            "transport": "Transport",
+            "image": "Image",
+            "donation": "Donation"
+        }
+    }
+}

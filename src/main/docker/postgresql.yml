@@ -1,0 +1,11 @@
+version: '2'
+services:
+    hopejustfound-postgresql:
+        image: postgres:10.4
+        # volumes:
+        #     - ~/volumes/jhipster/HopeJustFound/postgresql/:/var/lib/postgresql/data/
+        environment:
+            - POSTGRES_USER=HopeJustFound
+            - POSTGRES_PASSWORD=
+        ports:
+            - 5432:5432

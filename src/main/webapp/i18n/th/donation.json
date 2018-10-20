@@ -1,0 +1,28 @@
+
+{
+    "hopeJustFoundApp": {
+        "donation" : {
+            "home": {
+                "title": "Donations",
+                "createLabel": "สร้าง Donation",
+                "createOrEditLabel": "สร้างหรือแก้ไข Donation"
+            },
+            "created": "Donation ถูกสร้างด้วย {{ param }}",
+            "updated": "Donation ถูกแก้ไขด้วย {{ param }}",
+            "deleted": "Donation ถูกลบด้วย {{ param }}",
+            "delete": {
+                "question": "คุณต้องการที่จะลบ Donation {{ id }}?"
+            },
+            "detail": {
+                "title": "Donation"
+            },
+            "type": "Type",
+            "initialDate": "Initial Date",
+            "expireDate": "Expire Date",
+            "skilled": "Skilled",
+            "unskilled": "Unskilled",
+            "goods": "Goods",
+            "user": "User"
+        }
+    }
+}

@@ -1,0 +1,24 @@
+
+{
+    "hopeJustFoundApp": {
+        "status" : {
+            "home": {
+                "title": "Statuses",
+                "createLabel": "Стварыць новы Status",
+                "createOrEditLabel": "Стварыць або адрэдагаваць Status"
+            },
+            "created": "Новы Status створан з ідэнтыфікатарам {{ param }}",
+            "updated": "Status абноўлен з ідэнтыфікатарам {{ param }}",
+            "deleted": "Status выдален з ідэнтыфікатарам {{ param }}",
+            "delete": {
+                "question": "Вы ўпэўнены, што жадаеце выдаліць Status {{ id }}?"
+            },
+            "detail": {
+                "title": "Status"
+            },
+            "approved": "Approved",
+            "submitted": "Submitted",
+            "approvedBy": "Approved By"
+        }
+    }
+}

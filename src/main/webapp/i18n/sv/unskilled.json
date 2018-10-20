@@ -1,0 +1,25 @@
+
+{
+    "hopeJustFoundApp": {
+        "unskilled" : {
+            "home": {
+                "title": "Unskilleds",
+                "createLabel": "Skapa en ny Unskilled",
+                "createOrEditLabel": "Skapa eller ändra en Unskilled"
+            },
+            "created": "En ny Unskilled är skapad med id {{ param }}",
+            "updated": "En Unskilled är uppdaterad med id  {{ param }}",
+            "deleted": "En Unskilled är borttagen med id  {{ param }}",
+            "delete": {
+                "question": "Är du säker på att du vill ta bort Unskilled {{ id }}?"
+            },
+            "detail": {
+                "title": "Unskilled"
+            },
+            "climate": "Climate",
+            "intensity": "Intensity",
+            "number": "Number",
+            "donation": "Donation"
+        }
+    }
+}

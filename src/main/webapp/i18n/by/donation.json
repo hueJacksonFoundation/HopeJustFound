@@ -1,0 +1,28 @@
+
+{
+    "hopeJustFoundApp": {
+        "donation" : {
+            "home": {
+                "title": "Donations",
+                "createLabel": "Стварыць новы Donation",
+                "createOrEditLabel": "Стварыць або адрэдагаваць Donation"
+            },
+            "created": "Новы Donation створан з ідэнтыфікатарам {{ param }}",
+            "updated": "Donation абноўлен з ідэнтыфікатарам {{ param }}",
+            "deleted": "Donation выдален з ідэнтыфікатарам {{ param }}",
+            "delete": {
+                "question": "Вы ўпэўнены, што жадаеце выдаліць Donation {{ id }}?"
+            },
+            "detail": {
+                "title": "Donation"
+            },
+            "type": "Type",
+            "initialDate": "Initial Date",
+            "expireDate": "Expire Date",
+            "skilled": "Skilled",
+            "unskilled": "Unskilled",
+            "goods": "Goods",
+            "user": "User"
+        }
+    }
+}

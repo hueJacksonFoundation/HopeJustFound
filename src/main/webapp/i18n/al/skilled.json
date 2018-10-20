@@ -1,0 +1,25 @@
+
+{
+    "hopeJustFoundApp": {
+        "skilled" : {
+            "home": {
+                "title": "Skilleds",
+                "createLabel": "Krijo një të ri Skilled",
+                "createOrEditLabel": "Krijo ose përpuno një Skilled"
+            },
+            "created": "Një Skilled i ri u krijua me identifikues {{ param }}",
+            "updated": "Një Skilled u përpunua me identifikues {{ param }}",
+            "deleted": "Një Skilled u fshi me identifikues {{ param }}",
+            "delete": {
+                "question": "Jeni i sigurtë që doni të fshini Skilled {{ id }}?"
+            },
+            "detail": {
+                "title": "Skilled"
+            },
+            "experience": "Experience",
+            "type": "Type",
+            "number": "Number",
+            "donation": "Donation"
+        }
+    }
+}

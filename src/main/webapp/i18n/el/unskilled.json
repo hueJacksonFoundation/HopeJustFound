@@ -1,0 +1,25 @@
+
+{
+    "hopeJustFoundApp": {
+        "unskilled" : {
+            "home": {
+                "title": "Unskilleds",
+                "createLabel": "Δημιουργήστε ένα νέο Unskilled",
+                "createOrEditLabel": "Δημιουργήστε η επεξεργαστείτε ένα Unskilled"
+            },
+            "created": "Ένα νέο Unskilled έχει δημιουργηθεί με αναγνωριστικό {{ param }}",
+            "updated": "Ένα Unskilled έχει ενημερωθεί με αναγνωριστικό {{ param }}",
+            "deleted": "Ένα Unskilled έχει διαγραφτεί με αναγνωριστικό {{ param }}",
+            "delete": {
+                "question": "Είστε βέβαιοι όταν θέλετε να διαγράψετε το ακόλουθο Unskilled {{ id }};"
+            },
+            "detail": {
+                "title": "Unskilled"
+            },
+            "climate": "Climate",
+            "intensity": "Intensity",
+            "number": "Number",
+            "donation": "Donation"
+        }
+    }
+}

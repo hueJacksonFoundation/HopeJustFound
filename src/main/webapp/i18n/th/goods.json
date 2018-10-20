@@ -1,0 +1,27 @@
+
+{
+    "hopeJustFoundApp": {
+        "goods" : {
+            "home": {
+                "title": "Goods",
+                "createLabel": "สร้าง Goods",
+                "createOrEditLabel": "สร้างหรือแก้ไข Goods"
+            },
+            "created": "Goods ถูกสร้างด้วย {{ param }}",
+            "updated": "Goods ถูกแก้ไขด้วย {{ param }}",
+            "deleted": "Goods ถูกลบด้วย {{ param }}",
+            "delete": {
+                "question": "คุณต้องการที่จะลบ Goods {{ id }}?"
+            },
+            "detail": {
+                "title": "Goods"
+            },
+            "type": "Type",
+            "condition": "Condition",
+            "description": "Description",
+            "transport": "Transport",
+            "image": "Image",
+            "donation": "Donation"
+        }
+    }
+}

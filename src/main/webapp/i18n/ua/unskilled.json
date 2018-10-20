@@ -1,0 +1,25 @@
+
+{
+    "hopeJustFoundApp": {
+        "unskilled" : {
+            "home": {
+                "title": "Unskilleds",
+                "createLabel": "Створити новий Unskilled",
+                "createOrEditLabel": "Створити чи редагувати Unskilled"
+            },
+            "created": "Новий Unskilled створений з ідентифікатором {{ param }}",
+            "updated": "Unskilled оновлений з ідентифікатором {{ param }}",
+            "deleted": "Unskilled видалений з ідентифікатором {{ param }}",
+            "delete": {
+                "question": "Ви впевнені, що хочете видалити Unskilled {{ id }}?"
+            },
+            "detail": {
+                "title": "Unskilled"
+            },
+            "climate": "Climate",
+            "intensity": "Intensity",
+            "number": "Number",
+            "donation": "Donation"
+        }
+    }
+}

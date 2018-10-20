@@ -1,0 +1,28 @@
+
+{
+    "hopeJustFoundApp": {
+        "userContact" : {
+            "home": {
+                "title": "User Contacts",
+                "createLabel": "Pridať User Contact",
+                "createOrEditLabel": "Pridať alebo upraviť User Contact"
+            },
+            "created": "Bol vytvorený potomok entity User Contact s identifikátorom {{ param }}",
+            "updated": "Potomok entity User Contact s identifikátorom {{ param }} bol upravený.",
+            "deleted": "Potomok entity User Contact s identifikátorom {{ param }} bol vymazaný.",
+            "delete": {
+                "question": "Ste si istý, že chcete vymazať User Contact {{ id }}?"
+            },
+            "detail": {
+                "title": "User Contact"
+            },
+            "phoneNumber": "Phone Number",
+            "address": "Address",
+            "city": "City",
+            "state": "State",
+            "zipCode": "Zip Code",
+            "contactDays": "Contact Days",
+            "contactTimes": "Contact Times"
+        }
+    }
+}

@@ -1,0 +1,27 @@
+
+{
+    "hopeJustFoundApp": {
+        "goods" : {
+            "home": {
+                "title": "Goods",
+                "createLabel": "नवीन Goods तयार करा",
+                "createOrEditLabel": "Goods तयार किंवा संपादित करा"
+            },
+            "created": "Goods [identifier: {{ param }}] तयार आहे",
+            "updated": "Goods [identifier: {{ param }}] सुधारित केले आहे",
+            "deleted": "Goods [identifier: {{ param }}] हटविले आहे",
+            "delete": {
+                "question": "Goods [id: {{ id }}] काढून टाकण्याबाबत पुष्टी?"
+            },
+            "detail": {
+                "title": "Goods"
+            },
+            "type": "Type",
+            "condition": "Condition",
+            "description": "Description",
+            "transport": "Transport",
+            "image": "Image",
+            "donation": "Donation"
+        }
+    }
+}

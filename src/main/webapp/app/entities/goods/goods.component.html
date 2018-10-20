@@ -1,0 +1,70 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="hopeJustFoundApp.goods.home.title">Goods</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-goods" [routerLink]="['/goods/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span  jhiTranslate="hopeJustFoundApp.goods.home.createLabel">
+            Create new Goods
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="table-responsive" *ngIf="goods">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+            <th><span jhiTranslate="global.field.id">ID</span></th>
+            <th><span jhiTranslate="hopeJustFoundApp.goods.type">Type</span></th>
+            <th><span jhiTranslate="hopeJustFoundApp.goods.condition">Condition</span></th>
+            <th><span jhiTranslate="hopeJustFoundApp.goods.description">Description</span></th>
+            <th><span jhiTranslate="hopeJustFoundApp.goods.transport">Transport</span></th>
+            <th><span jhiTranslate="hopeJustFoundApp.goods.image">Image</span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let goods of goods ;trackBy: trackId">
+                <td><a [routerLink]="['/goods', goods.id, 'view' ]">{{goods.id}}</a></td>
+                <td>{{goods.type}}</td>
+                <td>{{goods.condition}}</td>
+                <td>
+                    <a *ngIf="goods.description" (click)="openFile(goods.descriptionContentType, goods.description)" jhiTranslate="entity.action.open">open</a>
+                    <span *ngIf="goods.description">{{goods.descriptionContentType}}, {{byteSize(goods.description)}}</span>
+                </td>
+                <td>{{goods.transport}}</td>
+                <td>
+                    <a *ngIf="goods.image" (click)="openFile(goods.imageContentType, goods.image)">
+                        <img [src]="'data:' + goods.imageContentType + ';base64,' + goods.image" style="max-height: 30px;" alt="goods image"/>
+                    </a>
+                    <span *ngIf="goods.image">{{goods.imageContentType}}, {{byteSize(goods.image)}}</span>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['/goods', goods.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/goods', goods.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'goods/'+ goods.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

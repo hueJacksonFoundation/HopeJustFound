@@ -1,0 +1,24 @@
+
+{
+    "hopeJustFoundApp": {
+        "status" : {
+            "home": {
+                "title": "Statuses",
+                "createLabel": "Yangi Status qo`shish",
+                "createOrEditLabel": "Statusni tahrirlash"
+            },
+            "created": "Status {{ param }} bilan qo`shildi",
+            "updated": "{{ param }}- Status saqlandi",
+            "deleted": "{{ param }}- Status o`chirildi",
+            "delete": {
+                "question": "{{ id }}- Statusni o`chirmoqchimisiz? "
+            },
+            "detail": {
+                "title": "Status"
+            },
+            "approved": "Approved",
+            "submitted": "Submitted",
+            "approvedBy": "Approved By"
+        }
+    }
+}

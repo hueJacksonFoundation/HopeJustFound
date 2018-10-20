@@ -1,0 +1,25 @@
+
+{
+    "hopeJustFoundApp": {
+        "unskilled" : {
+            "home": {
+                "title": "Unskilleds",
+                "createLabel": "Yangi Unskilled qo`shish",
+                "createOrEditLabel": "Unskilledni tahrirlash"
+            },
+            "created": "Unskilled {{ param }} bilan qo`shildi",
+            "updated": "{{ param }}- Unskilled saqlandi",
+            "deleted": "{{ param }}- Unskilled o`chirildi",
+            "delete": {
+                "question": "{{ id }}- Unskilledni o`chirmoqchimisiz? "
+            },
+            "detail": {
+                "title": "Unskilled"
+            },
+            "climate": "Climate",
+            "intensity": "Intensity",
+            "number": "Number",
+            "donation": "Donation"
+        }
+    }
+}

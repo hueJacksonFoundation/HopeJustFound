@@ -1,0 +1,32 @@
+{
+    "health": {
+        "title": "Kontrolli shendetit",
+        "refresh.button": "Rifresko",
+        "stacktrace": "Stacktrace",
+        "details": {
+            "details": "Detaje",
+            "properties": "Tipare",
+            "name": "Emri",
+            "value": "Vlera",
+            "error": "Gabim"
+        },
+        "indicator": {
+            "discoveryComposite": "Discovery Composite",
+            "refreshScope": "Microservice Refresh Scope",
+            "configServer": "Microservice Config Server",
+            "hystrix": "Hystrix",
+            "diskSpace": "Disk space",
+            "mail": "Email",
+            "db": "Database"
+        },
+        "table": {
+            "service": "Emri i sherbimit",
+            "status": "Statusi"
+        },
+        "status": {
+            "UNKNOWN": "UNKNOWN",
+            "UP": "UP",
+            "DOWN": "DOWN"
+        }
+    }
+}

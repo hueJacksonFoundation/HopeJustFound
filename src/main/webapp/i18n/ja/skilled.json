@@ -1,0 +1,25 @@
+
+{
+    "hopeJustFoundApp": {
+        "skilled" : {
+            "home": {
+                "title": "Skilleds",
+                "createLabel": "Skilled を追加",
+                "createOrEditLabel": "Skilledを追加または編集"
+            },
+            "created": "A new Skilled is created with identifier {{ param }}",
+            "updated": "A Skilled is updated with identifier {{ param }}",
+            "deleted": "A Skilled is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Skilled {{ id }}を削除してもよろしいですか？"
+            },
+            "detail": {
+                "title": "Skilled"
+            },
+            "experience": "Experience",
+            "type": "Type",
+            "number": "Number",
+            "donation": "Donation"
+        }
+    }
+}

@@ -1,0 +1,25 @@
+
+{
+    "hopeJustFoundApp": {
+        "unskilled" : {
+            "home": {
+                "title": "Unskilleds",
+                "createLabel": "Maak een nieuwe Unskilled",
+                "createOrEditLabel": "Maak of wijzig een Unskilled"
+            },
+            "created": "A new Unskilled is created with identifier {{ param }}",
+            "updated": "A Unskilled is updated with identifier {{ param }}",
+            "deleted": "A Unskilled is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Bent u zeker dat u Unskilled {{ id }} wilt verwijderen?"
+            },
+            "detail": {
+                "title": "Unskilled"
+            },
+            "climate": "Climate",
+            "intensity": "Intensity",
+            "number": "Number",
+            "donation": "Donation"
+        }
+    }
+}

@@ -1,0 +1,27 @@
+
+{
+    "hopeJustFoundApp": {
+        "goods" : {
+            "home": {
+                "title": "Goods",
+                "createLabel": "Goods-ஐ உருவாக்கு",
+                "createOrEditLabel": "Goods -ஐ மாற்று (அ) உருவாக்கு"
+            },
+            "created": "Goods புதிதாக உருவாக்கப்பட்டது, அடையாளம் {{ param }}",
+            "updated": "Goods மாற்றப்பட்டது, அடையாளம்  {{ param }}",
+            "deleted": "A Goods நீக்கப்பட்டது, அடையாளம {{ param }}",
+            "delete": {
+                "question": "நீக்குவதற்கு உறுதி செய் Goods {{ id }}?"
+            },
+            "detail": {
+                "title": "Goods"
+            },
+            "type": "Type",
+            "condition": "Condition",
+            "description": "Description",
+            "transport": "Transport",
+            "image": "Image",
+            "donation": "Donation"
+        }
+    }
+}

@@ -1,0 +1,28 @@
+
+{
+    "hopeJustFoundApp": {
+        "userContact" : {
+            "home": {
+                "title": "User Contacts",
+                "createLabel": "Create a new User Contact",
+                "createOrEditLabel": "Create or edit a User Contact"
+            },
+            "created": "A new User Contact is created with identifier {{ param }}",
+            "updated": "A User Contact is updated with identifier {{ param }}",
+            "deleted": "A User Contact is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete User Contact {{ id }}?"
+            },
+            "detail": {
+                "title": "User Contact"
+            },
+            "phoneNumber": "Phone Number",
+            "address": "Address",
+            "city": "City",
+            "state": "State",
+            "zipCode": "Zip Code",
+            "contactDays": "Contact Days",
+            "contactTimes": "Contact Times"
+        }
+    }
+}

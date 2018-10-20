@@ -1,0 +1,28 @@
+
+{
+    "hopeJustFoundApp": {
+        "userContact" : {
+            "home": {
+                "title": "User Contacts",
+                "createLabel": "สร้าง User Contact",
+                "createOrEditLabel": "สร้างหรือแก้ไข User Contact"
+            },
+            "created": "User Contact ถูกสร้างด้วย {{ param }}",
+            "updated": "User Contact ถูกแก้ไขด้วย {{ param }}",
+            "deleted": "User Contact ถูกลบด้วย {{ param }}",
+            "delete": {
+                "question": "คุณต้องการที่จะลบ User Contact {{ id }}?"
+            },
+            "detail": {
+                "title": "User Contact"
+            },
+            "phoneNumber": "Phone Number",
+            "address": "Address",
+            "city": "City",
+            "state": "State",
+            "zipCode": "Zip Code",
+            "contactDays": "Contact Days",
+            "contactTimes": "Contact Times"
+        }
+    }
+}

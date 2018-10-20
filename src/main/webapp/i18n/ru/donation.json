@@ -1,0 +1,28 @@
+
+{
+    "hopeJustFoundApp": {
+        "donation" : {
+            "home": {
+                "title": "Donations",
+                "createLabel": "Создать новый Donation",
+                "createOrEditLabel": "Создать или отредактировать Donation"
+            },
+            "created": "Новый Donation создан с идентификатором {{ param }}",
+            "updated": "Donation обновлен с идентификатором {{ param }}",
+            "deleted": "Donation удален с идентификатором {{ param }}",
+            "delete": {
+                "question": "Вы уверены что хотите удалить Donation {{ id }}?"
+            },
+            "detail": {
+                "title": "Donation"
+            },
+            "type": "Type",
+            "initialDate": "Initial Date",
+            "expireDate": "Expire Date",
+            "skilled": "Skilled",
+            "unskilled": "Unskilled",
+            "goods": "Goods",
+            "user": "User"
+        }
+    }
+}

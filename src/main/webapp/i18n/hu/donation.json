@@ -1,0 +1,28 @@
+
+{
+    "hopeJustFoundApp": {
+        "donation" : {
+            "home": {
+                "title": "Donations",
+                "createLabel": "Egy új Donation létrehozása",
+                "createOrEditLabel": "Hozzon létre, vagy módosítson Donationt"
+            },
+            "created": "Egy új Donation lett létrehozva {{ param }} azonosítóval",
+            "updated": "A Donation módosítva lett {{ param }} azonosítóval",
+            "deleted": "A Donation törölve lett {{ param }} azonosítóval",
+            "delete": {
+                "question": "Biztos benne, hogy törölni szeretné az Donationt {{ id }} azonosítóval?"
+            },
+            "detail": {
+                "title": "Donation"
+            },
+            "type": "Type",
+            "initialDate": "Initial Date",
+            "expireDate": "Expire Date",
+            "skilled": "Skilled",
+            "unskilled": "Unskilled",
+            "goods": "Goods",
+            "user": "User"
+        }
+    }
+}

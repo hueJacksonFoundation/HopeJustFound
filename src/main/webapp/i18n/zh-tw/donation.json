@@ -1,0 +1,28 @@
+
+{
+    "hopeJustFoundApp": {
+        "donation" : {
+            "home": {
+                "title": "Donations",
+                "createLabel": "建立一筆新的 Donation",
+                "createOrEditLabel": "建立或編輯 Donation"
+            },
+            "created": "新的 Donation 建立成功，識別碼為 {{ param }}",
+            "updated": "識別碼為 {{ param }} 的 Donation 更新成功",
+            "deleted": "識別碼為 {{ param }} 的 Donation 刪除成功",
+            "delete": {
+                "question": "您確定要刪除 Donation {{ id }} 嗎?"
+            },
+            "detail": {
+                "title": "Donation"
+            },
+            "type": "Type",
+            "initialDate": "Initial Date",
+            "expireDate": "Expire Date",
+            "skilled": "Skilled",
+            "unskilled": "Unskilled",
+            "goods": "Goods",
+            "user": "User"
+        }
+    }
+}

@@ -1,0 +1,25 @@
+
+{
+    "hopeJustFoundApp": {
+        "skilled" : {
+            "home": {
+                "title": "Skilleds",
+                "createLabel": "Pridať Skilled",
+                "createOrEditLabel": "Pridať alebo upraviť Skilled"
+            },
+            "created": "Bol vytvorený potomok entity Skilled s identifikátorom {{ param }}",
+            "updated": "Potomok entity Skilled s identifikátorom {{ param }} bol upravený.",
+            "deleted": "Potomok entity Skilled s identifikátorom {{ param }} bol vymazaný.",
+            "delete": {
+                "question": "Ste si istý, že chcete vymazať Skilled {{ id }}?"
+            },
+            "detail": {
+                "title": "Skilled"
+            },
+            "experience": "Experience",
+            "type": "Type",
+            "number": "Number",
+            "donation": "Donation"
+        }
+    }
+}

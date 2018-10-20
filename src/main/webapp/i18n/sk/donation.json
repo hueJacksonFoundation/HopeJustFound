@@ -1,0 +1,28 @@
+
+{
+    "hopeJustFoundApp": {
+        "donation" : {
+            "home": {
+                "title": "Donations",
+                "createLabel": "Pridať Donation",
+                "createOrEditLabel": "Pridať alebo upraviť Donation"
+            },
+            "created": "Bol vytvorený potomok entity Donation s identifikátorom {{ param }}",
+            "updated": "Potomok entity Donation s identifikátorom {{ param }} bol upravený.",
+            "deleted": "Potomok entity Donation s identifikátorom {{ param }} bol vymazaný.",
+            "delete": {
+                "question": "Ste si istý, že chcete vymazať Donation {{ id }}?"
+            },
+            "detail": {
+                "title": "Donation"
+            },
+            "type": "Type",
+            "initialDate": "Initial Date",
+            "expireDate": "Expire Date",
+            "skilled": "Skilled",
+            "unskilled": "Unskilled",
+            "goods": "Goods",
+            "user": "User"
+        }
+    }
+}

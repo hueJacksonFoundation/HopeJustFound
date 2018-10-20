@@ -1,0 +1,27 @@
+
+{
+    "hopeJustFoundApp": {
+        "goods" : {
+            "home": {
+                "title": "Goods",
+                "createLabel": "Buat Goods baru",
+                "createOrEditLabel": "Buat atau edit Goods"
+            },
+            "created": "Goods dengan id {{ param }} telah dibuat",
+            "updated": "Goods dengan id {{ param }} telah diperbaharui",
+            "deleted": "Goods dengan id {{ param }} telah dihapus",
+            "delete": {
+                "question": "Apakah anda yakin ingin menghapus Goods {{ id }}?"
+            },
+            "detail": {
+                "title": "Goods"
+            },
+            "type": "Type",
+            "condition": "Condition",
+            "description": "Description",
+            "transport": "Transport",
+            "image": "Image",
+            "donation": "Donation"
+        }
+    }
+}

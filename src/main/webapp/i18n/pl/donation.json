@@ -1,0 +1,28 @@
+
+{
+    "hopeJustFoundApp": {
+        "donation" : {
+            "home": {
+                "title": "Donation",
+                "createLabel": "Dodaj Donation",
+                "createOrEditLabel": "Dodaj lub edytuj: Donation"
+            },
+            "created": "Utworzono nowy obiekt typu Donation z identyfikatorem {{ param }}",
+            "updated": "Uaktualniono obiekt typu Donation z identyfikatorem {{ param }}",
+            "deleted": "Usunięto obiekt typu Donation z identyfikatorem {{ param }}",
+            "delete": {
+                "question": "Czy na pewno chcesz usunąć Donation {{ id }}?"
+            },
+            "detail": {
+                "title": "Donation"
+            },
+            "type": "Type",
+            "initialDate": "Initial Date",
+            "expireDate": "Expire Date",
+            "skilled": "Skilled",
+            "unskilled": "Unskilled",
+            "goods": "Goods",
+            "user": "User"
+        }
+    }
+}

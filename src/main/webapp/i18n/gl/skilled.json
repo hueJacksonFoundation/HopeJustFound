@@ -1,0 +1,25 @@
+
+{
+    "hopeJustFoundApp": {
+        "skilled" : {
+            "home": {
+                "title": "Skilleds",
+                "createLabel": "Crear novo Skilled",
+                "createOrEditLabel": "Crear ou editar Skilled"
+            },
+            "created": "Un novo Skilled foi creado co identificador {{ param }}",
+            "updated": "Un Skilled foi actualizado co identificador {{ param }}",
+            "deleted": "Un Skilled foi eliminado co identificador {{ param }}",
+            "delete": {
+                "question": "Seguro que desexa eliminar Skilled {{ id }}?"
+            },
+            "detail": {
+                "title": "Skilled"
+            },
+            "experience": "Experience",
+            "type": "Type",
+            "number": "Number",
+            "donation": "Donation"
+        }
+    }
+}

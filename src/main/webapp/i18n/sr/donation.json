@@ -1,0 +1,28 @@
+
+{
+    "hopeJustFoundApp": {
+        "donation" : {
+            "home": {
+                "title": "Donations",
+                "createLabel": "Kreiraj novi Donation",
+                "createOrEditLabel": "Kreirajte ili izmenite Donation"
+            },
+            "created": "Kreiran je novi Donation pod nazivom {{ param }}",
+            "updated": "Donation pod nazivom {{ param }} je ažuriran",
+            "deleted": "Donation pod nazivom {{ param }} je obrisan",
+            "delete": {
+                "question": "Da li ste sigurni da želite da obrišete Donation pod nazivom {{ id }}?"
+            },
+            "detail": {
+                "title": "Donation"
+            },
+            "type": "Type",
+            "initialDate": "Initial Date",
+            "expireDate": "Expire Date",
+            "skilled": "Skilled",
+            "unskilled": "Unskilled",
+            "goods": "Goods",
+            "user": "User"
+        }
+    }
+}

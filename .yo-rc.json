@@ -1,0 +1,101 @@
+{
+  "generator-jhipster": {
+    "promptValues": {
+      "packageName": "org.huejacksonfoundation.hopejustfound",
+      "nativeLanguage": "en"
+    },
+    "jhipsterVersion": "5.5.0",
+    "applicationType": "monolith",
+    "baseName": "HopeJustFound",
+    "packageName": "org.huejacksonfoundation.hopejustfound",
+    "packageFolder": "org/huejacksonfoundation/hopejustfound",
+    "serverPort": "8080",
+    "authenticationType": "jwt",
+    "cacheProvider": "ehcache",
+    "enableHibernateCache": true,
+    "websocket": false,
+    "databaseType": "sql",
+    "devDatabaseType": "h2Memory",
+    "prodDatabaseType": "postgresql",
+    "searchEngine": false,
+    "messageBroker": false,
+    "serviceDiscoveryType": "eureka",
+    "buildTool": "maven",
+    "enableSwaggerCodegen": false,
+    "jwtSecretKey": "YzVjMGQwZDVhYWU0ZDBkODE5MGY3NjRhODViMTQwZjgxOTcyOTcyOTBhMjVhZjllY2FjNDA0NGFiYjk1NzExMjg2Y2EzZDQ4YjAwNDBmMGFkMmRlNzlkNWQxYjYzNmU2NTM0YjU1Yjg1OGU4MTBmZDJhZTA3NmE0OWVkZjFkZTE=",
+    "clientFramework": "angularX",
+    "useSass": false,
+    "clientPackageManager": "npm",
+    "testFrameworks": [
+      "protractor"
+    ],
+    "jhiPrefix": "jhi",
+    "otherModules": [
+      {
+        "name": "generator-jhipster-nav-element",
+        "version": "2.0.7"
+      },
+      {
+        "name": "generator-jhipster-docker",
+        "version": "2.5.0"
+      },
+      {
+        "name": "generator-jhipster-audit-helper",
+        "version": "1.0.3"
+      },
+      {
+        "name": "generator-jhipster-swagger-cli",
+        "version": "3.0.1"
+      },
+      {
+        "name": "generator-jhipster-obfuscation-at-rest",
+        "version": "0.3.0"
+      }
+    ],
+    "enableTranslation": true,
+    "nativeLanguage": "en",
+    "languages": [
+      "en",
+      "al",
+      "ar-ly",
+      "hy",
+      "by",
+      "bn",
+      "ca",
+      "zh-cn",
+      "zh-tw",
+      "cs",
+      "da",
+      "nl",
+      "et",
+      "fa",
+      "fr",
+      "gl",
+      "de",
+      "el",
+      "hi",
+      "hu",
+      "id",
+      "it",
+      "ja",
+      "ko",
+      "mr",
+      "my",
+      "pl",
+      "pt-br",
+      "pt-pt",
+      "ro",
+      "ru",
+      "sk",
+      "sr",
+      "es",
+      "sv",
+      "tr",
+      "ta",
+      "th",
+      "ua",
+      "uz-lat",
+      "vi"
+    ]
+  }
+}
