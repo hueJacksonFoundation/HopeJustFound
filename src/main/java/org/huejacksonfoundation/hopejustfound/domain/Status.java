@@ -20,8 +20,6 @@ public class Status implements Serializable {
     private static final long serialVersionUID = 1L;
 
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "sequenceGenerator")
-    @SequenceGenerator(name = "sequenceGenerator")
     private Long id;
 
     @Column(name = "approved")
@@ -33,7 +31,8 @@ public class Status implements Serializable {
     @Column(name = "approved_by")
     private String approvedBy;
 
-    @OneToOne    @JoinColumn(unique = true)
+    @OneToOne
+    @MapsId
     private User user;
 
     // jhipster-needle-entity-add-field - JHipster will add fields here, do not remove

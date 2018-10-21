@@ -19,8 +19,6 @@ public class UserContact implements Serializable {
     private static final long serialVersionUID = 1L;
 
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "sequenceGenerator")
-    @SequenceGenerator(name = "sequenceGenerator")
     private Long id;
 
     @Column(name = "phone_number")
@@ -44,7 +42,8 @@ public class UserContact implements Serializable {
     @Column(name = "contact_times")
     private String contactTimes;
 
-    @OneToOne    @JoinColumn(unique = true)
+    @OneToOne
+    @MapsId
     private User user;
 
     // jhipster-needle-entity-add-field - JHipster will add fields here, do not remove
