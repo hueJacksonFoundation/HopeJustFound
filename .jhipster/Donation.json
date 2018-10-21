@@ -12,41 +12,41 @@
         {
             "fieldName": "expireDate",
             "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "condition",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "description",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "experience",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "climate",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "intensity",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "numberOfVolunteers",
+            "fieldType": "Integer"
         }
     ],
     "relationships": [
         {
-            "relationshipType": "one-to-one",
-            "relationshipName": "skilled",
-            "otherEntityName": "skilled",
-            "otherEntityField": "id",
-            "ownerSide": true,
-            "otherEntityRelationshipName": "donation(id)"
-        },
-        {
-            "relationshipType": "one-to-one",
-            "relationshipName": "unskilled",
-            "otherEntityName": "unskilled",
-            "otherEntityField": "id",
-            "ownerSide": true,
-            "otherEntityRelationshipName": "donation(id)"
-        },
-        {
-            "relationshipType": "one-to-one",
-            "relationshipName": "goods",
-            "otherEntityName": "goods",
-            "otherEntityField": "id",
-            "ownerSide": true,
-            "otherEntityRelationshipName": "donation(id)"
-        },
-        {
             "relationshipType": "many-to-one",
-            "relationshipName": "user",
+            "relationshipName": "userid",
             "otherEntityName": "user",
             "otherEntityField": "id"
         }
     ],
-    "changelogDate": "20181020184716",
+    "changelogDate": "20181021142449",
     "entityTableName": "donation",
     "dto": "no",
     "pagination": "no",

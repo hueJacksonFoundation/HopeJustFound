@@ -1,3 +1,5 @@
+import { IUser } from 'app/core/user/user.model';
+
 export interface IUserContact {
     id?: number;
     phoneNumber?: string;
@@ -7,6 +9,7 @@ export interface IUserContact {
     zipCode?: number;
     contactDays?: string;
     contactTimes?: string;
+    user?: IUser;
 }
 
 export class UserContact implements IUserContact {
@@ -18,6 +21,7 @@ export class UserContact implements IUserContact {
         public state?: string,
         public zipCode?: number,
         public contactDays?: string,
-        public contactTimes?: string
+        public contactTimes?: string,
+        public user?: IUser
     ) {}
 }

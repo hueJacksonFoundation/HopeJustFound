@@ -41,7 +41,8 @@ describe('Status e2e test', () => {
         await promise.all([
             statusUpdatePage.setApprovedInput('2000-12-31'),
             statusUpdatePage.setSubmittedInput('2000-12-31'),
-            statusUpdatePage.setApprovedByInput('approvedBy')
+            statusUpdatePage.setApprovedByInput('approvedBy'),
+            statusUpdatePage.userSelectLastOption()
         ]);
         expect(await statusUpdatePage.getApprovedInput()).to.eq('2000-12-31');
         expect(await statusUpdatePage.getSubmittedInput()).to.eq('2000-12-31');

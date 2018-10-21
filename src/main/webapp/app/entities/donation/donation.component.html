@@ -18,10 +18,13 @@
             <th><span jhiTranslate="hopeJustFoundApp.donation.type">Type</span></th>
             <th><span jhiTranslate="hopeJustFoundApp.donation.initialDate">Initial Date</span></th>
             <th><span jhiTranslate="hopeJustFoundApp.donation.expireDate">Expire Date</span></th>
-            <th><span jhiTranslate="hopeJustFoundApp.donation.skilled">Skilled</span></th>
-            <th><span jhiTranslate="hopeJustFoundApp.donation.unskilled">Unskilled</span></th>
-            <th><span jhiTranslate="hopeJustFoundApp.donation.goods">Goods</span></th>
-            <th><span jhiTranslate="hopeJustFoundApp.donation.user">User</span></th>
+            <th><span jhiTranslate="hopeJustFoundApp.donation.condition">Condition</span></th>
+            <th><span jhiTranslate="hopeJustFoundApp.donation.description">Description</span></th>
+            <th><span jhiTranslate="hopeJustFoundApp.donation.experience">Experience</span></th>
+            <th><span jhiTranslate="hopeJustFoundApp.donation.climate">Climate</span></th>
+            <th><span jhiTranslate="hopeJustFoundApp.donation.intensity">Intensity</span></th>
+            <th><span jhiTranslate="hopeJustFoundApp.donation.numberOfVolunteers">Number Of Volunteers</span></th>
+            <th><span jhiTranslate="hopeJustFoundApp.donation.userid">Userid</span></th>
             <th></th>
             </tr>
             </thead>
@@ -31,23 +34,14 @@
                 <td>{{donation.type}}</td>
                 <td>{{donation.initialDate | date:'mediumDate'}}</td>
                 <td>{{donation.expireDate | date:'mediumDate'}}</td>
+                <td>{{donation.condition}}</td>
+                <td>{{donation.description}}</td>
+                <td>{{donation.experience}}</td>
+                <td>{{donation.climate}}</td>
+                <td>{{donation.intensity}}</td>
+                <td>{{donation.numberOfVolunteers}}</td>
                 <td>
-                    <div *ngIf="donation.skilled">
-                        <a [routerLink]="['../skilled', donation.skilled?.id, 'view' ]" >{{donation.skilled?.id}}</a>
-                    </div>
-                </td>
-                <td>
-                    <div *ngIf="donation.unskilled">
-                        <a [routerLink]="['../unskilled', donation.unskilled?.id, 'view' ]" >{{donation.unskilled?.id}}</a>
-                    </div>
-                </td>
-                <td>
-                    <div *ngIf="donation.goods">
-                        <a [routerLink]="['../goods', donation.goods?.id, 'view' ]" >{{donation.goods?.id}}</a>
-                    </div>
-                </td>
-                <td>
-                    {{donation.user?.id}}
+                    {{donation.userid?.id}}
                 </td>
                 <td class="text-right">
                     <div class="btn-group flex-btn-group-container">

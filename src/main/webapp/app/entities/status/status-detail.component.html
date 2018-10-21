@@ -17,6 +17,10 @@
                 <dd>
                     <span>{{status.approvedBy}}</span>
                 </dd>
+                <dt><span jhiTranslate="hopeJustFoundApp.status.user">User</span></dt>
+                <dd>
+                    {{status.user?.id}}
+                </dd>
             </dl>
 
             <button type="submit"

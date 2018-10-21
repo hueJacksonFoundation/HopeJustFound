@@ -2,6 +2,7 @@ import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
 import { HopeJustFoundSharedModule } from 'app/shared';
+import { HopeJustFoundAdminModule } from 'app/admin/admin.module';
 import {
     UserContactComponent,
     UserContactDetailComponent,
@@ -15,7 +16,7 @@ import {
 const ENTITY_STATES = [...userContactRoute, ...userContactPopupRoute];
 
 @NgModule({
-    imports: [HopeJustFoundSharedModule, RouterModule.forChild(ENTITY_STATES)],
+    imports: [HopeJustFoundSharedModule, HopeJustFoundAdminModule, RouterModule.forChild(ENTITY_STATES)],
     declarations: [
         UserContactComponent,
         UserContactDetailComponent,

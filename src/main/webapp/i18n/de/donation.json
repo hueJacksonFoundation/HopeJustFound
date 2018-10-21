@@ -19,10 +19,13 @@
             "type": "Type",
             "initialDate": "Initial Date",
             "expireDate": "Expire Date",
-            "skilled": "Skilled",
-            "unskilled": "Unskilled",
-            "goods": "Goods",
-            "user": "User"
+            "condition": "Condition",
+            "description": "Description",
+            "experience": "Experience",
+            "climate": "Climate",
+            "intensity": "Intensity",
+            "numberOfVolunteers": "Number Of Volunteers",
+            "userid": "Userid"
         }
     }
 }

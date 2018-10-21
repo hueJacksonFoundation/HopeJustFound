@@ -33,6 +33,7 @@ export class UserContactUpdatePage {
     zipCodeInput = element(by.id('field_zipCode'));
     contactDaysInput = element(by.id('field_contactDays'));
     contactTimesInput = element(by.id('field_contactTimes'));
+    userSelect = element(by.id('field_user'));
 
     async getPageTitle() {
         return this.pageTitle.getAttribute('jhiTranslate');
@@ -92,6 +93,25 @@ export class UserContactUpdatePage {
 
     async getContactTimesInput() {
         return this.contactTimesInput.getAttribute('value');
+    }
+
+    async userSelectLastOption() {
+        await this.userSelect
+            .all(by.tagName('option'))
+            .last()
+            .click();
+    }
+
+    async userSelectOption(option) {
+        await this.userSelect.sendKeys(option);
+    }
+
+    getUserSelect(): ElementFinder {
+        return this.userSelect;
+    }
+
+    async getUserSelectedOption() {
+        return this.userSelect.element(by.css('option:checked')).getText();
     }
 
     async save() {

@@ -18,7 +18,8 @@
             },
             "approved": "Approved",
             "submitted": "Submitted",
-            "approvedBy": "Approved By"
+            "approvedBy": "Approved By",
+            "user": "User"
         }
     }
 }

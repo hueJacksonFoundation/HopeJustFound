@@ -22,7 +22,8 @@
             "state": "State",
             "zipCode": "Zip Code",
             "contactDays": "Contact Days",
-            "contactTimes": "Contact Times"
+            "contactTimes": "Contact Times",
+            "user": "User"
         }
     }
 }

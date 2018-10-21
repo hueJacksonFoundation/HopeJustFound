@@ -3,9 +3,11 @@ import { ActivatedRoute } from '@angular/router';
 import { HttpResponse, HttpErrorResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import * as moment from 'moment';
+import { JhiAlertService } from 'ng-jhipster';
 
 import { IStatus } from 'app/shared/model/status.model';
 import { StatusService } from './status.service';
+import { IUser, UserService } from 'app/core';
 
 @Component({
     selector: 'jhi-status-update',
@@ -14,16 +16,29 @@ import { StatusService } from './status.service';
 export class StatusUpdateComponent implements OnInit {
     status: IStatus;
     isSaving: boolean;
+
+    users: IUser[];
     approvedDp: any;
     submittedDp: any;
 
-    constructor(private statusService: StatusService, private activatedRoute: ActivatedRoute) {}
+    constructor(
+        private jhiAlertService: JhiAlertService,
+        private statusService: StatusService,
+        private userService: UserService,
+        private activatedRoute: ActivatedRoute
+    ) {}
 
     ngOnInit() {
         this.isSaving = false;
         this.activatedRoute.data.subscribe(({ status }) => {
             this.status = status;
         });
+        this.userService.query().subscribe(
+            (res: HttpResponse<IUser[]>) => {
+                this.users = res.body;
+            },
+            (res: HttpErrorResponse) => this.onError(res.message)
+        );
     }
 
     previousState() {
@@ -50,5 +65,13 @@ export class StatusUpdateComponent implements OnInit {
 
     private onSaveError() {
         this.isSaving = false;
+    }
+
+    private onError(errorMessage: string) {
+        this.jhiAlertService.error(errorMessage, null, null);
+    }
+
+    trackUserById(index: number, item: IUser) {
+        return item.id;
     }
 }
