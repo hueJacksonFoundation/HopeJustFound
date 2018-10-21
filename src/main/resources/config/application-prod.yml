@@ -34,8 +34,8 @@ spring:
             enabled: false
     datasource:
         type: com.zaxxer.hikari.HikariDataSource
-        url: jdbc:postgresql://localhost:5432/HopeJustFound
-        username: HopeJustFound
+        url: jdbc:postgresql://localhost:5432/hopeJustFound
+        username: hopeJustFound
         password:
         hikari:
             auto-commit: false
@@ -118,12 +118,12 @@ jhipster:
                 # - In the JHipster Registry (which includes a Spring Cloud Config server)
                 # - In a separate `application-prod.yml` file, in the same folder as your executable WAR file
                 # - In the `JHIPSTER_SECURITY_AUTHENTICATION_JWT_SECRET` environment variable
-                base64-secret: YzVjMGQwZDVhYWU0ZDBkODE5MGY3NjRhODViMTQwZjgxOTcyOTcyOTBhMjVhZjllY2FjNDA0NGFiYjk1NzExMjg2Y2EzZDQ4YjAwNDBmMGFkMmRlNzlkNWQxYjYzNmU2NTM0YjU1Yjg1OGU4MTBmZDJhZTA3NmE0OWVkZjFkZTE=
+                base64-secret: YzA3OTNkZDc3MzUyZmY1NDc2MDdlMGFlOGU4NWE1NDUxZjFmOGM3M2EwNWU2ZmNiYzA4Njk4MTEwOWMyYmNhZjRkYzU1ZTE0NzI2YWI0MzdhZGVhMzY5MmIwZWRkOTZhOTdjMTI0OTA0YjY2NWI0M2Y2YTg0NTk2MjQ3MjUyMWM=
                 # Token is valid 24 hours
                 token-validity-in-seconds: 86400
                 token-validity-in-seconds-for-remember-me: 2592000
     mail: # specific JHipster mail property, for standard properties see MailProperties
-        from: HopeJustFound@localhost
+        from: hopeJustFound@localhost
         base-url: http://my-server-url-to-change # Modify according to your server's URL
     metrics: # DropWizard Metrics configuration, used by MetricsConfiguration
         jmx:

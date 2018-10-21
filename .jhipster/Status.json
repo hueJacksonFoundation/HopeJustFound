@@ -14,8 +14,17 @@
             "fieldType": "String"
         }
     ],
-    "relationships": [],
-    "changelogDate": "20181020184720",
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "user",
+            "otherEntityName": "user",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "status"
+        }
+    ],
+    "changelogDate": "20181021142450",
     "entityTableName": "status",
     "dto": "no",
     "pagination": "no",

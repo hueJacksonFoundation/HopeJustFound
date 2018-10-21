@@ -45,7 +45,8 @@ describe('UserContact e2e test', () => {
             userContactUpdatePage.setStateInput('state'),
             userContactUpdatePage.setZipCodeInput('5'),
             userContactUpdatePage.setContactDaysInput('contactDays'),
-            userContactUpdatePage.setContactTimesInput('contactTimes')
+            userContactUpdatePage.setContactTimesInput('contactTimes'),
+            userContactUpdatePage.userSelectLastOption()
         ]);
         expect(await userContactUpdatePage.getPhoneNumberInput()).to.eq('phoneNumber');
         expect(await userContactUpdatePage.getAddressInput()).to.eq('address');

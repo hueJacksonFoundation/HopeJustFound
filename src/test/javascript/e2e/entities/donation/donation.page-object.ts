@@ -29,10 +29,13 @@ export class DonationUpdatePage {
     typeInput = element(by.id('field_type'));
     initialDateInput = element(by.id('field_initialDate'));
     expireDateInput = element(by.id('field_expireDate'));
-    skilledSelect = element(by.id('field_skilled'));
-    unskilledSelect = element(by.id('field_unskilled'));
-    goodsSelect = element(by.id('field_goods'));
-    userSelect = element(by.id('field_user'));
+    conditionInput = element(by.id('field_condition'));
+    descriptionInput = element(by.id('field_description'));
+    experienceInput = element(by.id('field_experience'));
+    climateInput = element(by.id('field_climate'));
+    intensityInput = element(by.id('field_intensity'));
+    numberOfVolunteersInput = element(by.id('field_numberOfVolunteers'));
+    useridSelect = element(by.id('field_userid'));
 
     async getPageTitle() {
         return this.pageTitle.getAttribute('jhiTranslate');
@@ -62,80 +65,71 @@ export class DonationUpdatePage {
         return this.expireDateInput.getAttribute('value');
     }
 
-    async skilledSelectLastOption() {
-        await this.skilledSelect
+    async setConditionInput(condition) {
+        await this.conditionInput.sendKeys(condition);
+    }
+
+    async getConditionInput() {
+        return this.conditionInput.getAttribute('value');
+    }
+
+    async setDescriptionInput(description) {
+        await this.descriptionInput.sendKeys(description);
+    }
+
+    async getDescriptionInput() {
+        return this.descriptionInput.getAttribute('value');
+    }
+
+    async setExperienceInput(experience) {
+        await this.experienceInput.sendKeys(experience);
+    }
+
+    async getExperienceInput() {
+        return this.experienceInput.getAttribute('value');
+    }
+
+    async setClimateInput(climate) {
+        await this.climateInput.sendKeys(climate);
+    }
+
+    async getClimateInput() {
+        return this.climateInput.getAttribute('value');
+    }
+
+    async setIntensityInput(intensity) {
+        await this.intensityInput.sendKeys(intensity);
+    }
+
+    async getIntensityInput() {
+        return this.intensityInput.getAttribute('value');
+    }
+
+    async setNumberOfVolunteersInput(numberOfVolunteers) {
+        await this.numberOfVolunteersInput.sendKeys(numberOfVolunteers);
+    }
+
+    async getNumberOfVolunteersInput() {
+        return this.numberOfVolunteersInput.getAttribute('value');
+    }
+
+    async useridSelectLastOption() {
+        await this.useridSelect
             .all(by.tagName('option'))
             .last()
             .click();
     }
 
-    async skilledSelectOption(option) {
-        await this.skilledSelect.sendKeys(option);
+    async useridSelectOption(option) {
+        await this.useridSelect.sendKeys(option);
     }
 
-    getSkilledSelect(): ElementFinder {
-        return this.skilledSelect;
+    getUseridSelect(): ElementFinder {
+        return this.useridSelect;
     }
 
-    async getSkilledSelectedOption() {
-        return this.skilledSelect.element(by.css('option:checked')).getText();
-    }
-
-    async unskilledSelectLastOption() {
-        await this.unskilledSelect
-            .all(by.tagName('option'))
-            .last()
-            .click();
-    }
-
-    async unskilledSelectOption(option) {
-        await this.unskilledSelect.sendKeys(option);
-    }
-
-    getUnskilledSelect(): ElementFinder {
-        return this.unskilledSelect;
-    }
-
-    async getUnskilledSelectedOption() {
-        return this.unskilledSelect.element(by.css('option:checked')).getText();
-    }
-
-    async goodsSelectLastOption() {
-        await this.goodsSelect
-            .all(by.tagName('option'))
-            .last()
-            .click();
-    }
-
-    async goodsSelectOption(option) {
-        await this.goodsSelect.sendKeys(option);
-    }
-
-    getGoodsSelect(): ElementFinder {
-        return this.goodsSelect;
-    }
-
-    async getGoodsSelectedOption() {
-        return this.goodsSelect.element(by.css('option:checked')).getText();
-    }
-
-    async userSelectLastOption() {
-        await this.userSelect
-            .all(by.tagName('option'))
-            .last()
-            .click();
-    }
-
-    async userSelectOption(option) {
-        await this.userSelect.sendKeys(option);
-    }
-
-    getUserSelect(): ElementFinder {
-        return this.userSelect;
-    }
-
-    async getUserSelectedOption() {
-        return this.userSelect.element(by.css('option:checked')).getText();
+    async getUseridSelectedOption() {
+        return this.useridSelect.element(by.css('option:checked')).getText();
     }
 
     async save() {

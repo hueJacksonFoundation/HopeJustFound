@@ -17,27 +17,33 @@
                 <dd>
                     <span>{{donation.expireDate}}</span>
                 </dd>
-                <dt><span jhiTranslate="hopeJustFoundApp.donation.skilled">Skilled</span></dt>
+                <dt><span jhiTranslate="hopeJustFoundApp.donation.condition">Condition</span></dt>
                 <dd>
-                    <div *ngIf="donation.skilled">
-                        <a [routerLink]="['/skilled', donation.skilled?.id, 'view']">{{donation.skilled?.id}}</a>
-                    </div>
+                    <span>{{donation.condition}}</span>
                 </dd>
-                <dt><span jhiTranslate="hopeJustFoundApp.donation.unskilled">Unskilled</span></dt>
+                <dt><span jhiTranslate="hopeJustFoundApp.donation.description">Description</span></dt>
                 <dd>
-                    <div *ngIf="donation.unskilled">
-                        <a [routerLink]="['/unskilled', donation.unskilled?.id, 'view']">{{donation.unskilled?.id}}</a>
-                    </div>
+                    <span>{{donation.description}}</span>
                 </dd>
-                <dt><span jhiTranslate="hopeJustFoundApp.donation.goods">Goods</span></dt>
+                <dt><span jhiTranslate="hopeJustFoundApp.donation.experience">Experience</span></dt>
                 <dd>
-                    <div *ngIf="donation.goods">
-                        <a [routerLink]="['/goods', donation.goods?.id, 'view']">{{donation.goods?.id}}</a>
-                    </div>
+                    <span>{{donation.experience}}</span>
                 </dd>
-                <dt><span jhiTranslate="hopeJustFoundApp.donation.user">User</span></dt>
+                <dt><span jhiTranslate="hopeJustFoundApp.donation.climate">Climate</span></dt>
                 <dd>
-                    {{donation.user?.id}}
+                    <span>{{donation.climate}}</span>
+                </dd>
+                <dt><span jhiTranslate="hopeJustFoundApp.donation.intensity">Intensity</span></dt>
+                <dd>
+                    <span>{{donation.intensity}}</span>
+                </dd>
+                <dt><span jhiTranslate="hopeJustFoundApp.donation.numberOfVolunteers">Number Of Volunteers</span></dt>
+                <dd>
+                    <span>{{donation.numberOfVolunteers}}</span>
+                </dd>
+                <dt><span jhiTranslate="hopeJustFoundApp.donation.userid">Userid</span></dt>
+                <dd>
+                    {{donation.userid?.id}}
                 </dd>
             </dl>
 

@@ -29,6 +29,7 @@ export class StatusUpdatePage {
     approvedInput = element(by.id('field_approved'));
     submittedInput = element(by.id('field_submitted'));
     approvedByInput = element(by.id('field_approvedBy'));
+    userSelect = element(by.id('field_user'));
 
     async getPageTitle() {
         return this.pageTitle.getAttribute('jhiTranslate');
@@ -56,6 +57,25 @@ export class StatusUpdatePage {
 
     async getApprovedByInput() {
         return this.approvedByInput.getAttribute('value');
+    }
+
+    async userSelectLastOption() {
+        await this.userSelect
+            .all(by.tagName('option'))
+            .last()
+            .click();
+    }
+
+    async userSelectOption(option) {
+        await this.userSelect.sendKeys(option);
+    }
+
+    getUserSelect(): ElementFinder {
+        return this.userSelect;
+    }
+
+    async getUserSelectedOption() {
+        return this.userSelect.element(by.css('option:checked')).getText();
     }
 
     async save() {

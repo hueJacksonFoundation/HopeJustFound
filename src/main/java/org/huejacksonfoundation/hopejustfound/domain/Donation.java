@@ -34,18 +34,27 @@ public class Donation implements Serializable {
     @Column(name = "expire_date")
     private LocalDate expireDate;
 
-    @OneToOne    @JoinColumn(unique = true)
-    private Skilled skilled;
+    @Column(name = "jhi_condition")
+    private String condition;
 
-    @OneToOne    @JoinColumn(unique = true)
-    private Unskilled unskilled;
+    @Column(name = "description")
+    private String description;
 
-    @OneToOne    @JoinColumn(unique = true)
-    private Goods goods;
+    @Column(name = "experience")
+    private String experience;
+
+    @Column(name = "climate")
+    private String climate;
+
+    @Column(name = "intensity")
+    private String intensity;
+
+    @Column(name = "number_of_volunteers")
+    private Integer numberOfVolunteers;
 
     @ManyToOne
     @JsonIgnoreProperties("")
-    private User user;
+    private User userid;
 
     // jhipster-needle-entity-add-field - JHipster will add fields here, do not remove
     public Long getId() {
@@ -95,56 +104,95 @@ public class Donation implements Serializable {
         this.expireDate = expireDate;
     }
 
-    public Skilled getSkilled() {
-        return skilled;
+    public String getCondition() {
+        return condition;
     }
 
-    public Donation skilled(Skilled skilled) {
-        this.skilled = skilled;
+    public Donation condition(String condition) {
+        this.condition = condition;
         return this;
     }
 
-    public void setSkilled(Skilled skilled) {
-        this.skilled = skilled;
+    public void setCondition(String condition) {
+        this.condition = condition;
     }
 
-    public Unskilled getUnskilled() {
-        return unskilled;
+    public String getDescription() {
+        return description;
     }
 
-    public Donation unskilled(Unskilled unskilled) {
-        this.unskilled = unskilled;
+    public Donation description(String description) {
+        this.description = description;
         return this;
     }
 
-    public void setUnskilled(Unskilled unskilled) {
-        this.unskilled = unskilled;
+    public void setDescription(String description) {
+        this.description = description;
     }
 
-    public Goods getGoods() {
-        return goods;
+    public String getExperience() {
+        return experience;
     }
 
-    public Donation goods(Goods goods) {
-        this.goods = goods;
+    public Donation experience(String experience) {
+        this.experience = experience;
         return this;
     }
 
-    public void setGoods(Goods goods) {
-        this.goods = goods;
+    public void setExperience(String experience) {
+        this.experience = experience;
     }
 
-    public User getUser() {
-        return user;
+    public String getClimate() {
+        return climate;
     }
 
-    public Donation user(User user) {
-        this.user = user;
+    public Donation climate(String climate) {
+        this.climate = climate;
         return this;
     }
 
-    public void setUser(User user) {
-        this.user = user;
+    public void setClimate(String climate) {
+        this.climate = climate;
+    }
+
+    public String getIntensity() {
+        return intensity;
+    }
+
+    public Donation intensity(String intensity) {
+        this.intensity = intensity;
+        return this;
+    }
+
+    public void setIntensity(String intensity) {
+        this.intensity = intensity;
+    }
+
+    public Integer getNumberOfVolunteers() {
+        return numberOfVolunteers;
+    }
+
+    public Donation numberOfVolunteers(Integer numberOfVolunteers) {
+        this.numberOfVolunteers = numberOfVolunteers;
+        return this;
+    }
+
+    public void setNumberOfVolunteers(Integer numberOfVolunteers) {
+        this.numberOfVolunteers = numberOfVolunteers;
+    }
+
+    public User getUserid() {
+        return userid;
+    }
+
+    public Donation userid(User user) {
+        this.userid = user;
+        return this;
+    }
+
+    public void setUserid(User user) {
+        this.userid = user;
     }
     // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here, do not remove
 
@@ -175,6 +223,12 @@ public class Donation implements Serializable {
             ", type='" + getType() + "'" +
             ", initialDate='" + getInitialDate() + "'" +
             ", expireDate='" + getExpireDate() + "'" +
+            ", condition='" + getCondition() + "'" +
+            ", description='" + getDescription() + "'" +
+            ", experience='" + getExperience() + "'" +
+            ", climate='" + getClimate() + "'" +
+            ", intensity='" + getIntensity() + "'" +
+            ", numberOfVolunteers=" + getNumberOfVolunteers() +
             "}";
     }
 }

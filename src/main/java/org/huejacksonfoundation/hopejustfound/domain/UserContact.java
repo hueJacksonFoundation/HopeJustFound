@@ -44,6 +44,9 @@ public class UserContact implements Serializable {
     @Column(name = "contact_times")
     private String contactTimes;
 
+    @OneToOne    @JoinColumn(unique = true)
+    private User user;
+
     // jhipster-needle-entity-add-field - JHipster will add fields here, do not remove
     public Long getId() {
         return id;
@@ -142,6 +145,19 @@ public class UserContact implements Serializable {
 
     public void setContactTimes(String contactTimes) {
         this.contactTimes = contactTimes;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public UserContact user(User user) {
+        this.user = user;
+        return this;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
     }
     // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here, do not remove
 

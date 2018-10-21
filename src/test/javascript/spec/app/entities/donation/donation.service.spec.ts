@@ -25,7 +25,7 @@ describe('Service Tests', () => {
             httpMock = injector.get(HttpTestingController);
             currentDate = moment();
 
-            elemDefault = new Donation(0, 'AAAAAAA', currentDate, currentDate);
+            elemDefault = new Donation(0, 'AAAAAAA', currentDate, currentDate, 'AAAAAAA', 'AAAAAAA', 'AAAAAAA', 'AAAAAAA', 'AAAAAAA', 0);
         });
 
         describe('Service methods', async () => {
@@ -75,7 +75,13 @@ describe('Service Tests', () => {
                     {
                         type: 'BBBBBB',
                         initialDate: currentDate.format(DATE_FORMAT),
-                        expireDate: currentDate.format(DATE_FORMAT)
+                        expireDate: currentDate.format(DATE_FORMAT),
+                        condition: 'BBBBBB',
+                        description: 'BBBBBB',
+                        experience: 'BBBBBB',
+                        climate: 'BBBBBB',
+                        intensity: 'BBBBBB',
+                        numberOfVolunteers: 1
                     },
                     elemDefault
                 );
@@ -100,7 +106,13 @@ describe('Service Tests', () => {
                     {
                         type: 'BBBBBB',
                         initialDate: currentDate.format(DATE_FORMAT),
-                        expireDate: currentDate.format(DATE_FORMAT)
+                        expireDate: currentDate.format(DATE_FORMAT),
+                        condition: 'BBBBBB',
+                        description: 'BBBBBB',
+                        experience: 'BBBBBB',
+                        climate: 'BBBBBB',
+                        intensity: 'BBBBBB',
+                        numberOfVolunteers: 1
                     },
                     elemDefault
                 );

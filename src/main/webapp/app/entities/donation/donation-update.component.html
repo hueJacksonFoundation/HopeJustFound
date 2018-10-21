@@ -34,33 +34,42 @@
                         </span>
                     </div>
                 </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="hopeJustFoundApp.donation.condition" for="field_condition">Condition</label>
+                    <input type="text" class="form-control" name="condition" id="field_condition"
+                        [(ngModel)]="donation.condition" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="hopeJustFoundApp.donation.description" for="field_description">Description</label>
+                    <input type="text" class="form-control" name="description" id="field_description"
+                        [(ngModel)]="donation.description" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="hopeJustFoundApp.donation.experience" for="field_experience">Experience</label>
+                    <input type="text" class="form-control" name="experience" id="field_experience"
+                        [(ngModel)]="donation.experience" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="hopeJustFoundApp.donation.climate" for="field_climate">Climate</label>
+                    <input type="text" class="form-control" name="climate" id="field_climate"
+                        [(ngModel)]="donation.climate" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="hopeJustFoundApp.donation.intensity" for="field_intensity">Intensity</label>
+                    <input type="text" class="form-control" name="intensity" id="field_intensity"
+                        [(ngModel)]="donation.intensity" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="hopeJustFoundApp.donation.numberOfVolunteers" for="field_numberOfVolunteers">Number Of Volunteers</label>
+                    <input type="number" class="form-control" name="numberOfVolunteers" id="field_numberOfVolunteers"
+                        [(ngModel)]="donation.numberOfVolunteers" />
+                </div>
 
                 <div class="form-group">
-                    <label class="form-control-label" jhiTranslate="hopeJustFoundApp.donation.skilled" for="field_skilled">Skilled</label>
-                    <select class="form-control" id="field_skilled" name="skilled" [(ngModel)]="donation.skilled">
+                    <label class="form-control-label" jhiTranslate="hopeJustFoundApp.donation.userid" for="field_userid">Userid</label>
+                    <select class="form-control" id="field_userid" name="userid" [(ngModel)]="donation.userid" >
                         <option [ngValue]="null"></option>
-                        <option [ngValue]="skilledOption.id === donation.skilled?.id ? donation.skilled : skilledOption" *ngFor="let skilledOption of skilleds; trackBy: trackSkilledById">{{skilledOption.id}}</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label class="form-control-label" jhiTranslate="hopeJustFoundApp.donation.unskilled" for="field_unskilled">Unskilled</label>
-                    <select class="form-control" id="field_unskilled" name="unskilled" [(ngModel)]="donation.unskilled">
-                        <option [ngValue]="null"></option>
-                        <option [ngValue]="unskilledOption.id === donation.unskilled?.id ? donation.unskilled : unskilledOption" *ngFor="let unskilledOption of unskilleds; trackBy: trackUnskilledById">{{unskilledOption.id}}</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label class="form-control-label" jhiTranslate="hopeJustFoundApp.donation.goods" for="field_goods">Goods</label>
-                    <select class="form-control" id="field_goods" name="goods" [(ngModel)]="donation.goods">
-                        <option [ngValue]="null"></option>
-                        <option [ngValue]="goodsOption.id === donation.goods?.id ? donation.goods : goodsOption" *ngFor="let goodsOption of goods; trackBy: trackGoodsById">{{goodsOption.id}}</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label class="form-control-label" jhiTranslate="hopeJustFoundApp.donation.user" for="field_user">User</label>
-                    <select class="form-control" id="field_user" name="user" [(ngModel)]="donation.user" >
-                        <option [ngValue]="null"></option>
-                        <option [ngValue]="userOption.id === donation.user?.id ? donation.user : userOption" *ngFor="let userOption of users; trackBy: trackUserById">{{userOption.id}}</option>
+                        <option [ngValue]="userOption.id === donation.userid?.id ? donation.userid : userOption" *ngFor="let userOption of users; trackBy: trackUserById">{{userOption.id}}</option>
                     </select>
                 </div>
             </div>

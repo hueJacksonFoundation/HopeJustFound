@@ -8,9 +8,6 @@
             "entities": {
                 "main": "Entities များ",
                 "donation": "Donation",
-                "goods": "Goods",
-                "skilled": "Skilled",
-                "unskilled": "Unskilled",
                 "status": "Status",
                 "userContact": "User Contact",
                 "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"

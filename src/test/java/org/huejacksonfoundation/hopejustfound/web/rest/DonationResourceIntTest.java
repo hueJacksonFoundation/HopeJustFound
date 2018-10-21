@@ -50,6 +50,24 @@ public class DonationResourceIntTest {
     private static final LocalDate DEFAULT_EXPIRE_DATE = LocalDate.ofEpochDay(0L);
     private static final LocalDate UPDATED_EXPIRE_DATE = LocalDate.now(ZoneId.systemDefault());
 
+    private static final String DEFAULT_CONDITION = "AAAAAAAAAA";
+    private static final String UPDATED_CONDITION = "BBBBBBBBBB";
+
+    private static final String DEFAULT_DESCRIPTION = "AAAAAAAAAA";
+    private static final String UPDATED_DESCRIPTION = "BBBBBBBBBB";
+
+    private static final String DEFAULT_EXPERIENCE = "AAAAAAAAAA";
+    private static final String UPDATED_EXPERIENCE = "BBBBBBBBBB";
+
+    private static final String DEFAULT_CLIMATE = "AAAAAAAAAA";
+    private static final String UPDATED_CLIMATE = "BBBBBBBBBB";
+
+    private static final String DEFAULT_INTENSITY = "AAAAAAAAAA";
+    private static final String UPDATED_INTENSITY = "BBBBBBBBBB";
+
+    private static final Integer DEFAULT_NUMBER_OF_VOLUNTEERS = 1;
+    private static final Integer UPDATED_NUMBER_OF_VOLUNTEERS = 2;
+
     @Autowired
     private DonationRepository donationRepository;
 
@@ -90,7 +108,13 @@ public class DonationResourceIntTest {
         Donation donation = new Donation()
             .type(DEFAULT_TYPE)
             .initialDate(DEFAULT_INITIAL_DATE)
-            .expireDate(DEFAULT_EXPIRE_DATE);
+            .expireDate(DEFAULT_EXPIRE_DATE)
+            .condition(DEFAULT_CONDITION)
+            .description(DEFAULT_DESCRIPTION)
+            .experience(DEFAULT_EXPERIENCE)
+            .climate(DEFAULT_CLIMATE)
+            .intensity(DEFAULT_INTENSITY)
+            .numberOfVolunteers(DEFAULT_NUMBER_OF_VOLUNTEERS);
         return donation;
     }
 
@@ -117,6 +141,12 @@ public class DonationResourceIntTest {
         assertThat(testDonation.getType()).isEqualTo(DEFAULT_TYPE);
         assertThat(testDonation.getInitialDate()).isEqualTo(DEFAULT_INITIAL_DATE);
         assertThat(testDonation.getExpireDate()).isEqualTo(DEFAULT_EXPIRE_DATE);
+        assertThat(testDonation.getCondition()).isEqualTo(DEFAULT_CONDITION);
+        assertThat(testDonation.getDescription()).isEqualTo(DEFAULT_DESCRIPTION);
+        assertThat(testDonation.getExperience()).isEqualTo(DEFAULT_EXPERIENCE);
+        assertThat(testDonation.getClimate()).isEqualTo(DEFAULT_CLIMATE);
+        assertThat(testDonation.getIntensity()).isEqualTo(DEFAULT_INTENSITY);
+        assertThat(testDonation.getNumberOfVolunteers()).isEqualTo(DEFAULT_NUMBER_OF_VOLUNTEERS);
     }
 
     @Test
@@ -151,7 +181,13 @@ public class DonationResourceIntTest {
             .andExpect(jsonPath("$.[*].id").value(hasItem(donation.getId().intValue())))
             .andExpect(jsonPath("$.[*].type").value(hasItem(DEFAULT_TYPE.toString())))
             .andExpect(jsonPath("$.[*].initialDate").value(hasItem(DEFAULT_INITIAL_DATE.toString())))
-            .andExpect(jsonPath("$.[*].expireDate").value(hasItem(DEFAULT_EXPIRE_DATE.toString())));
+            .andExpect(jsonPath("$.[*].expireDate").value(hasItem(DEFAULT_EXPIRE_DATE.toString())))
+            .andExpect(jsonPath("$.[*].condition").value(hasItem(DEFAULT_CONDITION.toString())))
+            .andExpect(jsonPath("$.[*].description").value(hasItem(DEFAULT_DESCRIPTION.toString())))
+            .andExpect(jsonPath("$.[*].experience").value(hasItem(DEFAULT_EXPERIENCE.toString())))
+            .andExpect(jsonPath("$.[*].climate").value(hasItem(DEFAULT_CLIMATE.toString())))
+            .andExpect(jsonPath("$.[*].intensity").value(hasItem(DEFAULT_INTENSITY.toString())))
+            .andExpect(jsonPath("$.[*].numberOfVolunteers").value(hasItem(DEFAULT_NUMBER_OF_VOLUNTEERS)));
     }
     
     @Test
@@ -167,7 +203,13 @@ public class DonationResourceIntTest {
             .andExpect(jsonPath("$.id").value(donation.getId().intValue()))
             .andExpect(jsonPath("$.type").value(DEFAULT_TYPE.toString()))
             .andExpect(jsonPath("$.initialDate").value(DEFAULT_INITIAL_DATE.toString()))
-            .andExpect(jsonPath("$.expireDate").value(DEFAULT_EXPIRE_DATE.toString()));
+            .andExpect(jsonPath("$.expireDate").value(DEFAULT_EXPIRE_DATE.toString()))
+            .andExpect(jsonPath("$.condition").value(DEFAULT_CONDITION.toString()))
+            .andExpect(jsonPath("$.description").value(DEFAULT_DESCRIPTION.toString()))
+            .andExpect(jsonPath("$.experience").value(DEFAULT_EXPERIENCE.toString()))
+            .andExpect(jsonPath("$.climate").value(DEFAULT_CLIMATE.toString()))
+            .andExpect(jsonPath("$.intensity").value(DEFAULT_INTENSITY.toString()))
+            .andExpect(jsonPath("$.numberOfVolunteers").value(DEFAULT_NUMBER_OF_VOLUNTEERS));
     }
 
     @Test
@@ -193,7 +235,13 @@ public class DonationResourceIntTest {
         updatedDonation
             .type(UPDATED_TYPE)
             .initialDate(UPDATED_INITIAL_DATE)
-            .expireDate(UPDATED_EXPIRE_DATE);
+            .expireDate(UPDATED_EXPIRE_DATE)
+            .condition(UPDATED_CONDITION)
+            .description(UPDATED_DESCRIPTION)
+            .experience(UPDATED_EXPERIENCE)
+            .climate(UPDATED_CLIMATE)
+            .intensity(UPDATED_INTENSITY)
+            .numberOfVolunteers(UPDATED_NUMBER_OF_VOLUNTEERS);
 
         restDonationMockMvc.perform(put("/api/donations")
             .contentType(TestUtil.APPLICATION_JSON_UTF8)
@@ -207,6 +255,12 @@ public class DonationResourceIntTest {
         assertThat(testDonation.getType()).isEqualTo(UPDATED_TYPE);
         assertThat(testDonation.getInitialDate()).isEqualTo(UPDATED_INITIAL_DATE);
         assertThat(testDonation.getExpireDate()).isEqualTo(UPDATED_EXPIRE_DATE);
+        assertThat(testDonation.getCondition()).isEqualTo(UPDATED_CONDITION);
+        assertThat(testDonation.getDescription()).isEqualTo(UPDATED_DESCRIPTION);
+        assertThat(testDonation.getExperience()).isEqualTo(UPDATED_EXPERIENCE);
+        assertThat(testDonation.getClimate()).isEqualTo(UPDATED_CLIMATE);
+        assertThat(testDonation.getIntensity()).isEqualTo(UPDATED_INTENSITY);
+        assertThat(testDonation.getNumberOfVolunteers()).isEqualTo(UPDATED_NUMBER_OF_VOLUNTEERS);
     }
 
     @Test

@@ -1,4 +1,4 @@
-# HopeJustFound
+# hopeJustFound
 This application was generated using JHipster 5.5.0, you can find documentation and help at [https://www.jhipster.tech/documentation-archive/v5.5.0](https://www.jhipster.tech/documentation-archive/v5.5.0).
 
 ## Development
@@ -86,7 +86,7 @@ will generate few files:
 
 ## Building for production
 
-To optimize the HopeJustFound application for production, run:
+To optimize the hopeJustFound application for production, run:
 
     ./mvnw -Pprod clean package
 

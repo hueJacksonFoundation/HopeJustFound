@@ -22,6 +22,7 @@
             <th><span jhiTranslate="hopeJustFoundApp.userContact.zipCode">Zip Code</span></th>
             <th><span jhiTranslate="hopeJustFoundApp.userContact.contactDays">Contact Days</span></th>
             <th><span jhiTranslate="hopeJustFoundApp.userContact.contactTimes">Contact Times</span></th>
+            <th><span jhiTranslate="hopeJustFoundApp.userContact.user">User</span></th>
             <th></th>
             </tr>
             </thead>
@@ -35,6 +36,9 @@
                 <td>{{userContact.zipCode}}</td>
                 <td>{{userContact.contactDays}}</td>
                 <td>{{userContact.contactTimes}}</td>
+                <td>
+                    {{userContact.user?.id}}
+                </td>
                 <td class="text-right">
                     <div class="btn-group flex-btn-group-container">
                         <button type="submit"

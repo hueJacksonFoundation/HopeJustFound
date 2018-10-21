@@ -42,14 +42,23 @@ describe('Donation e2e test', () => {
             donationUpdatePage.setTypeInput('type'),
             donationUpdatePage.setInitialDateInput('2000-12-31'),
             donationUpdatePage.setExpireDateInput('2000-12-31'),
-            donationUpdatePage.skilledSelectLastOption(),
-            donationUpdatePage.unskilledSelectLastOption(),
-            donationUpdatePage.goodsSelectLastOption(),
-            donationUpdatePage.userSelectLastOption()
+            donationUpdatePage.setConditionInput('condition'),
+            donationUpdatePage.setDescriptionInput('description'),
+            donationUpdatePage.setExperienceInput('experience'),
+            donationUpdatePage.setClimateInput('climate'),
+            donationUpdatePage.setIntensityInput('intensity'),
+            donationUpdatePage.setNumberOfVolunteersInput('5'),
+            donationUpdatePage.useridSelectLastOption()
         ]);
         expect(await donationUpdatePage.getTypeInput()).to.eq('type');
         expect(await donationUpdatePage.getInitialDateInput()).to.eq('2000-12-31');
         expect(await donationUpdatePage.getExpireDateInput()).to.eq('2000-12-31');
+        expect(await donationUpdatePage.getConditionInput()).to.eq('condition');
+        expect(await donationUpdatePage.getDescriptionInput()).to.eq('description');
+        expect(await donationUpdatePage.getExperienceInput()).to.eq('experience');
+        expect(await donationUpdatePage.getClimateInput()).to.eq('climate');
+        expect(await donationUpdatePage.getIntensityInput()).to.eq('intensity');
+        expect(await donationUpdatePage.getNumberOfVolunteersInput()).to.eq('5');
         await donationUpdatePage.save();
         expect(await donationUpdatePage.getSaveButton().isPresent()).to.be.false;
 

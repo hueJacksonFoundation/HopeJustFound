@@ -13,7 +13,7 @@ import java.util.List;
 @Repository
 public interface DonationRepository extends JpaRepository<Donation, Long> {
 
-    @Query("select donation from Donation donation where donation.user.login = ?#{principal.username}")
-    List<Donation> findByUserIsCurrentUser();
+    @Query("select donation from Donation donation where donation.userid.login = ?#{principal.username}")
+    List<Donation> findByUseridIsCurrentUser();
 
 }

@@ -33,6 +33,9 @@ public class Status implements Serializable {
     @Column(name = "approved_by")
     private String approvedBy;
 
+    @OneToOne    @JoinColumn(unique = true)
+    private User user;
+
     // jhipster-needle-entity-add-field - JHipster will add fields here, do not remove
     public Long getId() {
         return id;
@@ -79,6 +82,19 @@ public class Status implements Serializable {
 
     public void setApprovedBy(String approvedBy) {
         this.approvedBy = approvedBy;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public Status user(User user) {
+        this.user = user;
+        return this;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
     }
     // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here, do not remove
 

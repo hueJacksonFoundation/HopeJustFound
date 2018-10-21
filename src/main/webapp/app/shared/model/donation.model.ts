@@ -1,7 +1,4 @@
 import { Moment } from 'moment';
-import { ISkilled } from 'app/shared/model//skilled.model';
-import { IUnskilled } from 'app/shared/model//unskilled.model';
-import { IGoods } from 'app/shared/model//goods.model';
 import { IUser } from 'app/core/user/user.model';
 
 export interface IDonation {
@@ -9,10 +6,13 @@ export interface IDonation {
     type?: string;
     initialDate?: Moment;
     expireDate?: Moment;
-    skilled?: ISkilled;
-    unskilled?: IUnskilled;
-    goods?: IGoods;
-    user?: IUser;
+    condition?: string;
+    description?: string;
+    experience?: string;
+    climate?: string;
+    intensity?: string;
+    numberOfVolunteers?: number;
+    userid?: IUser;
 }
 
 export class Donation implements IDonation {
@@ -21,9 +21,12 @@ export class Donation implements IDonation {
         public type?: string,
         public initialDate?: Moment,
         public expireDate?: Moment,
-        public skilled?: ISkilled,
-        public unskilled?: IUnskilled,
-        public goods?: IGoods,
-        public user?: IUser
+        public condition?: string,
+        public description?: string,
+        public experience?: string,
+        public climate?: string,
+        public intensity?: string,
+        public numberOfVolunteers?: number,
+        public userid?: IUser
     ) {}
 }
