@@ -8,9 +8,9 @@
     -->
     <changeSet id="20181022124052-2" author="jhipster">
         
-        <addForeignKeyConstraint baseColumnNames="userid_id"
+        <addForeignKeyConstraint baseColumnNames="user_id"
                                  baseTableName="status"
-                                 constraintName="fk_status_userid_id"
+                                 constraintName="fk_status_user_id"
                                  referencedColumnNames="id"
                                  referencedTableName="jhi_user"/>
 

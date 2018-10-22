@@ -23,6 +23,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 import java.util.*;
 
+import java.time.LocalDate;
+
 
 /**
  * REST controller for managing the current user's account.
@@ -61,7 +63,17 @@ public class AccountResource {
         if (!checkPasswordLength(managedUserVM.getPassword())) {
             throw new InvalidPasswordException();
         }
-        User user = userService.registerUser(managedUserVM, managedUserVM.getPassword());
+        User user = userService.registerUser(managedUserVM,
+                                            managedUserVM.getPassword(),
+                                            managedUserVM.getPhoneNumber(),
+                                            managedUserVM.getAddress(),
+                                            managedUserVM.getCity(),
+                                            managedUserVM.getState(),
+                                            managedUserVM.getZipCode(),
+                                            managedUserVM.getContactDays(),
+                                            managedUserVM.getContactTimes(),
+                                            managedUserVM.getSubmitted(),
+                                            managedUserVM.getRole());
         mailService.sendActivationEmail(user);
     }
 

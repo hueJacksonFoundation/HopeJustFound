@@ -20,8 +20,6 @@ public class Status implements Serializable {
     private static final long serialVersionUID = 1L;
 
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "sequenceGenerator")
-    @SequenceGenerator(name = "sequenceGenerator")
     private Long id;
 
     @Column(name = "approved")
@@ -33,8 +31,9 @@ public class Status implements Serializable {
     @Column(name = "jhi_role")
     private String role;
 
-    @OneToOne    @JoinColumn(unique = true)
-    private User userid;
+    @OneToOne
+    @MapsId
+    private User user;
 
     // jhipster-needle-entity-add-field - JHipster will add fields here, do not remove
     public Long getId() {
@@ -84,17 +83,17 @@ public class Status implements Serializable {
         this.role = role;
     }
 
-    public User getUserid() {
-        return userid;
+    public User getUser() {
+        return user;
     }
 
-    public Status userid(User user) {
-        this.userid = user;
+    public Status user(User user) {
+        this.user = user;
         return this;
     }
 
-    public void setUserid(User user) {
-        this.userid = user;
+    public void setUser(User user) {
+        this.user = user;
     }
     // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here, do not remove
 

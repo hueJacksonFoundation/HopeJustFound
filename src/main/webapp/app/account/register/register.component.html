@@ -27,6 +27,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <form name="form" role="form" (ngSubmit)="register()" #registerForm="ngForm" *ngIf="!success">
+                <!-- Username -->
                 <div class="form-group">
                     <label class="form-control-label" for="login" jhiTranslate="global.form.username">Username</label>
                     <input type="text" class="form-control" [(ngModel)]="registerAccount.login" id="login" name="login" #login="ngModel" placeholder="{{'global.form.username.placeholder' | translate}}"
@@ -49,6 +50,7 @@
                         </small>
                     </div>
                 </div>
+                <!-- Email -->
                 <div class="form-group">
                     <label class="form-control-label" for="email" jhiTranslate="global.form.email">Email</label>
                     <input type="email" class="form-control" id="email" name="email" #email="ngModel" placeholder="{{'global.form.email.placeholder' | translate}}"
@@ -72,6 +74,7 @@
                         </small>
                     </div>
                 </div>
+                <!-- Password -->
                 <div class="form-group">
                     <label class="form-control-label" for="password" jhiTranslate="global.form.newpassword">New password</label>
                     <input type="password" class="form-control" id="password" name="password" #password="ngModel" placeholder="{{'global.form.newpassword.placeholder' | translate}}"
@@ -92,6 +95,7 @@
                     </div>
                     <jhi-password-strength-bar [passwordToCheck]="registerAccount.password"></jhi-password-strength-bar>
                 </div>
+                <!-- Confirm Password -->
                 <div class="form-group">
                     <label class="form-control-label" for="confirmPassword" jhiTranslate="global.form.confirmpassword">New password confirmation</label>
                     <input type="password" class="form-control" id="confirmPassword" name="confirmPassword" #confirmPasswordInput="ngModel" placeholder="{{'global.form.confirmpassword.placeholder' | translate}}"
@@ -111,6 +115,60 @@
                         </small>
                     </div>
                 </div>
+                <!-- Phone Number -->
+                <div class="form-group">
+                    <label class="form-control-label" for="phoneNumber" data-translate="global.form.phoneNumber">Phone number</label>
+                    <input type="tel" class="form-control" id="phoneNumber" name="phoneNumber" #phoneNumber="ngModel" placeholder="000-000-0000"
+                           [(ngModel)]="registerAccount.phoneNumber">
+                </div>
+                <!-- Address -->
+                <div class="form-group">
+                    <label class="form-control-label" for="address" data-translate="global.form.address">Address</label>
+                    <input type="text" class="form-control" id="address" name="address" #address="ngModel" placeholder="123 Main St"
+                           [(ngModel)]="registerAccount.address">
+                </div>
+                <!-- City -->
+                <div class="form-group">
+                    <label class="form-control-label" for="city" data-translate="global.form.city">City</label>
+                    <input type="text" class="form-control" id="city" name="city" #city="ngModel" placeholder="Any Town"
+                           [(ngModel)]="registerAccount.city">
+                </div>
+                <!-- State -->
+                <div class="form-group">
+                    <label class="form-control-label" for="state" data-translate="global.form.state">State</label>
+                    <input type="text" class="form-control" id="state" name="state" #state="ngModel" placeholder="OH"
+                           [(ngModel)]="registerAccount.state">
+                </div>
+                <!-- ZipCode -->
+                <div class="form-group">
+                    <label class="form-control-label" for="zipCode" data-translate="global.form.zipCode">Zip code</label>
+                    <input type="number" class="form-control" id="zipCode" name="zipCode" #zipCode="ngModel" placeholder="44123"
+                           [(ngModel)]="registerAccount.zipCode">
+                </div>
+                <!-- Contact Days -->
+                <div class="form-group">
+                    <label class="form-control-label" for="contactDays" data-translate="global.form.contactDays">Contact Days</label>
+                    <input type="text" class="form-control" id="contactDays" name="contactDays" #conatctDays="ngModel" placeholder="Mon. - Fri."
+                           [(ngModel)]="registerAccount.contactDays">
+                </div>
+                <!-- Contact Times -->
+                <div class="form-group">
+                    <label class="form-control-label" for="contactTimes" data-translate="global.form.contactTimes">Contact Times</label>
+                    <input type="text" class="form-control" id="contactTimes" name="contactTimes" #contactTimes="ngModel" placeholder="8am - 5pm"
+                           [(ngModel)]="registerAccount.contactTimes">
+                </div>
+                <!-- Role -->
+                <div class="form-group">
+                    <label class="form-control-label" for="role" data-translate="global.form.role">Role(s)</label>
+                    <input type="text" class="role" id="role" name="role" #role="ngModel" placeholder="Donator, NonProfit, Superstar"
+                           [(ngModel)]="registerAccount.role">
+                </div>
+                <!-- Submitted -->
+                <div class="form-group">
+                    <label class="form-control-label" for="submitted"> </label>
+                    <input type="hidden" class="role" id="submitted" name="submitted" #submitted="ngModel" value ="currentDate"
+                           [(ngModel)]="registerAccount.submitted">
+                </div>
 
                 <button type="submit" [disabled]="registerForm.form.invalid" class="btn btn-primary" jhiTranslate="register.form.button">Register</button>
             </form>
@@ -122,3 +180,9 @@
         </div>
     </div>
 </div>
+
+<script type="text/javascript">
+    var d = new Date(year, month, day);
+    // Set the value of the "date" field
+    document.getElementById("submitted").value = d.toDateString();
+</script>
