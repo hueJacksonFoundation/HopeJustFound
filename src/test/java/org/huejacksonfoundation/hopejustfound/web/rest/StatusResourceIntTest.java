@@ -47,8 +47,8 @@ public class StatusResourceIntTest {
     private static final LocalDate DEFAULT_SUBMITTED = LocalDate.ofEpochDay(0L);
     private static final LocalDate UPDATED_SUBMITTED = LocalDate.now(ZoneId.systemDefault());
 
-    private static final String DEFAULT_APPROVED_BY = "AAAAAAAAAA";
-    private static final String UPDATED_APPROVED_BY = "BBBBBBBBBB";
+    private static final String DEFAULT_ROLE = "AAAAAAAAAA";
+    private static final String UPDATED_ROLE = "BBBBBBBBBB";
 
     @Autowired
     private StatusRepository statusRepository;
@@ -90,7 +90,7 @@ public class StatusResourceIntTest {
         Status status = new Status()
             .approved(DEFAULT_APPROVED)
             .submitted(DEFAULT_SUBMITTED)
-            .approvedBy(DEFAULT_APPROVED_BY);
+            .role(DEFAULT_ROLE);
         return status;
     }
 
@@ -116,7 +116,7 @@ public class StatusResourceIntTest {
         Status testStatus = statusList.get(statusList.size() - 1);
         assertThat(testStatus.getApproved()).isEqualTo(DEFAULT_APPROVED);
         assertThat(testStatus.getSubmitted()).isEqualTo(DEFAULT_SUBMITTED);
-        assertThat(testStatus.getApprovedBy()).isEqualTo(DEFAULT_APPROVED_BY);
+        assertThat(testStatus.getRole()).isEqualTo(DEFAULT_ROLE);
     }
 
     @Test
@@ -151,7 +151,7 @@ public class StatusResourceIntTest {
             .andExpect(jsonPath("$.[*].id").value(hasItem(status.getId().intValue())))
             .andExpect(jsonPath("$.[*].approved").value(hasItem(DEFAULT_APPROVED.toString())))
             .andExpect(jsonPath("$.[*].submitted").value(hasItem(DEFAULT_SUBMITTED.toString())))
-            .andExpect(jsonPath("$.[*].approvedBy").value(hasItem(DEFAULT_APPROVED_BY.toString())));
+            .andExpect(jsonPath("$.[*].role").value(hasItem(DEFAULT_ROLE.toString())));
     }
     
     @Test
@@ -167,7 +167,7 @@ public class StatusResourceIntTest {
             .andExpect(jsonPath("$.id").value(status.getId().intValue()))
             .andExpect(jsonPath("$.approved").value(DEFAULT_APPROVED.toString()))
             .andExpect(jsonPath("$.submitted").value(DEFAULT_SUBMITTED.toString()))
-            .andExpect(jsonPath("$.approvedBy").value(DEFAULT_APPROVED_BY.toString()));
+            .andExpect(jsonPath("$.role").value(DEFAULT_ROLE.toString()));
     }
 
     @Test
@@ -193,7 +193,7 @@ public class StatusResourceIntTest {
         updatedStatus
             .approved(UPDATED_APPROVED)
             .submitted(UPDATED_SUBMITTED)
-            .approvedBy(UPDATED_APPROVED_BY);
+            .role(UPDATED_ROLE);
 
         restStatusMockMvc.perform(put("/api/statuses")
             .contentType(TestUtil.APPLICATION_JSON_UTF8)
@@ -206,7 +206,7 @@ public class StatusResourceIntTest {
         Status testStatus = statusList.get(statusList.size() - 1);
         assertThat(testStatus.getApproved()).isEqualTo(UPDATED_APPROVED);
         assertThat(testStatus.getSubmitted()).isEqualTo(UPDATED_SUBMITTED);
-        assertThat(testStatus.getApprovedBy()).isEqualTo(UPDATED_APPROVED_BY);
+        assertThat(testStatus.getRole()).isEqualTo(UPDATED_ROLE);
     }
 
     @Test

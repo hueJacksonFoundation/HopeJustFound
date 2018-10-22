@@ -17,8 +17,8 @@
             <th><span jhiTranslate="global.field.id">ID</span></th>
             <th><span jhiTranslate="hopeJustFoundApp.status.approved">Approved</span></th>
             <th><span jhiTranslate="hopeJustFoundApp.status.submitted">Submitted</span></th>
-            <th><span jhiTranslate="hopeJustFoundApp.status.approvedBy">Approved By</span></th>
-            <th><span jhiTranslate="hopeJustFoundApp.status.user">User</span></th>
+            <th><span jhiTranslate="hopeJustFoundApp.status.role">Role</span></th>
+            <th><span jhiTranslate="hopeJustFoundApp.status.userid">Userid</span></th>
             <th></th>
             </tr>
             </thead>
@@ -27,9 +27,9 @@
                 <td><a [routerLink]="['/status', status.id, 'view' ]">{{status.id}}</a></td>
                 <td>{{status.approved | date:'mediumDate'}}</td>
                 <td>{{status.submitted | date:'mediumDate'}}</td>
-                <td>{{status.approvedBy}}</td>
+                <td>{{status.role}}</td>
                 <td>
-                    {{status.user?.id}}
+                    {{status.userid?.id}}
                 </td>
                 <td class="text-right">
                     <div class="btn-group flex-btn-group-container">

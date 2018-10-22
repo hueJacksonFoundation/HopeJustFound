@@ -1,0 +1,29 @@
+
+{
+    "hopeJustFoundApp": {
+        "contact" : {
+            "home": {
+                "title": "Contacts",
+                "createLabel": "Criar um(a) novo(a) Contact",
+                "createOrEditLabel": "Criar ou editar um(a) Contact"
+            },
+            "created": "A new Contact is created with identifier {{ param }}",
+            "updated": "A Contact is updated with identifier {{ param }}",
+            "deleted": "A Contact is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Tem a certeza que pretende eliminar o(a) Contact {{ id }}?"
+            },
+            "detail": {
+                "title": "Contact"
+            },
+            "phoneNumber": "Phone Number",
+            "address": "Address",
+            "city": "City",
+            "state": "State",
+            "zipCode": "Zip Code",
+            "contactDays": "Contact Days",
+            "contactTimes": "Contact Times",
+            "userid": "Userid"
+        }
+    }
+}

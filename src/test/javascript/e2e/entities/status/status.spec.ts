@@ -41,12 +41,12 @@ describe('Status e2e test', () => {
         await promise.all([
             statusUpdatePage.setApprovedInput('2000-12-31'),
             statusUpdatePage.setSubmittedInput('2000-12-31'),
-            statusUpdatePage.setApprovedByInput('approvedBy'),
-            statusUpdatePage.userSelectLastOption()
+            statusUpdatePage.setRoleInput('role'),
+            statusUpdatePage.useridSelectLastOption()
         ]);
         expect(await statusUpdatePage.getApprovedInput()).to.eq('2000-12-31');
         expect(await statusUpdatePage.getSubmittedInput()).to.eq('2000-12-31');
-        expect(await statusUpdatePage.getApprovedByInput()).to.eq('approvedBy');
+        expect(await statusUpdatePage.getRoleInput()).to.eq('role');
         await statusUpdatePage.save();
         expect(await statusUpdatePage.getSaveButton().isPresent()).to.be.false;
 

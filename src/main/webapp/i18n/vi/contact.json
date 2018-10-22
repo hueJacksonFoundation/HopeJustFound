@@ -1,0 +1,29 @@
+
+{
+    "hopeJustFoundApp": {
+        "contact" : {
+            "home": {
+                "title": "Contacts",
+                "createLabel": "Thêm mới một Contact",
+                "createOrEditLabel": "Thêm mới hoặc cập nhật Contact"
+            },
+            "created": "Một Contact mới được tạo với định danh {{ param }}",
+            "updated": "Một Contact cập nhật với định danh {{ param }}",
+            "deleted": "Một Contact đã xóa với định danh {{ param }}",
+            "delete": {
+                "question": "Bạn có chắc là muốn xóa Contact {{ id }}?"
+            },
+            "detail": {
+                "title": "Contact"
+            },
+            "phoneNumber": "Phone Number",
+            "address": "Address",
+            "city": "City",
+            "state": "State",
+            "zipCode": "Zip Code",
+            "contactDays": "Contact Days",
+            "contactTimes": "Contact Times",
+            "userid": "Userid"
+        }
+    }
+}

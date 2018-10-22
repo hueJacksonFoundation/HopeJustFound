@@ -1,0 +1,29 @@
+
+{
+    "hopeJustFoundApp": {
+        "contact" : {
+            "home": {
+                "title": "Contacts",
+                "createLabel": "Egy új Contact létrehozása",
+                "createOrEditLabel": "Hozzon létre, vagy módosítson Contactt"
+            },
+            "created": "Egy új Contact lett létrehozva {{ param }} azonosítóval",
+            "updated": "A Contact módosítva lett {{ param }} azonosítóval",
+            "deleted": "A Contact törölve lett {{ param }} azonosítóval",
+            "delete": {
+                "question": "Biztos benne, hogy törölni szeretné az Contactt {{ id }} azonosítóval?"
+            },
+            "detail": {
+                "title": "Contact"
+            },
+            "phoneNumber": "Phone Number",
+            "address": "Address",
+            "city": "City",
+            "state": "State",
+            "zipCode": "Zip Code",
+            "contactDays": "Contact Days",
+            "contactTimes": "Contact Times",
+            "userid": "Userid"
+        }
+    }
+}

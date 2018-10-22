@@ -22,9 +22,9 @@
     "serviceDiscoveryType": "eureka",
     "buildTool": "maven",
     "enableSwaggerCodegen": false,
-    "jwtSecretKey": "YzA3OTNkZDc3MzUyZmY1NDc2MDdlMGFlOGU4NWE1NDUxZjFmOGM3M2EwNWU2ZmNiYzA4Njk4MTEwOWMyYmNhZjRkYzU1ZTE0NzI2YWI0MzdhZGVhMzY5MmIwZWRkOTZhOTdjMTI0OTA0YjY2NWI0M2Y2YTg0NTk2MjQ3MjUyMWM=",
+    "jwtSecretKey": "Y2UwMzU2NWQ3MWJjZDQyOTcyMjUwMzFmOGRjNTZjYzFkYjY5YjdkYzBhYzBhYTAzZGJhZTkwZTMzNWQ3NTc1ZjQ1NDdlMmRkYjk1ZjRiYzdiNTJjZDVkYmVmYzEyMzViYmU5ZmYyYmVkZGI0YWJhYWQ5M2RlNzExZWJhNDJkMDA=",
     "clientFramework": "angularX",
-    "useSass": false,
+    "useSass": true,
     "clientPackageManager": "npm",
     "testFrameworks": [
       "protractor"
@@ -32,24 +32,8 @@
     "jhiPrefix": "jhi",
     "otherModules": [
       {
-        "name": "generator-jhipster-nav-element",
-        "version": "2.0.7"
-      },
-      {
-        "name": "generator-jhipster-standalone-profile",
-        "version": "2.0.0"
-      },
-      {
         "name": "generator-jhipster-docker",
         "version": "2.5.0"
-      },
-      {
-        "name": "generator-jhipster-audit-helper",
-        "version": "1.0.3"
-      },
-      {
-        "name": "generator-jhipster-swagger-cli",
-        "version": "3.0.1"
       },
       {
         "name": "generator-jhipster-obfuscation-at-rest",

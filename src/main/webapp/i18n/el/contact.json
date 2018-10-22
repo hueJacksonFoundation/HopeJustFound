@@ -1,0 +1,29 @@
+
+{
+    "hopeJustFoundApp": {
+        "contact" : {
+            "home": {
+                "title": "Contacts",
+                "createLabel": "Δημιουργήστε ένα νέο Contact",
+                "createOrEditLabel": "Δημιουργήστε η επεξεργαστείτε ένα Contact"
+            },
+            "created": "Ένα νέο Contact έχει δημιουργηθεί με αναγνωριστικό {{ param }}",
+            "updated": "Ένα Contact έχει ενημερωθεί με αναγνωριστικό {{ param }}",
+            "deleted": "Ένα Contact έχει διαγραφτεί με αναγνωριστικό {{ param }}",
+            "delete": {
+                "question": "Είστε βέβαιοι όταν θέλετε να διαγράψετε το ακόλουθο Contact {{ id }};"
+            },
+            "detail": {
+                "title": "Contact"
+            },
+            "phoneNumber": "Phone Number",
+            "address": "Address",
+            "city": "City",
+            "state": "State",
+            "zipCode": "Zip Code",
+            "contactDays": "Contact Days",
+            "contactTimes": "Contact Times",
+            "userid": "Userid"
+        }
+    }
+}

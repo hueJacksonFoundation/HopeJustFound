@@ -28,8 +28,8 @@ export class StatusUpdatePage {
     cancelButton = element(by.id('cancel-save'));
     approvedInput = element(by.id('field_approved'));
     submittedInput = element(by.id('field_submitted'));
-    approvedByInput = element(by.id('field_approvedBy'));
-    userSelect = element(by.id('field_user'));
+    roleInput = element(by.id('field_role'));
+    useridSelect = element(by.id('field_userid'));
 
     async getPageTitle() {
         return this.pageTitle.getAttribute('jhiTranslate');
@@ -51,31 +51,31 @@ export class StatusUpdatePage {
         return this.submittedInput.getAttribute('value');
     }
 
-    async setApprovedByInput(approvedBy) {
-        await this.approvedByInput.sendKeys(approvedBy);
+    async setRoleInput(role) {
+        await this.roleInput.sendKeys(role);
     }
 
-    async getApprovedByInput() {
-        return this.approvedByInput.getAttribute('value');
+    async getRoleInput() {
+        return this.roleInput.getAttribute('value');
     }
 
-    async userSelectLastOption() {
-        await this.userSelect
+    async useridSelectLastOption() {
+        await this.useridSelect
             .all(by.tagName('option'))
             .last()
             .click();
     }
 
-    async userSelectOption(option) {
-        await this.userSelect.sendKeys(option);
+    async useridSelectOption(option) {
+        await this.useridSelect.sendKeys(option);
     }
 
-    getUserSelect(): ElementFinder {
-        return this.userSelect;
+    getUseridSelect(): ElementFinder {
+        return this.useridSelect;
     }
 
-    async getUserSelectedOption() {
-        return this.userSelect.element(by.css('option:checked')).getText();
+    async getUseridSelectedOption() {
+        return this.useridSelect.element(by.css('option:checked')).getText();
     }
 
     async save() {

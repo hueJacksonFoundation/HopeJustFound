@@ -1,0 +1,29 @@
+
+{
+    "hopeJustFoundApp": {
+        "contact" : {
+            "home": {
+                "title": "Contacts",
+                "createLabel": "Yangi Contact qo`shish",
+                "createOrEditLabel": "Contactni tahrirlash"
+            },
+            "created": "Contact {{ param }} bilan qo`shildi",
+            "updated": "{{ param }}- Contact saqlandi",
+            "deleted": "{{ param }}- Contact o`chirildi",
+            "delete": {
+                "question": "{{ id }}- Contactni o`chirmoqchimisiz? "
+            },
+            "detail": {
+                "title": "Contact"
+            },
+            "phoneNumber": "Phone Number",
+            "address": "Address",
+            "city": "City",
+            "state": "State",
+            "zipCode": "Zip Code",
+            "contactDays": "Contact Days",
+            "contactTimes": "Contact Times",
+            "userid": "Userid"
+        }
+    }
+}

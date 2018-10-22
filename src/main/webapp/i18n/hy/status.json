@@ -18,8 +18,8 @@
             },
             "approved": "Approved",
             "submitted": "Submitted",
-            "approvedBy": "Approved By",
-            "user": "User"
+            "role": "Role",
+            "userid": "Userid"
         }
     }
 }

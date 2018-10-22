@@ -10,21 +10,21 @@
             "fieldType": "LocalDate"
         },
         {
-            "fieldName": "approvedBy",
+            "fieldName": "role",
             "fieldType": "String"
         }
     ],
     "relationships": [
         {
             "relationshipType": "one-to-one",
-            "relationshipName": "user",
+            "relationshipName": "userid",
             "otherEntityName": "user",
             "otherEntityField": "id",
             "ownerSide": true,
             "otherEntityRelationshipName": "status"
         }
     ],
-    "changelogDate": "20181021142450",
+    "changelogDate": "20181022124052",
     "entityTableName": "status",
     "dto": "no",
     "pagination": "no",

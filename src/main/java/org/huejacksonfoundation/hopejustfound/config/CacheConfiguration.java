@@ -43,7 +43,7 @@ public class CacheConfiguration {
             cm.createCache(org.huejacksonfoundation.hopejustfound.domain.User.class.getName() + ".authorities", jcacheConfiguration);
             cm.createCache(org.huejacksonfoundation.hopejustfound.domain.Donation.class.getName(), jcacheConfiguration);
             cm.createCache(org.huejacksonfoundation.hopejustfound.domain.Status.class.getName(), jcacheConfiguration);
-            cm.createCache(org.huejacksonfoundation.hopejustfound.domain.UserContact.class.getName(), jcacheConfiguration);
+            cm.createCache(org.huejacksonfoundation.hopejustfound.domain.Contact.class.getName(), jcacheConfiguration);
             // jhipster-needle-ehcache-add-entry
         };
     }
