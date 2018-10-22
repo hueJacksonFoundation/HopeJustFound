@@ -2,8 +2,12 @@ package org.huejacksonfoundation.hopejustfound.service;
 
 import org.huejacksonfoundation.hopejustfound.config.Constants;
 import org.huejacksonfoundation.hopejustfound.domain.Authority;
+import org.huejacksonfoundation.hopejustfound.domain.Contact;
+import org.huejacksonfoundation.hopejustfound.domain.Status;
 import org.huejacksonfoundation.hopejustfound.domain.User;
 import org.huejacksonfoundation.hopejustfound.repository.AuthorityRepository;
+import org.huejacksonfoundation.hopejustfound.repository.ContactRepository;
+import org.huejacksonfoundation.hopejustfound.repository.StatusRepository;
 import org.huejacksonfoundation.hopejustfound.repository.UserRepository;
 import org.huejacksonfoundation.hopejustfound.security.AuthoritiesConstants;
 import org.huejacksonfoundation.hopejustfound.security.SecurityUtils;
@@ -22,6 +26,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.time.Instant;
+import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
 import java.util.*;
 import java.util.stream.Collectors;
@@ -43,11 +48,17 @@ public class UserService {
 
     private final CacheManager cacheManager;
 
-    public UserService(UserRepository userRepository, PasswordEncoder passwordEncoder, AuthorityRepository authorityRepository, CacheManager cacheManager) {
+    private final ContactRepository contactRepository;
+
+    private final StatusRepository statusRepository;
+
+    public UserService(UserRepository userRepository, PasswordEncoder passwordEncoder, AuthorityRepository authorityRepository, CacheManager cacheManager, ContactRepository contactRepository, StatusRepository statusRepository) {
         this.userRepository = userRepository;
         this.passwordEncoder = passwordEncoder;
         this.authorityRepository = authorityRepository;
         this.cacheManager = cacheManager;
+        this.contactRepository = contactRepository;
+        this.statusRepository= statusRepository;
     }
 
     public Optional<User> activateRegistration(String key) {
@@ -87,7 +98,18 @@ public class UserService {
             });
     }
 
-    public User registerUser(UserDTO userDTO, String password) {
+    public User registerUser(UserDTO userDTO,
+                              String password,
+                              String phoneNumber,
+                              String address,
+                              String city,
+                              String state,
+                              Integer zipCode,
+                              String contactDays,
+                              String contactTimes,
+                              LocalDate submitted,
+                              String role
+                            ) {
         userRepository.findOneByLogin(userDTO.getLogin().toLowerCase()).ifPresent(existingUser -> {
             boolean removed = removeNonActivatedUser(existingUser);
             if (!removed) {
@@ -120,6 +142,29 @@ public class UserService {
         userRepository.save(newUser);
         this.clearUserCaches(newUser);
         log.debug("Created Information for User: {}", newUser);
+
+        // Create and save the Contact entity
+        Contact contact = new Contact();
+        contact.setUser(newUser);
+        contact.setPhoneNumber(phoneNumber);
+        contact.setAddress(address);
+        contact.setCity(city);
+        contact.setState(state);
+        contact.setZipCode(zipCode);
+        contact.setContactDays(contactDays);
+        contact.setContactTimes(contactTimes);
+        contactRepository.save(contact);
+        log.debug("Created Information for UserExtra: {}", contact);
+
+        // Create and save the Status entity
+        Status status = new Status();
+        status.setUser(newUser);
+        status.setSubmitted(submitted);
+        status.setRole(role);
+        statusRepository.save(status);
+        log.debug("Created Information for UserExtra: {}", status);
+
+
         return newUser;
     }
     private boolean removeNonActivatedUser(User existingUser){

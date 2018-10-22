@@ -46,7 +46,7 @@
             "otherEntityField": "id"
         }
     ],
-    "changelogDate": "20181021142449",
+    "changelogDate": "20181022124051",
     "entityTableName": "donation",
     "dto": "no",
     "pagination": "no",

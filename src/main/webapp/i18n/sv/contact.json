@@ -1,0 +1,29 @@
+
+{
+    "hopeJustFoundApp": {
+        "contact" : {
+            "home": {
+                "title": "Contacts",
+                "createLabel": "Skapa en ny Contact",
+                "createOrEditLabel": "Skapa eller ändra en Contact"
+            },
+            "created": "En ny Contact är skapad med id {{ param }}",
+            "updated": "En Contact är uppdaterad med id  {{ param }}",
+            "deleted": "En Contact är borttagen med id  {{ param }}",
+            "delete": {
+                "question": "Är du säker på att du vill ta bort Contact {{ id }}?"
+            },
+            "detail": {
+                "title": "Contact"
+            },
+            "phoneNumber": "Phone Number",
+            "address": "Address",
+            "city": "City",
+            "state": "State",
+            "zipCode": "Zip Code",
+            "contactDays": "Contact Days",
+            "contactTimes": "Contact Times",
+            "userid": "Userid"
+        }
+    }
+}

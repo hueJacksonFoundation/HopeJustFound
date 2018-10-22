@@ -10,7 +10,7 @@
             "fieldType": "LocalDate"
         },
         {
-            "fieldName": "approvedBy",
+            "fieldName": "role",
             "fieldType": "String"
         }
     ],
@@ -24,7 +24,7 @@
             "otherEntityRelationshipName": "status"
         }
     ],
-    "changelogDate": "20181021142450",
+    "changelogDate": "20181022124052",
     "entityTableName": "status",
     "dto": "no",
     "pagination": "no",

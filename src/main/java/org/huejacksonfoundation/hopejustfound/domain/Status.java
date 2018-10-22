@@ -20,8 +20,6 @@ public class Status implements Serializable {
     private static final long serialVersionUID = 1L;
 
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "sequenceGenerator")
-    @SequenceGenerator(name = "sequenceGenerator")
     private Long id;
 
     @Column(name = "approved")
@@ -30,10 +28,11 @@ public class Status implements Serializable {
     @Column(name = "submitted")
     private LocalDate submitted;
 
-    @Column(name = "approved_by")
-    private String approvedBy;
+    @Column(name = "jhi_role")
+    private String role;
 
-    @OneToOne    @JoinColumn(unique = true)
+    @OneToOne
+    @MapsId
     private User user;
 
     // jhipster-needle-entity-add-field - JHipster will add fields here, do not remove
@@ -71,17 +70,17 @@ public class Status implements Serializable {
         this.submitted = submitted;
     }
 
-    public String getApprovedBy() {
-        return approvedBy;
+    public String getRole() {
+        return role;
     }
 
-    public Status approvedBy(String approvedBy) {
-        this.approvedBy = approvedBy;
+    public Status role(String role) {
+        this.role = role;
         return this;
     }
 
-    public void setApprovedBy(String approvedBy) {
-        this.approvedBy = approvedBy;
+    public void setRole(String role) {
+        this.role = role;
     }
 
     public User getUser() {
@@ -124,7 +123,7 @@ public class Status implements Serializable {
             "id=" + getId() +
             ", approved='" + getApproved() + "'" +
             ", submitted='" + getSubmitted() + "'" +
-            ", approvedBy='" + getApprovedBy() + "'" +
+            ", role='" + getRole() + "'" +
             "}";
     }
 }

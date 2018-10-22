@@ -75,7 +75,7 @@ describe('Service Tests', () => {
                     {
                         approved: currentDate.format(DATE_FORMAT),
                         submitted: currentDate.format(DATE_FORMAT),
-                        approvedBy: 'BBBBBB'
+                        role: 'BBBBBB'
                     },
                     elemDefault
                 );
@@ -100,7 +100,7 @@ describe('Service Tests', () => {
                     {
                         approved: currentDate.format(DATE_FORMAT),
                         submitted: currentDate.format(DATE_FORMAT),
-                        approvedBy: 'BBBBBB'
+                        role: 'BBBBBB'
                     },
                     elemDefault
                 );

@@ -30,16 +30,16 @@
                     </div>
                 </div>
                 <div class="form-group">
-                    <label class="form-control-label" jhiTranslate="hopeJustFoundApp.status.approvedBy" for="field_approvedBy">Approved By</label>
-                    <input type="text" class="form-control" name="approvedBy" id="field_approvedBy"
-                        [(ngModel)]="status.approvedBy" />
+                    <label class="form-control-label" jhiTranslate="hopeJustFoundApp.status.role" for="field_role">Role</label>
+                    <input type="text" class="form-control" name="role" id="field_role"
+                        [(ngModel)]="status.role" />
                 </div>
 
                 <div class="form-group">
-                    <label class="form-control-label" jhiTranslate="hopeJustFoundApp.status.user" for="field_user">User</label>
-                    <select class="form-control" id="field_user" name="user" [(ngModel)]="status.user" >
+                    <label class="form-control-label" jhiTranslate="hopeJustFoundApp.status.userid" for="field_userid">Userid</label>
+                    <select class="form-control" id="field_userid" name="userid" [(ngModel)]="status.userid" >
                         <option [ngValue]="null"></option>
-                        <option [ngValue]="userOption.id === status.user?.id ? status.user : userOption" *ngFor="let userOption of users; trackBy: trackUserById">{{userOption.id}}</option>
+                        <option [ngValue]="userOption.id === status.userid?.id ? status.userid : userOption" *ngFor="let userOption of users; trackBy: trackUserById">{{userOption.id}}</option>
                     </select>
                 </div>
             </div>

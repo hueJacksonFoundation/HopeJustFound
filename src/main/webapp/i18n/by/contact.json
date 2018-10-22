@@ -1,0 +1,29 @@
+
+{
+    "hopeJustFoundApp": {
+        "contact" : {
+            "home": {
+                "title": "Contacts",
+                "createLabel": "Стварыць новы Contact",
+                "createOrEditLabel": "Стварыць або адрэдагаваць Contact"
+            },
+            "created": "Новы Contact створан з ідэнтыфікатарам {{ param }}",
+            "updated": "Contact абноўлен з ідэнтыфікатарам {{ param }}",
+            "deleted": "Contact выдален з ідэнтыфікатарам {{ param }}",
+            "delete": {
+                "question": "Вы ўпэўнены, што жадаеце выдаліць Contact {{ id }}?"
+            },
+            "detail": {
+                "title": "Contact"
+            },
+            "phoneNumber": "Phone Number",
+            "address": "Address",
+            "city": "City",
+            "state": "State",
+            "zipCode": "Zip Code",
+            "contactDays": "Contact Days",
+            "contactTimes": "Contact Times",
+            "userid": "Userid"
+        }
+    }
+}
