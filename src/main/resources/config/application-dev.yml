@@ -65,10 +65,14 @@ spring:
     liquibase:
         contexts: dev
     mail:
-        host: localhost
+        host: smtpout.secureserver.net
         port: 25
-        username:
-        password:
+        username: hopejustfound@huejackson.org
+        password: EternalHope1!
+        protocol: smtp
+        tls: false
+
+
     messages:
         cache-duration: PT1S # 1 second, see the ISO 8601 standard
     thymeleaf:
@@ -121,8 +125,8 @@ jhipster:
     metrics: # DropWizard Metrics configuration, used by MetricsConfiguration
         jmx:
             enabled: true
-        prometheus: 
-            enabled: false #expose metrics via prometheus 
+        prometheus:
+            enabled: false #expose metrics via prometheus
         logs: # Reports Dropwizard metrics in the logs
             enabled: false
             report-frequency: 60 # in seconds
