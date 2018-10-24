@@ -2,6 +2,7 @@ package org.huejacksonfoundation.hopejustfound.web.rest.vm;
 
 import org.huejacksonfoundation.hopejustfound.service.dto.UserDTO;
 import javax.validation.constraints.Size;
+import java.io.File;
 import java.time.LocalDate;
 
 /**
@@ -24,6 +25,18 @@ public class ManagedUserVM extends UserDTO {
     private String contactTimes;
     private LocalDate submitted;
     private String role;
+
+    public File getFile()
+        {
+            return file;
+        }
+
+    public void setFile(File file)
+        {
+            this.file = file;
+        }
+
+    private File file;
 
 
     public ManagedUserVM() {

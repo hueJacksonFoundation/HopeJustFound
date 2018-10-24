@@ -65,12 +65,16 @@ spring:
     liquibase:
         contexts: dev
     mail:
-        host: smtpout.secureserver.net
-        port: 25
-        username: hopejustfound@huejackson.org
-        password: EternalHope1!
+        host: smtp.gmail.com
+        port: 587
+        username: hopejustfound@gmail.com
+        password: DeveloperAccess
         protocol: smtp
-        tls: false
+        tls: true
+        properties.mail.smtp:
+            auth: true
+            starttls.enable: true
+            ssl.trust: smtp.gmail.com
 
 
     messages:

@@ -4,6 +4,7 @@ import org.huejacksonfoundation.hopejustfound.domain.User;
 
 import io.github.jhipster.config.JHipsterProperties;
 
+import java.io.File;
 import java.nio.charset.StandardCharsets;
 import java.util.Locale;
 import javax.mail.internet.MimeMessage;
@@ -11,6 +12,7 @@ import javax.mail.internet.MimeMessage;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.context.MessageSource;
+import org.springframework.core.io.FileSystemResource;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.scheduling.annotation.Async;
@@ -101,5 +103,26 @@ public class MailService {
     public void sendPasswordResetMail(User user) {
         log.debug("Sending password reset email to '{}'", user.getEmail());
         sendEmailFromTemplate(user, "mail/passwordResetEmail", "email.reset.title");
+    }
+
+    public void sendVerificationEmail(String to, String subject, String content, boolean isMultipart, boolean isHtml,File file){
+        // Prepare message using a Spring helper
+        MimeMessage mimeMessage = javaMailSender.createMimeMessage();
+        try {
+            MimeMessageHelper message = new MimeMessageHelper(mimeMessage, isMultipart, StandardCharsets.UTF_8.name());
+            message.setTo(to);
+            message.setFrom(jHipsterProperties.getMail().getFrom());
+            message.setSubject(subject);
+            message.setText(content, isHtml);
+            message.addAttachment("IRS Form", file);
+            javaMailSender.send(mimeMessage);
+            log.debug("Sent email to User '{}'", to);
+        } catch (Exception e) {
+            if (log.isDebugEnabled()) {
+                log.warn("Email could not be sent to user '{}'", to, e);
+            } else {
+                log.warn("Email could not be sent to user '{}': {}", to, e.getMessage());
+            }
+        }
     }
 }
