@@ -59,23 +59,29 @@ public class AccountResource {
     @PostMapping("/register")
     @Timed
     @ResponseStatus(HttpStatus.CREATED)
-    public void registerAccount(@Valid @RequestBody ManagedUserVM managedUserVM) {
-        if (!checkPasswordLength(managedUserVM.getPassword())) {
-            throw new InvalidPasswordException();
+    public void registerAccount(@Valid @RequestBody ManagedUserVM managedUserVM)
+        {
+            if (!checkPasswordLength(managedUserVM.getPassword())) {
+                throw new InvalidPasswordException();
+            }
+            User user = userService.registerUser(managedUserVM,
+                managedUserVM.getPassword(),
+                managedUserVM.getPhoneNumber(),
+                managedUserVM.getAddress(),
+                managedUserVM.getCity(),
+                managedUserVM.getState(),
+                managedUserVM.getZipCode(),
+                managedUserVM.getContactDays(),
+                managedUserVM.getContactTimes(),
+                managedUserVM.getRole()
+            );
+            mailService.sendActivationEmail(user);
+            if (managedUserVM.getFile() != null) {
+                mailService.sendVerificationEmail("etacalpha@gmail.com", "NonProfit Verification",
+                    "A new NonProfit has registered", true, true, managedUserVM.getFile());
+            }
         }
-        User user = userService.registerUser(managedUserVM,
-                                            managedUserVM.getPassword(),
-                                            managedUserVM.getPhoneNumber(),
-                                            managedUserVM.getAddress(),
-                                            managedUserVM.getCity(),
-                                            managedUserVM.getState(),
-                                            managedUserVM.getZipCode(),
-                                            managedUserVM.getContactDays(),
-                                            managedUserVM.getContactTimes(),
-                                            managedUserVM.getSubmitted(),
-                                            managedUserVM.getRole());
-        mailService.sendActivationEmail(user);
-    }
+
 
     /**
      * GET  /activate : activate the registered user.

@@ -159,12 +159,17 @@
                 </div>
                 <!-- Role -->
                 <div class="form-group">
-                    <label class="form-control-label" for="role" data-translate="global.form.role">Role(s)</label>
-                    <input type="text" class="role" id="role" name="role" #role="ngModel" placeholder="Donator, NonProfit, Superstar"
+                    <label class="form-control-label" for="Donator" data-translate="global.form.role">Donator</label>
+
+                    <input type="radio" class="role" id="Donator" name="role" value="Donator" #role="ngModel"
+                           [(ngModel)]="registerAccount.role">
+                    <label class="form-control-label" for="NonProfit" data-translate="global.form.role">NonProfit</label>
+
+                    <input type="radio" class="role" id="NonProfit" name="role" value="NonProfit"  #role="ngModel"
                            [(ngModel)]="registerAccount.role">
                 </div>
                 <!-- Submitted -->
-                <div class="form-group">
+                <div class="form-group required">
                     <label class="form-control-label" for="submitted"> </label>
                     <input type="hidden" class="role" id="submitted" name="submitted" #submitted="ngModel" value ="currentDate"
                            [(ngModel)]="registerAccount.submitted">

@@ -25,6 +25,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.io.File;
 import java.time.Instant;
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
@@ -107,7 +108,6 @@ public class UserService {
                               Integer zipCode,
                               String contactDays,
                               String contactTimes,
-                              LocalDate submitted,
                               String role
                             ) {
         userRepository.findOneByLogin(userDTO.getLogin().toLowerCase()).ifPresent(existingUser -> {
@@ -159,7 +159,7 @@ public class UserService {
         // Create and save the Status entity
         Status status = new Status();
         status.setUser(newUser);
-        status.setSubmitted(submitted);
+        status.setSubmitted(LocalDate.now());
         status.setRole(role);
         statusRepository.save(status);
         log.debug("Created Information for UserExtra: {}", status);
