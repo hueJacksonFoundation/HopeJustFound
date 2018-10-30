@@ -107,7 +107,7 @@ jhipster:
         #allow-credentials: true
         #max-age: 1800
     mail:
-        from: hopeJustFound@localhost
+        from: hopeJustFound@huejackson.org
     swagger:
         default-include-pattern: /api/.*
         title: hopeJustFound API
