@@ -1,14 +1,19 @@
 /* ==========================================================================
 Navbar
 ========================================================================== */
+.navbar {
+    height: 150px;
+    color: #fe6b10;
+}
 
 .navbar-version {
     font-size: 10px;
     color: #ccc;
 }
+// text color #fe6b10
 
 .jh-navbar {
-    background-color: #353d47;
+    background-color: #2c1509;
     padding: 0.2em 1em;
     .profile-image {
         margin: -10px 0px;
@@ -67,11 +72,11 @@ Logo styles
     &.logo {
         padding: 5px 15px;
         .logo-img {
-            height: 45px;
-            width: 70px;
+            height: 20rem;
+            width: 10rem;
             display: inline-block;
             vertical-align: middle;
-            background: url('../../../content/images/logo-jhipster.png') no-repeat center center;
+            background: url('../../../content/images/HJF_Logo.jpeg') no-repeat center center;
             background-size: contain;
         }
     }
