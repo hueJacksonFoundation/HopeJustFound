@@ -5,19 +5,11 @@
         </a>
         <a class="navbar-brand logo float-left" routerLink="/" (click)="collapseNavbar()">
             <span class="logo-img"></span>
-            <span jhiTranslate="global.title" class="navbar-title">HopeJustFound</span> <span class="navbar-version">{{version}}</span>
+            <span jhiTranslate="global.title" class="navbar-title">HopeJustFound</span> <span *jhiHasAnyAuthority="'ROLE_ADMIN'"></span>
         </a>
     </div>
     <div class="navbar-collapse collapse" id="navbarResponsive" [ngbCollapse]="isNavbarCollapsed" [ngSwitch]="isAuthenticated()">
         <ul class="navbar-nav ml-auto">
-            <li class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
-                <a class="nav-link" routerLink="/" (click)="collapseNavbar()">
-                    <span>
-                        <fa-icon [icon]="'home'"></fa-icon>
-                        <span jhiTranslate="global.menu.home">Home</span>
-                    </span>
-                </a>
-            </li>
             <!-- jhipster-needle-add-element-to-menu - JHipster will add new menu items here -->
             <li *ngSwitchCase="true" ngbDropdown class="nav-item dropdown pointer" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
                 <a class="nav-link dropdown-toggle" ngbDropdownToggle href="javascript:void(0);" id="entity-menu">
@@ -49,7 +41,9 @@
                     </li>
                     <!-- jhipster-needle-add-entity-to-menu - JHipster will add entities to the menu here -->
                 </ul>
+
             </li>
+            <!--Display for admin only-->
             <li *jhiHasAnyAuthority="'ROLE_ADMIN'" ngbDropdown class="nav-item dropdown pointer" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
                 <a class="nav-link dropdown-toggle" ngbDropdownToggle href="javascript:void(0);" id="admin-menu">
                     <span>
@@ -108,6 +102,16 @@
                         </a>
                     </li>
                 </ul>
+            </li>
+
+
+            <li id="donationLink">
+                <a href="https://hubjackson.org/donate/">
+                    <span>
+                        <fa-icon [icon]="'donate'"></fa-icon>
+                        Donate
+                    </span>
+                </a>
             </li>
             <li ngbDropdown class="nav-item dropdown pointer" *ngIf="languages && languages.length > 1">
                 <a class="nav-link dropdown-toggle" ngbDropdownToggle href="javascript:void(0);" id="languagesnavBarDropdown">
