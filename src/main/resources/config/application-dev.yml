@@ -17,15 +17,7 @@ logging:
     level:
         ROOT: DEBUG
         io.github.jhipster: DEBUG
-        org.huejacksonfoundation.hopejustfound: DEBUG
-
-eureka:
-    instance:
-        prefer-ip-address: true
-    client:
-        enabled: false # By default, the JHipster Registry is not used in the "dev" profile
-        service-url:
-            defaultZone: http://admin:${jhipster.registry.password}@localhost:8761/eureka/
+        org.huejackson.hopejustfound: DEBUG
 
 spring:
     profiles:
@@ -44,7 +36,7 @@ spring:
     datasource:
         type: com.zaxxer.hikari.HikariDataSource
         url: jdbc:h2:mem:hopejustfound;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
-        username: hopeJustFound
+        username: HopeJustFound
         password:
         hikari:
             auto-commit: false
@@ -58,38 +50,20 @@ spring:
         properties:
             hibernate.id.new_generator_mappings: true
             hibernate.connection.provider_disables_autocommit: true
-            hibernate.cache.use_second_level_cache: true
+            hibernate.cache.use_second_level_cache: false
             hibernate.cache.use_query_cache: false
             hibernate.generate_statistics: true
-            hibernate.cache.region.factory_class: io.github.jhipster.config.jcache.BeanClassLoaderAwareJCacheRegionFactory
     liquibase:
         contexts: dev
     mail:
-        host: smtp.gmail.com
-        port: 587
-        username: hopejustfound@gmail.com
-        password: DeveloperAccess
-        protocol: smtp
-        tls: true
-        properties.mail.smtp:
-            auth: true
-            starttls.enable: true
-            ssl.trust: smtp.gmail.com
-
-
+        host: localhost
+        port: 25
+        username:
+        password:
     messages:
         cache-duration: PT1S # 1 second, see the ISO 8601 standard
     thymeleaf:
         cache: false
-    sleuth:
-        sampler:
-            probability: 1 # report 100% of traces
-    zipkin: # Use the "zipkin" Maven profile to have the Spring Cloud Zipkin dependencies
-        base-url: http://localhost:9411
-        enabled: false
-        locator:
-            discovery:
-                enabled: true
 
 server:
     port: 8080
@@ -103,10 +77,6 @@ server:
 jhipster:
     http:
         version: V_1_1 # To use HTTP/2 you will need to activate TLS (see application-tls.yml)
-    cache: # Cache configuration
-        ehcache: # Ehcache configuration
-            time-to-live-seconds: 3600 # By default objects stay 1 hour in the cache
-            max-entries: 100 # Number of objects in each cache entry
     # CORS is only enabled by default with the "dev" profile, so BrowserSync can access the API
     cors:
         allowed-origins: "*"
@@ -119,18 +89,18 @@ jhipster:
         authentication:
             jwt:
                 # This token must be encoded using Base64 (you can type `echo 'secret-key'|base64` on your command line)
-                base64-secret: Y2UwMzU2NWQ3MWJjZDQyOTcyMjUwMzFmOGRjNTZjYzFkYjY5YjdkYzBhYzBhYTAzZGJhZTkwZTMzNWQ3NTc1ZjQ1NDdlMmRkYjk1ZjRiYzdiNTJjZDVkYmVmYzEyMzViYmU5ZmYyYmVkZGI0YWJhYWQ5M2RlNzExZWJhNDJkMDA=
+                base64-secret: ZjhlOTVjZmUxOWRhOWE2ZjI0OTg3YjQ2Mzc0NTQ3MjIzZDZlZDM5NjhhZDk4OGE4ZGNhZjQ4YTZkNjdkZGI1MWUxYTUwNmY0YjYyMWExODcwNThhZDEyMDk5NjZhZTA0MWI2ODJjYWViYzIwNzBiMWQ5Nzc0Nzg0MGQyMDFiNmU=
                 # Token is valid 24 hours
                 token-validity-in-seconds: 86400
                 token-validity-in-seconds-for-remember-me: 2592000
     mail: # specific JHipster mail property, for standard properties see MailProperties
-        from: hopeJustFound@localhost
+        from: HopeJustFound@localhost
         base-url: http://127.0.0.1:8080
     metrics: # DropWizard Metrics configuration, used by MetricsConfiguration
         jmx:
             enabled: true
-        prometheus:
-            enabled: false #expose metrics via prometheus
+        prometheus: 
+            enabled: false #expose metrics via prometheus 
         logs: # Reports Dropwizard metrics in the logs
             enabled: false
             report-frequency: 60 # in seconds

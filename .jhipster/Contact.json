@@ -2,6 +2,10 @@
     "name": "Contact",
     "fields": [
         {
+            "fieldName": "companyName",
+            "fieldType": "String"
+        },
+        {
             "fieldName": "phoneNumber",
             "fieldType": "String"
         },
@@ -40,7 +44,7 @@
             "otherEntityRelationshipName": "contact"
         }
     ],
-    "changelogDate": "20181022124053",
+    "changelogDate": "20181031150556",
     "entityTableName": "contact",
     "dto": "no",
     "pagination": "no",

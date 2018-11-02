@@ -1,21 +1,21 @@
 <div class="row justify-content-center">
     <div class="col-8">
         <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
-            <h2 id="jhi-donation-heading" jhiTranslate="hopeJustFoundApp.donation.home.createOrEditLabel">Create or edit a Donation</h2>
+            <h2 id="jhi-donation-heading">Create or edit a Donation</h2>
             <div>
                 <jhi-alert-error></jhi-alert-error>
                 <div class="form-group" [hidden]="!donation.id">
-                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <label for="id">ID</label>
                     <input type="text" class="form-control" id="id" name="id"
                         [(ngModel)]="donation.id" readonly />
                 </div>
                 <div class="form-group">
-                    <label class="form-control-label" jhiTranslate="hopeJustFoundApp.donation.type" for="field_type">Type</label>
+                    <label class="form-control-label" for="field_type">Type</label>
                     <input type="text" class="form-control" name="type" id="field_type"
                         [(ngModel)]="donation.type" />
                 </div>
                 <div class="form-group">
-                    <label class="form-control-label" jhiTranslate="hopeJustFoundApp.donation.initialDate" for="field_initialDate">Initial Date</label>
+                    <label class="form-control-label" for="field_initialDate">Initial Date</label>
                     <div class="input-group">
                         <input id="field_initialDate" type="text" class="form-control" name="initialDate" ngbDatepicker  #initialDateDp="ngbDatepicker" [(ngModel)]="donation.initialDate"
                         />
@@ -25,7 +25,7 @@
                     </div>
                 </div>
                 <div class="form-group">
-                    <label class="form-control-label" jhiTranslate="hopeJustFoundApp.donation.expireDate" for="field_expireDate">Expire Date</label>
+                    <label class="form-control-label" for="field_expireDate">Expire Date</label>
                     <div class="input-group">
                         <input id="field_expireDate" type="text" class="form-control" name="expireDate" ngbDatepicker  #expireDateDp="ngbDatepicker" [(ngModel)]="donation.expireDate"
                         />
@@ -35,50 +35,50 @@
                     </div>
                 </div>
                 <div class="form-group">
-                    <label class="form-control-label" jhiTranslate="hopeJustFoundApp.donation.condition" for="field_condition">Condition</label>
+                    <label class="form-control-label" for="field_condition">Condition</label>
                     <input type="text" class="form-control" name="condition" id="field_condition"
                         [(ngModel)]="donation.condition" />
                 </div>
                 <div class="form-group">
-                    <label class="form-control-label" jhiTranslate="hopeJustFoundApp.donation.description" for="field_description">Description</label>
+                    <label class="form-control-label" for="field_description">Description</label>
                     <input type="text" class="form-control" name="description" id="field_description"
                         [(ngModel)]="donation.description" />
                 </div>
                 <div class="form-group">
-                    <label class="form-control-label" jhiTranslate="hopeJustFoundApp.donation.experience" for="field_experience">Experience</label>
+                    <label class="form-control-label" for="field_experience">Experience</label>
                     <input type="text" class="form-control" name="experience" id="field_experience"
                         [(ngModel)]="donation.experience" />
                 </div>
                 <div class="form-group">
-                    <label class="form-control-label" jhiTranslate="hopeJustFoundApp.donation.climate" for="field_climate">Climate</label>
+                    <label class="form-control-label" for="field_climate">Climate</label>
                     <input type="text" class="form-control" name="climate" id="field_climate"
                         [(ngModel)]="donation.climate" />
                 </div>
                 <div class="form-group">
-                    <label class="form-control-label" jhiTranslate="hopeJustFoundApp.donation.intensity" for="field_intensity">Intensity</label>
+                    <label class="form-control-label" for="field_intensity">Intensity</label>
                     <input type="text" class="form-control" name="intensity" id="field_intensity"
                         [(ngModel)]="donation.intensity" />
                 </div>
                 <div class="form-group">
-                    <label class="form-control-label" jhiTranslate="hopeJustFoundApp.donation.numberOfVolunteers" for="field_numberOfVolunteers">Number Of Volunteers</label>
+                    <label class="form-control-label" for="field_numberOfVolunteers">Number Of Volunteers</label>
                     <input type="number" class="form-control" name="numberOfVolunteers" id="field_numberOfVolunteers"
                         [(ngModel)]="donation.numberOfVolunteers" />
                 </div>
 
                 <div class="form-group">
-                    <label class="form-control-label" jhiTranslate="hopeJustFoundApp.donation.userid" for="field_userid">Userid</label>
-                    <select class="form-control" id="field_userid" name="userid" [(ngModel)]="donation.userid" >
+                    <label class="form-control-label" for="field_user">User</label>
+                    <select class="form-control" id="field_user" name="user" [(ngModel)]="donation.user" >
                         <option [ngValue]="null"></option>
-                        <option [ngValue]="userOption.id === donation.userid?.id ? donation.userid : userOption" *ngFor="let userOption of users; trackBy: trackUserById">{{userOption.id}}</option>
+                        <option [ngValue]="userOption.id === donation.user?.id ? donation.user : userOption" *ngFor="let userOption of users; trackBy: trackUserById">{{userOption.id}}</option>
                     </select>
                 </div>
             </div>
             <div>
                 <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
-                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span>Cancel</span>
                 </button>
                 <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
-                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span>Save</span>
                 </button>
             </div>
         </form>

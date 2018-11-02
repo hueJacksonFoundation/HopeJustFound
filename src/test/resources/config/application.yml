@@ -13,21 +13,13 @@
 # http://docs.spring.io/spring-boot/docs/current/reference/html/common-application-properties.html
 # ===================================================================
 
-eureka:
-    client:
-        enabled: false
-    instance:
-        appname: hopeJustFound
-        instanceId: hopeJustFound:${spring.application.instance-id:${random.value}}
 
 spring:
     application:
-        name: hopeJustFound
-    cache:
-        type: simple
+        name: HopeJustFound
     datasource:
         type: com.zaxxer.hikari.HikariDataSource
-        url: jdbc:h2:mem:hopeJustFound;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+        url: jdbc:h2:mem:HopeJustFound;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
         name:
         username:
         password:
@@ -96,7 +88,7 @@ jhipster:
         authentication:
             jwt:
                 # This token must be encoded using Base64 (you can type `echo 'secret-key'|base64` on your command line)
-                base64-secret: Y2UwMzU2NWQ3MWJjZDQyOTcyMjUwMzFmOGRjNTZjYzFkYjY5YjdkYzBhYzBhYTAzZGJhZTkwZTMzNWQ3NTc1ZjQ1NDdlMmRkYjk1ZjRiYzdiNTJjZDVkYmVmYzEyMzViYmU5ZmYyYmVkZGI0YWJhYWQ5M2RlNzExZWJhNDJkMDA=
+                base64-secret: ZjhlOTVjZmUxOWRhOWE2ZjI0OTg3YjQ2Mzc0NTQ3MjIzZDZlZDM5NjhhZDk4OGE4ZGNhZjQ4YTZkNjdkZGI1MWUxYTUwNmY0YjYyMWExODcwNThhZDEyMDk5NjZhZTA0MWI2ODJjYWViYzIwNzBiMWQ5Nzc0Nzg0MGQyMDFiNmU=
                 # Token is valid 24 hours
                 token-validity-in-seconds: 86400
     metrics: # DropWizard Metrics configuration, used by MetricsConfiguration

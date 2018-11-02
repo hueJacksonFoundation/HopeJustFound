@@ -1,6 +1,6 @@
 /* after changing this file run 'npm run webpack:build' */
 /* tslint:disable */
-import '../content/scss/vendor.scss';
+import '../content/css/vendor.css';
 
 // Imports all fontawesome core and solid icons
 
@@ -39,8 +39,7 @@ import {
     faTrashAlt,
     faAsterisk,
     faTasks,
-    faHome,
-    faDonate
+    faHome
 } from '@fortawesome/free-solid-svg-icons';
 
 // Adds the SVG icon to the library so you can use it in your page
@@ -78,6 +77,5 @@ library.add(faCalendarAlt);
 library.add(faSearch);
 library.add(faTrashAlt);
 library.add(faAsterisk);
-library.add(faDonate);
 
 // jhipster-needle-add-element-to-vendor - JHipster will add new menu items here

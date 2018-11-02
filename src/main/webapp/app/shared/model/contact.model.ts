@@ -2,6 +2,7 @@ import { IUser } from 'app/core/user/user.model';
 
 export interface IContact {
     id?: number;
+    companyName?: string;
     phoneNumber?: string;
     address?: string;
     city?: string;
@@ -9,12 +10,13 @@ export interface IContact {
     zipCode?: number;
     contactDays?: string;
     contactTimes?: string;
-    userid?: IUser;
+    user?: IUser;
 }
 
 export class Contact implements IContact {
     constructor(
         public id?: number,
+        public companyName?: string,
         public phoneNumber?: string,
         public address?: string,
         public city?: string,
@@ -22,6 +24,6 @@ export class Contact implements IContact {
         public zipCode?: number,
         public contactDays?: string,
         public contactTimes?: string,
-        public userid?: IUser
+        public user?: IUser
     ) {}
 }
