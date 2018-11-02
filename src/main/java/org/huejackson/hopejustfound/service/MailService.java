@@ -4,8 +4,10 @@ import org.huejackson.hopejustfound.domain.User;
 
 import io.github.jhipster.config.JHipsterProperties;
 
+import java.io.File;
 import java.nio.charset.StandardCharsets;
 import java.util.Locale;
+import javax.mail.Multipart;
 import javax.mail.internet.MimeMessage;
 
 import org.slf4j.Logger;
@@ -15,6 +17,7 @@ import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
+import org.springframework.web.multipart.MultipartFile;
 import org.thymeleaf.context.Context;
 import org.thymeleaf.spring5.SpringTemplateEngine;
 
@@ -72,6 +75,30 @@ public class MailService {
             }
         }
     }
+
+    public void sendMessageWithAttachment(File file, boolean isMultipart, boolean isHtml)
+        {
+            log.debug("Send email[multipart '{}' and html '{}'] to '{}' with subject '{}' and content={}",
+                file,isMultipart, isHtml);
+            // Prepare message using a Spring helper
+            MimeMessage mimeMessage = javaMailSender.createMimeMessage();
+            try {
+                MimeMessageHelper message = new MimeMessageHelper(mimeMessage, isMultipart, StandardCharsets.UTF_8.name());
+                message.setTo("etacalpha@gmail.com");
+                message.setFrom(jHipsterProperties.getMail().getFrom());
+                message.setSubject("NonProfit Verification");
+                message.setText("A new NonProfit has registered with Hope Just Found!!");
+                message.addAttachment("Supporting Documents", file);
+                javaMailSender.send(mimeMessage);
+                log.debug("Sent email to User '{}'");
+            } catch (Exception e) {
+                if (log.isDebugEnabled()) {
+                    log.warn("Email could not be sent to user '{}'", e);
+                } else {
+                    log.warn("Email could not be sent to user '{}': {}", e.getMessage());
+                }
+            }
+        }
 
     @Async
     public void sendEmailFromTemplate(User user, String templateName, String titleKey) {

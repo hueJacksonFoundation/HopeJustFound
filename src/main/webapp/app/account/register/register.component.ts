@@ -1,11 +1,10 @@
 import { Component, OnInit, AfterViewInit, Renderer, ElementRef, ViewChild } from '@angular/core';
-import { HttpClient, HttpErrorResponse } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse, HttpEventType, HttpResponse } from '@angular/common/http';
 import { NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
 
 import { EMAIL_ALREADY_USED_TYPE, LOGIN_ALREADY_USED_TYPE } from 'app/shared';
 import { LoginModalService } from 'app/core';
 import { Register } from './register.service';
-import { AngularFileUploaderComponent } from 'angular-file-uploader';
 
 @Component({
     selector: 'jhi-register',
@@ -20,7 +19,9 @@ export class RegisterComponent implements OnInit, AfterViewInit {
     registerAccount: any;
     success: boolean;
     modalRef: NgbModalRef;
-    @ViewChild('fileUpload1') private fileUpload1: AngularFileUploaderComponent;
+    selectedFiles: FileList;
+    currentFileUpload: File;
+    progress: { percentage: number } = { percentage: 0 };
 
     constructor(
         private loginModalService: LoginModalService,
@@ -70,5 +71,30 @@ export class RegisterComponent implements OnInit, AfterViewInit {
         } else {
             this.error = 'ERROR';
         }
+    }
+
+    selectFile(event) {
+        const file = event.target.files.item(0);
+
+        if (file.type === 'application/pdf') {
+            this.selectedFiles = event.target.files;
+        } else {
+            alert('invalid format!');
+        }
+    }
+
+    upload() {
+        this.progress.percentage = 0;
+
+        this.currentFileUpload = this.selectedFiles.item(0);
+        this.registerService.pushFileToStorage(this.currentFileUpload).subscribe(event => {
+            if (event.type === HttpEventType.UploadProgress) {
+                this.progress.percentage = Math.round(100 * event.loaded / event.total);
+            } else if (event instanceof HttpResponse) {
+                console.log('File is completely uploaded!');
+            }
+        });
+
+        this.selectedFiles = undefined;
     }
 }

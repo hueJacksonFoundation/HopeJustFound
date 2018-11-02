@@ -31,6 +31,7 @@
     "ngxf-uploader": "^1.5.0",
     "reflect-metadata": "0.1.12",
     "rxjs": "6.1.0",
+    "rxjs-compat": "^6.3.3",
     "swagger-ui": "2.2.10",
     "tslib": "1.9.3",
     "zone.js": "0.8.26"

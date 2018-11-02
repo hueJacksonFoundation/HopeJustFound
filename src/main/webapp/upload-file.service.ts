@@ -1,22 +1,18 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpEvent, HttpRequest } from '@angular/common/http';
-import { Observable } from 'rxjs';
-
+import { HttpClient, HttpRequest, HttpEvent } from '@angular/common/http';
+import { Observable } from 'rxjs/Observable';
 import { SERVER_API_URL } from 'app/app.constants';
 
-@Injectable({ providedIn: 'root' })
-export class Register {
+@Injectable()
+export class UploadFileService {
     constructor(private http: HttpClient) {}
 
-    save(account: any): Observable<any> {
-        return this.http.post(SERVER_API_URL + 'api/register', account);
-    }
     pushFileToStorage(file: File): Observable<HttpEvent<{}>> {
         const formdata: FormData = new FormData();
 
         formdata.append('file', file);
 
-        const req = new HttpRequest('POST', SERVER_API_URL + 'api/post', formdata, {
+        const req = new HttpRequest('POST', SERVER_API_URL + 'api/register', formdata, {
             reportProgress: true,
             responseType: 'text'
         });
