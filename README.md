@@ -1,4 +1,4 @@
-# hopeJustFound
+# HopeJustFound
 This application was generated using JHipster 5.5.0, you can find documentation and help at [https://www.jhipster.tech/documentation-archive/v5.5.0](https://www.jhipster.tech/documentation-archive/v5.5.0).
 
 ## Development
@@ -86,7 +86,7 @@ will generate few files:
 
 ## Building for production
 
-To optimize the hopeJustFound application for production, run:
+To optimize the HopeJustFound application for production, run:
 
     ./mvnw -Pprod clean package
 
@@ -111,8 +111,7 @@ Unit tests are run by [Jest][] and written with [Jasmine][]. They're located in 
 
     npm test
 
-UI end-to-end tests are powered by [Protractor][], which is built on top of WebDriverJS. They're located in [src/test/javascript/e2e](src/test/javascript/e2e)
-and can be run by starting Spring Boot in one terminal (`./mvnw spring-boot:run`) and running the tests (`npm run e2e`) in a second one.
+
 
 For more information, refer to the [Running tests page][].
 
@@ -163,7 +162,6 @@ To configure CI for your project, run the ci-cd sub-generator (`jhipster ci-cd`)
 [JHipster 5.5.0 archive]: https://www.jhipster.tech/documentation-archive/v5.5.0
 
 [Using JHipster in development]: https://www.jhipster.tech/documentation-archive/v5.5.0/development/
-[Service Discovery and Configuration with the JHipster-Registry]: https://www.jhipster.tech/documentation-archive/v5.5.0/microservices-architecture/#jhipster-registry
 [Using Docker and Docker-Compose]: https://www.jhipster.tech/documentation-archive/v5.5.0/docker-compose
 [Using JHipster in production]: https://www.jhipster.tech/documentation-archive/v5.5.0/production/
 [Running tests page]: https://www.jhipster.tech/documentation-archive/v5.5.0/running-tests/

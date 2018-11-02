@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 
-import { HopeJustFoundSharedLibsModule, FindLanguageFromKeyPipe, JhiAlertComponent, JhiAlertErrorComponent } from './';
+import { HopeJustFoundSharedLibsModule, JhiAlertComponent, JhiAlertErrorComponent } from './';
 
 @NgModule({
     imports: [HopeJustFoundSharedLibsModule],
-    declarations: [FindLanguageFromKeyPipe, JhiAlertComponent, JhiAlertErrorComponent],
-    exports: [HopeJustFoundSharedLibsModule, FindLanguageFromKeyPipe, JhiAlertComponent, JhiAlertErrorComponent]
+    declarations: [JhiAlertComponent, JhiAlertErrorComponent],
+    exports: [HopeJustFoundSharedLibsModule, JhiAlertComponent, JhiAlertErrorComponent]
 })
 export class HopeJustFoundSharedCommonModule {}

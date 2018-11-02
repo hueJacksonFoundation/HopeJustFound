@@ -1,93 +1,37 @@
 {
   "generator-jhipster": {
     "promptValues": {
-      "packageName": "org.huejacksonfoundation.hopejustfound",
-      "nativeLanguage": "en"
+      "packageName": "org.huejackson.hopejustfound"
     },
     "jhipsterVersion": "5.5.0",
     "applicationType": "monolith",
-    "baseName": "hopeJustFound",
-    "packageName": "org.huejacksonfoundation.hopejustfound",
-    "packageFolder": "org/huejacksonfoundation/hopejustfound",
+    "baseName": "HopeJustFound",
+    "packageName": "org.huejackson.hopejustfound",
+    "packageFolder": "org/huejackson/hopejustfound",
     "serverPort": "8080",
     "authenticationType": "jwt",
-    "cacheProvider": "ehcache",
-    "enableHibernateCache": true,
+    "cacheProvider": "no",
     "websocket": false,
     "databaseType": "sql",
     "devDatabaseType": "h2Memory",
     "prodDatabaseType": "postgresql",
     "searchEngine": false,
     "messageBroker": false,
-    "serviceDiscoveryType": "eureka",
+    "serviceDiscoveryType": false,
     "buildTool": "maven",
     "enableSwaggerCodegen": false,
-    "jwtSecretKey": "Y2UwMzU2NWQ3MWJjZDQyOTcyMjUwMzFmOGRjNTZjYzFkYjY5YjdkYzBhYzBhYTAzZGJhZTkwZTMzNWQ3NTc1ZjQ1NDdlMmRkYjk1ZjRiYzdiNTJjZDVkYmVmYzEyMzViYmU5ZmYyYmVkZGI0YWJhYWQ5M2RlNzExZWJhNDJkMDA=",
+    "jwtSecretKey": "ZjhlOTVjZmUxOWRhOWE2ZjI0OTg3YjQ2Mzc0NTQ3MjIzZDZlZDM5NjhhZDk4OGE4ZGNhZjQ4YTZkNjdkZGI1MWUxYTUwNmY0YjYyMWExODcwNThhZDEyMDk5NjZhZTA0MWI2ODJjYWViYzIwNzBiMWQ5Nzc0Nzg0MGQyMDFiNmU=",
     "clientFramework": "angularX",
-    "useSass": true,
+    "useSass": false,
     "clientPackageManager": "npm",
-    "testFrameworks": [
-      "protractor"
-    ],
+    "testFrameworks": [],
     "jhiPrefix": "jhi",
     "otherModules": [
       {
         "name": "generator-jhipster-docker",
         "version": "2.5.0"
-      },
-      {
-        "name": "generator-jhipster-obfuscation-at-rest",
-        "version": "0.3.0"
-      },
-      {
-        "name": "generator-jhipster-file2url",
-        "version": "0.0.0"
       }
     ],
-    "enableTranslation": true,
-    "nativeLanguage": "en",
-    "languages": [
-      "en",
-      "al",
-      "ar-ly",
-      "hy",
-      "by",
-      "bn",
-      "ca",
-      "zh-cn",
-      "zh-tw",
-      "cs",
-      "da",
-      "nl",
-      "et",
-      "fa",
-      "fr",
-      "gl",
-      "de",
-      "el",
-      "hi",
-      "hu",
-      "id",
-      "it",
-      "ja",
-      "ko",
-      "mr",
-      "my",
-      "pl",
-      "pt-br",
-      "pt-pt",
-      "ro",
-      "ru",
-      "sk",
-      "sr",
-      "es",
-      "sv",
-      "tr",
-      "ta",
-      "th",
-      "ua",
-      "uz-lat",
-      "vi"
-    ]
+    "enableTranslation": false
   }
 }

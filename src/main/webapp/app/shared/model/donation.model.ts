@@ -12,7 +12,7 @@ export interface IDonation {
     climate?: string;
     intensity?: string;
     numberOfVolunteers?: number;
-    userid?: IUser;
+    user?: IUser;
 }
 
 export class Donation implements IDonation {
@@ -27,6 +27,6 @@ export class Donation implements IDonation {
         public climate?: string,
         public intensity?: string,
         public numberOfVolunteers?: number,
-        public userid?: IUser
+        public user?: IUser
     ) {}
 }

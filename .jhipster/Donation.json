@@ -41,15 +41,15 @@
     "relationships": [
         {
             "relationshipType": "many-to-one",
-            "relationshipName": "userid",
+            "relationshipName": "user",
             "otherEntityName": "user",
             "otherEntityField": "id"
         }
     ],
-    "changelogDate": "20181022124051",
+    "changelogDate": "20181031150554",
     "entityTableName": "donation",
     "dto": "no",
-    "pagination": "no",
+    "pagination": "infinite-scroll",
     "service": "no",
     "jpaMetamodelFiltering": false,
     "fluentMethods": true,

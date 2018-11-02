@@ -1,11 +1,11 @@
-import { Component, OnInit, AfterViewInit, Renderer, ElementRef } from '@angular/core';
-import { HttpErrorResponse } from '@angular/common/http';
+import { Component, OnInit, AfterViewInit, Renderer, ElementRef, ViewChild } from '@angular/core';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
-import { JhiLanguageService } from 'ng-jhipster';
 
 import { EMAIL_ALREADY_USED_TYPE, LOGIN_ALREADY_USED_TYPE } from 'app/shared';
 import { LoginModalService } from 'app/core';
 import { Register } from './register.service';
+import { AngularFileUploaderComponent } from 'angular-file-uploader';
 
 @Component({
     selector: 'jhi-register',
@@ -20,13 +20,14 @@ export class RegisterComponent implements OnInit, AfterViewInit {
     registerAccount: any;
     success: boolean;
     modalRef: NgbModalRef;
+    @ViewChild('fileUpload1') private fileUpload1: AngularFileUploaderComponent;
 
     constructor(
-        private languageService: JhiLanguageService,
         private loginModalService: LoginModalService,
         private registerService: Register,
         private elementRef: ElementRef,
-        private renderer: Renderer
+        private renderer: Renderer,
+        private http: HttpClient
     ) {}
 
     ngOnInit() {
@@ -46,15 +47,13 @@ export class RegisterComponent implements OnInit, AfterViewInit {
             this.error = null;
             this.errorUserExists = null;
             this.errorEmailExists = null;
-            this.languageService.getCurrent().then(key => {
-                this.registerAccount.langKey = key;
-                this.registerService.save(this.registerAccount).subscribe(
-                    () => {
-                        this.success = true;
-                    },
-                    response => this.processError(response)
-                );
-            });
+            this.registerAccount.langKey = 'en';
+            this.registerService.save(this.registerAccount).subscribe(
+                () => {
+                    this.success = true;
+                },
+                response => this.processError(response)
+            );
         }
     }
 
