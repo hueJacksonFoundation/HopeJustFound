@@ -1,38 +1,34 @@
 <div class="row justify-content-center">
     <div class="col-8">
         <div *ngIf="status">
-            <h2><span jhiTranslate="hopeJustFoundApp.status.detail.title">Status</span> {{status.id}}</h2>
+            <h2><span>Status</span> {{status.id}}</h2>
             <hr>
             <jhi-alert-error></jhi-alert-error>
             <dl class="row-md jh-entity-details">
-                <dt><span jhiTranslate="hopeJustFoundApp.status.approved">Approved</span></dt>
+                <dt><span>Approved</span></dt>
                 <dd>
                     <span>{{status.approved}}</span>
                 </dd>
-                <dt><span jhiTranslate="hopeJustFoundApp.status.submitted">Submitted</span></dt>
+                <dt><span>Submitted</span></dt>
                 <dd>
                     <span>{{status.submitted}}</span>
                 </dd>
-                <dt><span jhiTranslate="hopeJustFoundApp.status.role">Role</span></dt>
+                <dt><span>User</span></dt>
                 <dd>
-                    <span>{{status.role}}</span>
-                </dd>
-                <dt><span jhiTranslate="hopeJustFoundApp.status.userid">Userid</span></dt>
-                <dd>
-                    {{status.userid?.id}}
+                    {{status.user?.login}}
                 </dd>
             </dl>
 
             <button type="submit"
                     (click)="previousState()"
                     class="btn btn-info">
-                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span> Back</span>
             </button>
 
             <button type="button"
                     [routerLink]="['/status', status.id, 'edit']"
                     class="btn btn-primary">
-                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span> Edit</span>
             </button>
         </div>
     </div>

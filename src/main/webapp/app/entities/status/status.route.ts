@@ -31,7 +31,7 @@ export const statusRoute: Routes = [
         component: StatusComponent,
         data: {
             authorities: ['ROLE_USER'],
-            pageTitle: 'hopeJustFoundApp.status.home.title'
+            pageTitle: 'Statuses'
         },
         canActivate: [UserRouteAccessService]
     },
@@ -43,7 +43,7 @@ export const statusRoute: Routes = [
         },
         data: {
             authorities: ['ROLE_USER'],
-            pageTitle: 'hopeJustFoundApp.status.home.title'
+            pageTitle: 'Statuses'
         },
         canActivate: [UserRouteAccessService]
     },
@@ -55,7 +55,7 @@ export const statusRoute: Routes = [
         },
         data: {
             authorities: ['ROLE_USER'],
-            pageTitle: 'hopeJustFoundApp.status.home.title'
+            pageTitle: 'Statuses'
         },
         canActivate: [UserRouteAccessService]
     },
@@ -67,7 +67,7 @@ export const statusRoute: Routes = [
         },
         data: {
             authorities: ['ROLE_USER'],
-            pageTitle: 'hopeJustFoundApp.status.home.title'
+            pageTitle: 'Statuses'
         },
         canActivate: [UserRouteAccessService]
     }
@@ -82,7 +82,7 @@ export const statusPopupRoute: Routes = [
         },
         data: {
             authorities: ['ROLE_USER'],
-            pageTitle: 'hopeJustFoundApp.status.home.title'
+            pageTitle: 'Statuses'
         },
         canActivate: [UserRouteAccessService],
         outlet: 'popup'

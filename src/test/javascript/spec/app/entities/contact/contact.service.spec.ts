@@ -21,7 +21,7 @@ describe('Service Tests', () => {
             service = injector.get(ContactService);
             httpMock = injector.get(HttpTestingController);
 
-            elemDefault = new Contact(0, 'AAAAAAA', 'AAAAAAA', 'AAAAAAA', 'AAAAAAA', 0, 'AAAAAAA', 'AAAAAAA');
+            elemDefault = new Contact(0, 'AAAAAAA', 'AAAAAAA', 'AAAAAAA', 'AAAAAAA', 'AAAAAAA', 0, 'AAAAAAA', 'AAAAAAA');
         });
 
         describe('Service methods', async () => {
@@ -55,6 +55,7 @@ describe('Service Tests', () => {
             it('should update a Contact', async () => {
                 const returnedFromService = Object.assign(
                     {
+                        companyName: 'BBBBBB',
                         phoneNumber: 'BBBBBB',
                         address: 'BBBBBB',
                         city: 'BBBBBB',
@@ -78,6 +79,7 @@ describe('Service Tests', () => {
             it('should return a list of Contact', async () => {
                 const returnedFromService = Object.assign(
                     {
+                        companyName: 'BBBBBB',
                         phoneNumber: 'BBBBBB',
                         address: 'BBBBBB',
                         city: 'BBBBBB',

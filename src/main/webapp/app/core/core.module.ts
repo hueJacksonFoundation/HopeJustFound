@@ -4,7 +4,6 @@ import { HttpClientModule } from '@angular/common/http';
 import { Title } from '@angular/platform-browser';
 import locale from '@angular/common/locales/en';
 
-import { FindLanguageFromKeyPipe } from 'app/shared';
 @NgModule({
     imports: [HttpClientModule],
     exports: [],
@@ -15,7 +14,6 @@ import { FindLanguageFromKeyPipe } from 'app/shared';
             provide: LOCALE_ID,
             useValue: 'en'
         },
-        FindLanguageFromKeyPipe,
         DatePipe
     ]
 })

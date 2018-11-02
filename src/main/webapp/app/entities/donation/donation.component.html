@@ -1,9 +1,9 @@
 <div>
     <h2 id="page-heading">
-        <span jhiTranslate="hopeJustFoundApp.donation.home.title">Donations</span>
+        <span>Donations</span>
         <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-donation" [routerLink]="['/donation/new']">
             <fa-icon [icon]="'plus'"></fa-icon>
-            <span  jhiTranslate="hopeJustFoundApp.donation.home.createLabel">
+            <span >
             Create new Donation
             </span>
         </button>
@@ -13,22 +13,22 @@
     <div class="table-responsive" *ngIf="donations">
         <table class="table table-striped">
             <thead>
-            <tr>
-            <th><span jhiTranslate="global.field.id">ID</span></th>
-            <th><span jhiTranslate="hopeJustFoundApp.donation.type">Type</span></th>
-            <th><span jhiTranslate="hopeJustFoundApp.donation.initialDate">Initial Date</span></th>
-            <th><span jhiTranslate="hopeJustFoundApp.donation.expireDate">Expire Date</span></th>
-            <th><span jhiTranslate="hopeJustFoundApp.donation.condition">Condition</span></th>
-            <th><span jhiTranslate="hopeJustFoundApp.donation.description">Description</span></th>
-            <th><span jhiTranslate="hopeJustFoundApp.donation.experience">Experience</span></th>
-            <th><span jhiTranslate="hopeJustFoundApp.donation.climate">Climate</span></th>
-            <th><span jhiTranslate="hopeJustFoundApp.donation.intensity">Intensity</span></th>
-            <th><span jhiTranslate="hopeJustFoundApp.donation.numberOfVolunteers">Number Of Volunteers</span></th>
-            <th><span jhiTranslate="hopeJustFoundApp.donation.userid">Userid</span></th>
+            <tr jhiSort [(predicate)]="predicate" [(ascending)]="reverse" [callback]="reset.bind(this)">
+            <th jhiSortBy="id"><span>ID</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="type"><span>Type</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="initialDate"><span>Initial Date</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="expireDate"><span>Expire Date</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="condition"><span>Condition</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="description"><span>Description</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="experience"><span>Experience</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="climate"><span>Climate</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="intensity"><span>Intensity</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="numberOfVolunteers"><span>Number Of Volunteers</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="user.id"><span>User</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th></th>
             </tr>
             </thead>
-            <tbody>
+            <tbody infinite-scroll (scrolled)="loadPage(page + 1)" [infiniteScrollDisabled]="page >= links['last']" [infiniteScrollDistance]="0">
             <tr *ngFor="let donation of donations ;trackBy: trackId">
                 <td><a [routerLink]="['/donation', donation.id, 'view' ]">{{donation.id}}</a></td>
                 <td>{{donation.type}}</td>
@@ -41,7 +41,7 @@
                 <td>{{donation.intensity}}</td>
                 <td>{{donation.numberOfVolunteers}}</td>
                 <td>
-                    {{donation.userid?.id}}
+                    {{donation.user?.id}}
                 </td>
                 <td class="text-right">
                     <div class="btn-group flex-btn-group-container">
@@ -49,13 +49,13 @@
                                 [routerLink]="['/donation', donation.id, 'view' ]"
                                 class="btn btn-info btn-sm">
                             <fa-icon [icon]="'eye'"></fa-icon>
-                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                            <span class="d-none d-md-inline">View</span>
                         </button>
                         <button type="submit"
                                 [routerLink]="['/donation', donation.id, 'edit']"
                                 class="btn btn-primary btn-sm">
                             <fa-icon [icon]="'pencil-alt'"></fa-icon>
-                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                            <span class="d-none d-md-inline">Edit</span>
                         </button>
                         <button type="submit"
                                 [routerLink]="['/', { outlets: { popup: 'donation/'+ donation.id + '/delete'} }]"
@@ -63,7 +63,7 @@
                                 queryParamsHandling="merge"
                                 class="btn btn-danger btn-sm">
                             <fa-icon [icon]="'times'"></fa-icon>
-                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                            <span class="d-none d-md-inline">Delete</span>
                         </button>
                     </div>
                 </td>

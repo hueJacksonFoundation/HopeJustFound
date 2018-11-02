@@ -1,16 +1,16 @@
 <div class="row justify-content-center">
     <div class="col-8">
         <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
-            <h2 id="jhi-status-heading" jhiTranslate="hopeJustFoundApp.status.home.createOrEditLabel">Create or edit a Status</h2>
+            <h2 id="jhi-status-heading">Create or edit a Status</h2>
             <div>
                 <jhi-alert-error></jhi-alert-error>
                 <div class="form-group" [hidden]="!status.id">
-                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <label for="id">ID</label>
                     <input type="text" class="form-control" id="id" name="id"
                         [(ngModel)]="status.id" readonly />
                 </div>
                 <div class="form-group">
-                    <label class="form-control-label" jhiTranslate="hopeJustFoundApp.status.approved" for="field_approved">Approved</label>
+                    <label class="form-control-label" for="field_approved">Approved</label>
                     <div class="input-group">
                         <input id="field_approved" type="text" class="form-control" name="approved" ngbDatepicker  #approvedDp="ngbDatepicker" [(ngModel)]="status.approved"
                         />
@@ -20,7 +20,7 @@
                     </div>
                 </div>
                 <div class="form-group">
-                    <label class="form-control-label" jhiTranslate="hopeJustFoundApp.status.submitted" for="field_submitted">Submitted</label>
+                    <label class="form-control-label" for="field_submitted">Submitted</label>
                     <div class="input-group">
                         <input id="field_submitted" type="text" class="form-control" name="submitted" ngbDatepicker  #submittedDp="ngbDatepicker" [(ngModel)]="status.submitted"
                         />
@@ -29,26 +29,21 @@
                         </span>
                     </div>
                 </div>
-                <div class="form-group">
-                    <label class="form-control-label" jhiTranslate="hopeJustFoundApp.status.role" for="field_role">Role</label>
-                    <input type="text" class="form-control" name="role" id="field_role"
-                        [(ngModel)]="status.role" />
-                </div>
 
                 <div class="form-group">
-                    <label class="form-control-label" jhiTranslate="hopeJustFoundApp.status.userid" for="field_userid">Userid</label>
-                    <select class="form-control" id="field_userid" name="userid" [(ngModel)]="status.userid" >
+                    <label class="form-control-label" for="field_user">User</label>
+                    <select class="form-control" id="field_user" name="user" [(ngModel)]="status.user" >
                         <option [ngValue]="null"></option>
-                        <option [ngValue]="userOption.id === status.userid?.id ? status.userid : userOption" *ngFor="let userOption of users; trackBy: trackUserById">{{userOption.id}}</option>
+                        <option [ngValue]="userOption.id === status.user?.id ? status.user : userOption" *ngFor="let userOption of users; trackBy: trackUserById">{{userOption.login}}</option>
                     </select>
                 </div>
             </div>
             <div>
                 <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
-                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span>Cancel</span>
                 </button>
                 <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
-                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span>Save</span>
                 </button>
             </div>
         </form>

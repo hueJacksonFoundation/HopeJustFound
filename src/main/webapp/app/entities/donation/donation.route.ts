@@ -31,7 +31,7 @@ export const donationRoute: Routes = [
         component: DonationComponent,
         data: {
             authorities: ['ROLE_USER'],
-            pageTitle: 'hopeJustFoundApp.donation.home.title'
+            pageTitle: 'Donations'
         },
         canActivate: [UserRouteAccessService]
     },
@@ -43,7 +43,7 @@ export const donationRoute: Routes = [
         },
         data: {
             authorities: ['ROLE_USER'],
-            pageTitle: 'hopeJustFoundApp.donation.home.title'
+            pageTitle: 'Donations'
         },
         canActivate: [UserRouteAccessService]
     },
@@ -55,7 +55,7 @@ export const donationRoute: Routes = [
         },
         data: {
             authorities: ['ROLE_USER'],
-            pageTitle: 'hopeJustFoundApp.donation.home.title'
+            pageTitle: 'Donations'
         },
         canActivate: [UserRouteAccessService]
     },
@@ -67,7 +67,7 @@ export const donationRoute: Routes = [
         },
         data: {
             authorities: ['ROLE_USER'],
-            pageTitle: 'hopeJustFoundApp.donation.home.title'
+            pageTitle: 'Donations'
         },
         canActivate: [UserRouteAccessService]
     }
@@ -82,7 +82,7 @@ export const donationPopupRoute: Routes = [
         },
         data: {
             authorities: ['ROLE_USER'],
-            pageTitle: 'hopeJustFoundApp.donation.home.title'
+            pageTitle: 'Donations'
         },
         canActivate: [UserRouteAccessService],
         outlet: 'popup'

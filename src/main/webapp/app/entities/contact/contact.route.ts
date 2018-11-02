@@ -31,7 +31,7 @@ export const contactRoute: Routes = [
         component: ContactComponent,
         data: {
             authorities: ['ROLE_USER'],
-            pageTitle: 'hopeJustFoundApp.contact.home.title'
+            pageTitle: 'Contacts'
         },
         canActivate: [UserRouteAccessService]
     },
@@ -43,7 +43,7 @@ export const contactRoute: Routes = [
         },
         data: {
             authorities: ['ROLE_USER'],
-            pageTitle: 'hopeJustFoundApp.contact.home.title'
+            pageTitle: 'Contacts'
         },
         canActivate: [UserRouteAccessService]
     },
@@ -55,7 +55,7 @@ export const contactRoute: Routes = [
         },
         data: {
             authorities: ['ROLE_USER'],
-            pageTitle: 'hopeJustFoundApp.contact.home.title'
+            pageTitle: 'Contacts'
         },
         canActivate: [UserRouteAccessService]
     },
@@ -67,7 +67,7 @@ export const contactRoute: Routes = [
         },
         data: {
             authorities: ['ROLE_USER'],
-            pageTitle: 'hopeJustFoundApp.contact.home.title'
+            pageTitle: 'Contacts'
         },
         canActivate: [UserRouteAccessService]
     }
@@ -82,7 +82,7 @@ export const contactPopupRoute: Routes = [
         },
         data: {
             authorities: ['ROLE_USER'],
-            pageTitle: 'hopeJustFoundApp.contact.home.title'
+            pageTitle: 'Contacts'
         },
         canActivate: [UserRouteAccessService],
         outlet: 'popup'

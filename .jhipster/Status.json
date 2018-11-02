@@ -8,10 +8,6 @@
         {
             "fieldName": "submitted",
             "fieldType": "LocalDate"
-        },
-        {
-            "fieldName": "role",
-            "fieldType": "String"
         }
     ],
     "relationships": [
@@ -24,7 +20,7 @@
             "otherEntityRelationshipName": "status"
         }
     ],
-    "changelogDate": "20181022124052",
+    "changelogDate": "20181031150555",
     "entityTableName": "status",
     "dto": "no",
     "pagination": "no",
