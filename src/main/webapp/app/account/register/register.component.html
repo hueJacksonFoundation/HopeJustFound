@@ -26,7 +26,7 @@
     </div>
     <div class="row justify-content-center">
         <div class="col-md-6">
-            <form name="form" role="form" (ngSubmit)="register()" #registerForm="ngForm" *ngIf="!success" enctype="multipart/form-data">
+            <form name="form" role="form" (ngSubmit)="register()" #registerForm="ngForm" *ngIf="!success" >
 
                 <!--UserName-->
                 <div class="form-group">
@@ -184,23 +184,24 @@
                 <div class="form-group">
                     <label class="form-control-label" for="Donator" >Donator</label>
                     <input type="radio" class="authority" id="Donator" name="authority" value="ROLE_DONATOR"
-                           [(ngModel)]="registerAccount.authority" required>
+                           [(ngModel)]="registerAccount.authority" >
 
                     <label class="form-control-label" for="USER" >NonProfit</label>
                     <input type="radio" class="authority" id="USER" name="authority" value="ROLE_USER"
-                           [(ngModel)]="registerAccount.authority" required>
+                           [(ngModel)]="registerAccount.authority" >
                 </div>
                 <div *ngIf="currentFileUpload" class="progress">
                     <div class="progress-bar progress-bar-info progress-bar-striped" role="progressbar" attr.aria-valuenow="{{progress.percentage}}"
                          aria-valuemin="0" aria-valuemax="100" [ngStyle]="{width:progress.percentage+'%'}">
-                        {{progress.percentage}}%</div>
+                        {{progress.percentage}}%
+                    </div>
                 </div>
 
                 <label class="btn btn-default">
-                    <input type="file" onchange="selectFile($event)">
+                    <input type="file"  (change)="selectFile($event)">
                 </label>
 
-                <button type="submit" class="btn btn-primary" (click)="upload()">Register</button>
+                <button class="submit btn btn-success"  (click)="upload()">Submit</button>
             </form>
         </div>
     </div>

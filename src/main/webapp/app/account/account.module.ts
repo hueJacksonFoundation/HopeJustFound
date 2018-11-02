@@ -13,9 +13,11 @@ import {
     SettingsComponent,
     accountState
 } from './';
+import { UploadFileService } from '../../upload-file.service';
 
 @NgModule({
     imports: [HopeJustFoundSharedModule, RouterModule.forChild(accountState)],
+    providers: [UploadFileService],
     declarations: [
         ActivateComponent,
         RegisterComponent,

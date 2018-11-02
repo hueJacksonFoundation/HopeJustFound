@@ -5,6 +5,7 @@ import { NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
 import { EMAIL_ALREADY_USED_TYPE, LOGIN_ALREADY_USED_TYPE } from 'app/shared';
 import { LoginModalService } from 'app/core';
 import { Register } from './register.service';
+import { UploadFileService } from '../../../upload-file.service';
 
 @Component({
     selector: 'jhi-register',
@@ -28,7 +29,7 @@ export class RegisterComponent implements OnInit, AfterViewInit {
         private registerService: Register,
         private elementRef: ElementRef,
         private renderer: Renderer,
-        private http: HttpClient
+        private uploadService: UploadFileService
     ) {}
 
     ngOnInit() {
@@ -74,9 +75,11 @@ export class RegisterComponent implements OnInit, AfterViewInit {
     }
 
     selectFile(event) {
+        console.log('SelectFile event fired!!!');
+        console.log(this.progress.percentage);
         const file = event.target.files.item(0);
 
-        if (file.type === 'application/pdf') {
+        if (file.type.match('*.pdf')) {
             this.selectedFiles = event.target.files;
         } else {
             alert('invalid format!');
@@ -84,10 +87,11 @@ export class RegisterComponent implements OnInit, AfterViewInit {
     }
 
     upload() {
+        console.log('upload event fired!!!');
         this.progress.percentage = 0;
 
         this.currentFileUpload = this.selectedFiles.item(0);
-        this.registerService.pushFileToStorage(this.currentFileUpload).subscribe(event => {
+        this.uploadService.pushFileToStorage(this.currentFileUpload).subscribe(event => {
             if (event.type === HttpEventType.UploadProgress) {
                 this.progress.percentage = Math.round(100 * event.loaded / event.total);
             } else if (event instanceof HttpResponse) {
