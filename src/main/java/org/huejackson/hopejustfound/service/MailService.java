@@ -76,7 +76,7 @@ public class MailService {
         }
     }
 
-    public void sendMessageWithAttachment(File file, boolean isMultipart, boolean isHtml)
+    public void sendMessageWithAttachment(MultipartFile file, boolean isMultipart, boolean isHtml)
         {
             log.debug("Send email[multipart '{}' and html '{}'] to '{}' with subject '{}' and content={}",
                 file,isMultipart, isHtml);

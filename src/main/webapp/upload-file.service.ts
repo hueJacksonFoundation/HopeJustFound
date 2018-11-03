@@ -12,7 +12,7 @@ export class UploadFileService {
 
         formdata.append('file', file);
 
-        const req = new HttpRequest('POST', SERVER_API_URL + 'api/register', formdata, {
+        const req = new HttpRequest('POST', SERVER_API_URL + '/api/post', formdata, {
             reportProgress: true,
             responseType: 'text'
         });

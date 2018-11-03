@@ -1,5 +1,5 @@
-import { Component, OnInit, AfterViewInit, Renderer, ElementRef, ViewChild } from '@angular/core';
-import { HttpClient, HttpErrorResponse, HttpEventType, HttpResponse } from '@angular/common/http';
+import { Component, OnInit, AfterViewInit, Renderer, ElementRef } from '@angular/core';
+import { HttpErrorResponse, HttpEventType, HttpResponse } from '@angular/common/http';
 import { NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
 
 import { EMAIL_ALREADY_USED_TYPE, LOGIN_ALREADY_USED_TYPE } from 'app/shared';
@@ -75,19 +75,10 @@ export class RegisterComponent implements OnInit, AfterViewInit {
     }
 
     selectFile(event) {
-        console.log('SelectFile event fired!!!');
-        console.log(this.progress.percentage);
-        const file = event.target.files.item(0);
-
-        if (file.type.match('*.pdf')) {
-            this.selectedFiles = event.target.files;
-        } else {
-            alert('invalid format!');
-        }
+        this.selectedFiles = event.target.files;
     }
 
     upload() {
-        console.log('upload event fired!!!');
         this.progress.percentage = 0;
 
         this.currentFileUpload = this.selectedFiles.item(0);
