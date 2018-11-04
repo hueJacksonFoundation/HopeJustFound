@@ -197,11 +197,11 @@
                         {{progress.percentage}}%
                     </div>
                 </div>
-
-                <label class="btn btn-default">
-                    <input type="file"  (change)="selectFile($event)">
-                </label>
-
+                <div>
+                    <label class="btn btn-default">
+                        <input type="file"  (change)="selectFile($event)">
+                    </label>
+                </div>
                 <button class="submit btn btn-success"  (click)="upload()">Submit</button>
             </form>
         </div>

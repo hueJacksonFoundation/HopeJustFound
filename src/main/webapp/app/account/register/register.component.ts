@@ -23,6 +23,7 @@ export class RegisterComponent implements OnInit, AfterViewInit {
     selectedFiles: FileList;
     currentFileUpload: File;
     progress: { percentage: number } = { percentage: 0 };
+    authority = null;
 
     constructor(
         private loginModalService: LoginModalService,

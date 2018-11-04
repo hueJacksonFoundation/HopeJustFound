@@ -1,14 +1,8 @@
-
-<div class="row">
+<!--Not Signed In-->
+<div class="row"*ngIf="!isAuthenticated()">
     <div class="col-md-3">
     </div>
     <div class="col-md-3">
-        <div [ngSwitch]="isAuthenticated()">
-            <div class="alert alert-success" *ngSwitchCase="true">
-                <span id="home-logged-message" *ngIf="account"
-                > You are logged in as user "{{account.login}}". </span>
-            </div>
-        </div>
         <h2 class="display-4">Mission Statement</h2>
         <p class="lead"> To connect those with the greatest needs to those with the greatest assets for the betterment of humanity.</p>
     </div>
@@ -21,3 +15,62 @@
     <div class="col-md-3">
     </div>
 </div>
+
+<!--Admin-->
+<div *jhiHasAnyAuthority="'ROLE_ADMIN'" class="home">
+
+    <div class="leftBox">
+        <p>This is status component!!!</p>
+    </div>
+
+
+    <div class="middleBox">
+        <p>This is map component!!!</p>
+    </div>
+
+
+    <div class="rightBox">
+        <p>This is Information component!!!</p>
+    </div>
+
+</div>
+
+<!--NonProfit-->
+<div *jhiHasAnyAuthority="'ROLE_USER'" class="home">
+
+    <div class="leftBox">
+        <p>This is status component!!!</p>
+    </div>
+
+
+    <div class="middleBox">
+        <p>This is map component!!!</p>
+    </div>
+
+
+    <div class="rightBox">
+        <p>This is Information component!!!</p>
+    </div>
+
+</div>
+
+<!--Donator-->
+<div *jhiHasAnyAuthority="'ROLE_DONTOR'" class="home">
+
+    <div class="leftBox">
+        <p>This is status component!!!</p>
+    </div>
+
+
+    <div class="middleBox">
+        <p>This is map component!!!</p>
+    </div>
+
+
+    <div class="rightBox">
+        <p>This is Information component!!!</p>
+    </div>
+
+</div>
+
+
