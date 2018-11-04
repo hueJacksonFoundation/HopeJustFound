@@ -30,7 +30,7 @@ export const donationRoute: Routes = [
         path: 'donation',
         component: DonationComponent,
         data: {
-            authorities: ['ROLE_USER'],
+            authorities: ['ROLE_USER', 'ROLE_ADMIN'],
             pageTitle: 'Donations'
         },
         canActivate: [UserRouteAccessService]

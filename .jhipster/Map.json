@@ -1,0 +1,13 @@
+{
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "relationships": [],
+    "fields": [],
+    "changelogDate": "20181104151651",
+    "dto": "no",
+    "searchEngine": false,
+    "service": "no",
+    "entityTableName": "map",
+    "jpaMetamodelFiltering": false,
+    "pagination": "no"
+}

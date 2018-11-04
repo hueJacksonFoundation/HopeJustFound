@@ -123,10 +123,6 @@ module.exports = (options) => webpackMerge(commonConfig({ env: ENV }), {
         new webpack.WatchIgnorePlugin([
             utils.root('src/test'),
         ]),
-        new WebpackNotifierPlugin({
-            title: 'JHipster',
-            contentImage: path.join(__dirname, 'logo-jhipster.png')
-        })
     ].filter(Boolean),
     mode: 'development'
 });

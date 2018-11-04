@@ -30,7 +30,7 @@ export const statusRoute: Routes = [
         path: 'status',
         component: StatusComponent,
         data: {
-            authorities: ['ROLE_USER'],
+            authorities: ['ROLE_ADMIN'],
             pageTitle: 'Statuses'
         },
         canActivate: [UserRouteAccessService]
@@ -42,7 +42,7 @@ export const statusRoute: Routes = [
             status: StatusResolve
         },
         data: {
-            authorities: ['ROLE_USER'],
+            authorities: ['ROLE_ADMIN'],
             pageTitle: 'Statuses'
         },
         canActivate: [UserRouteAccessService]
@@ -54,7 +54,7 @@ export const statusRoute: Routes = [
             status: StatusResolve
         },
         data: {
-            authorities: ['ROLE_USER'],
+            authorities: ['ROLE_ADMIN'],
             pageTitle: 'Statuses'
         },
         canActivate: [UserRouteAccessService]
@@ -66,7 +66,7 @@ export const statusRoute: Routes = [
             status: StatusResolve
         },
         data: {
-            authorities: ['ROLE_USER'],
+            authorities: ['ROLE_ADMIN'],
             pageTitle: 'Statuses'
         },
         canActivate: [UserRouteAccessService]
@@ -81,7 +81,7 @@ export const statusPopupRoute: Routes = [
             status: StatusResolve
         },
         data: {
-            authorities: ['ROLE_USER'],
+            authorities: ['ROLE_ADMIN'],
             pageTitle: 'Statuses'
         },
         canActivate: [UserRouteAccessService],

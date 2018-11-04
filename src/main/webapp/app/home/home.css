@@ -1,6 +1,24 @@
 /* ==========================================================================
 Main page styles
 ========================================================================== */
+
+#info {
+    display: grid;
+    margin-top: 5rem;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: auto;
+    grid-template-areas: '. mission vision .';
+    grid-column-gap: 5rem;
+}
+#info h1 {
+    color: darkorange;
+}
+#mission {
+    grid-area: mission;
+}
+#vision {
+    grid-area: vision;
+}
 .home {
     display: grid;
     margin: auto;

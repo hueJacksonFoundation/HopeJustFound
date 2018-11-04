@@ -1,26 +1,23 @@
 <!--Not Signed In-->
-<div class="row"*ngIf="!isAuthenticated()">
-    <div class="col-md-3">
-    </div>
-    <div class="col-md-3">
-        <h2 class="display-4">Mission Statement</h2>
+<div id="info" *ngIf="!isAuthenticated()">
+
+    <div id="mission">
+        <h1>Mission Statement</h1>
         <p class="lead"> To connect those with the greatest needs to those with the greatest assets for the betterment of humanity.</p>
     </div>
-    <div class="col-md-1">
-    </div>
-    <div class="col-md-3">
-        <h2 class="display-4">Vision</h2>
+
+    <div id="vision">
+        <h1>Vision</h1>
         <p class="lead">To provide an opportunity through an on-line platform for all non-profit organizations to list their needs for donated goods, supplies, volunteers and services to those who are willing to fulfill those needs.</p>
     </div>
-    <div class="col-md-3">
-    </div>
+
 </div>
 
 <!--Admin-->
 <div *jhiHasAnyAuthority="'ROLE_ADMIN'" class="home">
 
     <div class="leftBox">
-        <p>This is status component!!!</p>
+
     </div>
 
 
