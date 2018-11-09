@@ -19,6 +19,8 @@ import { HopeJustFoundAccountModule } from './account/account.module';
 import { HopeJustFoundEntityModule } from './entities/entity.module';
 import * as moment from 'moment';
 import { JhiMainComponent, NavbarComponent, FooterComponent, PageRibbonComponent, ErrorComponent } from './layouts';
+import { StatusComponent } from 'app/entities/status';
+import { HopeJustFoundStatusModule } from 'app/entities/status/status.module';
 
 @NgModule({
     imports: [

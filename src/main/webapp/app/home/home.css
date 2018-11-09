@@ -36,16 +36,16 @@ Main page styles
 
 .leftBox {
     grid-area: status;
-    background: lightgray;
+    background: gray;
 }
 .middleBox {
     grid-area: map;
-    background: lightgray;
+    background: gray;
 }
 
 .rightBox {
     grid-area: info;
-    background: lightgray;
+    background: gray;
 }
 
 /* wait autoprefixer update to allow simple generation of high pixel density media query */

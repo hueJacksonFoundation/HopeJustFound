@@ -155,7 +155,7 @@ public class UserService {
         Status newStatus = new Status();
         newStatus.setUser(newUser);
         newStatus.setSubmitted(LocalDate.now());
-        if (!newUser.getAuthorities().contains("ROLE_NONPROFIT")){
+        if (!newUser.getAuthorities().contains("ROLE_USER")){
             newStatus.setApproved(LocalDate.now());
         }
         statusRepository.save(newStatus);

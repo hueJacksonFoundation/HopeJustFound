@@ -20,6 +20,6 @@ const ENTITY_STATES = [...statusRoute, ...statusPopupRoute];
     declarations: [StatusComponent, StatusDetailComponent, StatusUpdateComponent, StatusDeleteDialogComponent, StatusDeletePopupComponent],
     entryComponents: [StatusComponent, StatusUpdateComponent, StatusDeleteDialogComponent, StatusDeletePopupComponent],
     schemas: [CUSTOM_ELEMENTS_SCHEMA],
-    exports: []
+    exports: [StatusComponent]
 })
 export class HopeJustFoundStatusModule {}
