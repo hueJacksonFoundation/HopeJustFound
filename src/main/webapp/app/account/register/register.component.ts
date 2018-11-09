@@ -5,7 +5,6 @@ import { NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
 import { EMAIL_ALREADY_USED_TYPE, LOGIN_ALREADY_USED_TYPE } from 'app/shared';
 import { LoginModalService } from 'app/core';
 import { Register } from './register.service';
-import { UploadFileService } from '../../../upload-file.service';
 
 @Component({
     selector: 'jhi-register',
@@ -29,8 +28,7 @@ export class RegisterComponent implements OnInit, AfterViewInit {
         private loginModalService: LoginModalService,
         private registerService: Register,
         private elementRef: ElementRef,
-        private renderer: Renderer,
-        private uploadService: UploadFileService
+        private renderer: Renderer
     ) {}
 
     ngOnInit() {
@@ -77,20 +75,5 @@ export class RegisterComponent implements OnInit, AfterViewInit {
 
     selectFile(event) {
         this.selectedFiles = event.target.files;
-    }
-
-    upload() {
-        this.progress.percentage = 0;
-
-        this.currentFileUpload = this.selectedFiles.item(0);
-        this.uploadService.pushFileToStorage(this.currentFileUpload).subscribe(event => {
-            if (event.type === HttpEventType.UploadProgress) {
-                this.progress.percentage = Math.round(100 * event.loaded / event.total);
-            } else if (event instanceof HttpResponse) {
-                console.log('File is completely uploaded!');
-            }
-        });
-
-        this.selectedFiles = undefined;
     }
 }
