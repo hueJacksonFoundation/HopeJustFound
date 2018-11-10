@@ -32,6 +32,8 @@
         "version": "2.5.0"
       }
     ],
-    "enableTranslation": false
+    "enableTranslation": false,
+    "herokuAppName": "hope-just-found",
+    "herokuDeployType": "git"
   }
 }

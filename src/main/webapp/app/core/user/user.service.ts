@@ -36,4 +36,8 @@ export class UserService {
     authorities(): Observable<string[]> {
         return this.http.get<string[]>(SERVER_API_URL + 'api/users/authorities');
     }
+
+    getAll(): Observable<any> {
+        return this.http.get(SERVER_API_URL + 'api/users');
+    }
 }

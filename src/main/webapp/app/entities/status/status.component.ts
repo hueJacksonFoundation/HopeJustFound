@@ -4,7 +4,7 @@ import { Subscription } from 'rxjs';
 import { JhiEventManager, JhiAlertService } from 'ng-jhipster';
 
 import { IStatus } from 'app/shared/model/status.model';
-import { Principal } from 'app/core';
+import { IUser, Principal, UserService } from 'app/core';
 import { StatusService } from './status.service';
 
 @Component({
@@ -16,11 +16,18 @@ export class StatusComponent implements OnInit, OnDestroy {
     currentAccount: any;
     eventSubscriber: Subscription;
 
+    // addede
+    users: IUser[];
+    page: any;
+    unapprovedUser: IUser[];
+    user: any;
+
     constructor(
         private statusService: StatusService,
         private jhiAlertService: JhiAlertService,
         private eventManager: JhiEventManager,
-        private principal: Principal
+        private principal: Principal,
+        private userService: UserService
     ) {}
 
     loadAll() {
@@ -38,6 +45,8 @@ export class StatusComponent implements OnInit, OnDestroy {
             this.currentAccount = account;
         });
         this.registerChangeInStatuses();
+        this.getUsers();
+        this.checkStatus();
     }
 
     ngOnDestroy() {
@@ -54,5 +63,28 @@ export class StatusComponent implements OnInit, OnDestroy {
 
     private onError(errorMessage: string) {
         this.jhiAlertService.error(errorMessage, null, null);
+    }
+
+    // added below
+    private getUsers() {
+        this.userService.getAll().subscribe(data => {
+            this.users = data;
+        });
+    }
+
+    private checkStatus() {
+        this.statuses.forEach(status => {
+            if (status.approved != null) {
+                this.getUserById(status.id);
+            }
+        });
+    }
+
+    private getUserById(id) {
+        this.users.forEach(user => {
+            if (user.id === id) {
+                this.unapprovedUser.push(user);
+            }
+        });
     }
 }
