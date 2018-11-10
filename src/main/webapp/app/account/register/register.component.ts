@@ -72,8 +72,4 @@ export class RegisterComponent implements OnInit, AfterViewInit {
             this.error = 'ERROR';
         }
     }
-
-    selectFile(event) {
-        this.selectedFiles = event.target.files;
-    }
 }
