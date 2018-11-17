@@ -16,7 +16,6 @@ import {
 
 @NgModule({
     imports: [HopeJustFoundSharedModule, RouterModule.forChild(accountState)],
-    providers: [],
     declarations: [
         ActivateComponent,
         RegisterComponent,

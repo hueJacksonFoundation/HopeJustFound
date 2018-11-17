@@ -16,129 +16,158 @@ public class ManagedUserVM extends UserDTO {
     @Size(min = PASSWORD_MIN_LENGTH, max = PASSWORD_MAX_LENGTH)
     private String password;
     private String companyName;
+    private String companyWebsite;
+    private String companyEIN;
     private String phoneNumber;
-    private String address;
-    private String city;
-    private String state;
-    private Integer zipCode;
+    private String mailingAddress;
+    private String mailingCity;
+    private String mailingState;
+    private Integer mailingZipCode;
+    private String phyisicalAddress;
+    private String phyisicalCity;
+    private String phyisicalState;
+    private Integer phyisicalZipCode;
     private String contactDays;
     private String contactTimes;
     private LocalDate approved;
     private LocalDate submitted;
     private String authority;
 
+    public String getCompanyName() {
+        return companyName;
+    }
 
-    public String getAuthority()
-        {
-            return authority;
-        }
+    public void setCompanyName(String companyName) {
+        this.companyName = companyName;
+    }
 
-    public void setAuthority(String authority)
-        {
-            this.authority = authority;
-        }
+    public String getCompanyWebsite() {
+        return companyWebsite;
+    }
 
+    public void setCompanyWebsite(String companyWebsite) {
+        this.companyWebsite = companyWebsite;
+    }
 
+    public String getCompanyEIN() {
+        return companyEIN;
+    }
 
-    public String getCompanyName()
-        {
-            return companyName;
-        }
+    public void setCompanyEIN(String companyEIN) {
+        this.companyEIN = companyEIN;
+    }
 
-    public void setCompanyName(String companyName)
-        {
-            this.companyName = companyName;
-        }
+    public String getPhoneNumber() {
+        return phoneNumber;
+    }
 
-    public String getPhoneNumber()
-        {
-            return phoneNumber;
-        }
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
+    }
 
-    public void setPhoneNumber(String phoneNumber)
-        {
-            this.phoneNumber = phoneNumber;
-        }
+    public String getMailingAddress() {
+        return mailingAddress;
+    }
 
-    public String getAddress()
-        {
-            return address;
-        }
+    public void setMailingAddress(String mailingAddress) {
+        this.mailingAddress = mailingAddress;
+    }
 
-    public void setAddress(String address)
-        {
-            this.address = address;
-        }
+    public String getMailingCity() {
+        return mailingCity;
+    }
 
-    public String getCity()
-        {
-            return city;
-        }
+    public void setMailingCity(String mailingCity) {
+        this.mailingCity = mailingCity;
+    }
 
-    public void setCity(String city)
-        {
-            this.city = city;
-        }
+    public String getMailingState() {
+        return mailingState;
+    }
 
-    public String getState()
-        {
-            return state;
-        }
+    public void setMailingState(String mailingState) {
+        this.mailingState = mailingState;
+    }
 
-    public void setState(String state)
-        {
-            this.state = state;
-        }
+    public Integer getMailingZipCode() {
+        return mailingZipCode;
+    }
 
-    public Integer getZipCode()
-        {
-            return zipCode;
-        }
+    public void setMailingZipCode(Integer mailingZipCode) {
+        this.mailingZipCode = mailingZipCode;
+    }
 
-    public void setZipCode(Integer zipCode)
-        {
-            this.zipCode = zipCode;
-        }
+    public String getPhyisicalAddress() {
+        return phyisicalAddress;
+    }
 
-    public String getContactDays()
-        {
-            return contactDays;
-        }
+    public void setPhyisicalAddress(String phyisicalAddress) {
+        this.phyisicalAddress = phyisicalAddress;
+    }
 
-    public void setContactDays(String contactDays)
-        {
-            this.contactDays = contactDays;
-        }
+    public String getPhyisicalCity() {
+        return phyisicalCity;
+    }
 
-    public String getContactTimes()
-        {
-            return contactTimes;
-        }
+    public void setPhyisicalCity(String phyisicalCity) {
+        this.phyisicalCity = phyisicalCity;
+    }
 
-    public void setContactTimes(String contactTimes)
-        {
-            this.contactTimes = contactTimes;
-        }
+    public String getPhyisicalState() {
+        return phyisicalState;
+    }
 
-    public LocalDate getApproved()
-        {
-            return approved;
-        }
+    public void setPhyisicalState(String phyisicalState) {
+        this.phyisicalState = phyisicalState;
+    }
 
-    public void setApproved(LocalDate approved)
-        {
-            this.approved = approved;
-        }
+    public Integer getPhyisicalZipCode() {
+        return phyisicalZipCode;
+    }
 
-    public LocalDate getSubmitted()
-        {
-            return submitted;
-        }
+    public void setPhyisicalZipCode(Integer phyisicalZipCode) {
+        this.phyisicalZipCode = phyisicalZipCode;
+    }
 
-    public void setSubmitted(LocalDate submitted)
-        {
-            this.submitted = submitted;
-        }
+    public String getContactDays() {
+        return contactDays;
+    }
+
+    public void setContactDays(String contactDays) {
+        this.contactDays = contactDays;
+    }
+
+    public String getContactTimes() {
+        return contactTimes;
+    }
+
+    public void setContactTimes(String contactTimes) {
+        this.contactTimes = contactTimes;
+    }
+
+    public LocalDate getApproved() {
+        return approved;
+    }
+
+    public void setApproved(LocalDate approved) {
+        this.approved = approved;
+    }
+
+    public LocalDate getSubmitted() {
+        return submitted;
+    }
+
+    public void setSubmitted(LocalDate submitted) {
+        this.submitted = submitted;
+    }
+
+    public String getAuthority() {
+        return authority;
+    }
+
+    public void setAuthority(String authority) {
+        this.authority = authority;
+    }
 
     public ManagedUserVM() {
         // Empty constructor needed for Jackson.

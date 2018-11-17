@@ -28,7 +28,7 @@ public class ContactResource {
 
     private static final String ENTITY_NAME = "contact";
 
-    private ContactRepository contactRepository;
+    private final ContactRepository contactRepository;
 
     public ContactResource(ContactRepository contactRepository) {
         this.contactRepository = contactRepository;

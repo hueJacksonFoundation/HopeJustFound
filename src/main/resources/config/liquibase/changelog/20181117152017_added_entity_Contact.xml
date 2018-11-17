@@ -16,12 +16,20 @@
     <!--
         Added the entity Contact.
     -->
-    <changeSet id="20181031150556-1" author="jhipster">
+    <changeSet id="20181117152017-1" author="jhipster">
         <createTable tableName="contact">
-            <column name="user_id" type="bigint" autoIncrement="${autoIncrement}">
+            <!--<column name="user_id" type="bigint" >
                 <constraints primaryKey="true" nullable="false"/>
-            </column>
+            </column>-->
             <column name="company_name" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="company_ein" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="company_website" type="varchar(255)">
                 <constraints nullable="true" />
             </column>
 
@@ -29,19 +37,35 @@
                 <constraints nullable="true" />
             </column>
 
-            <column name="address" type="varchar(255)">
+            <column name="mailing_address" type="varchar(255)">
                 <constraints nullable="true" />
             </column>
 
-            <column name="city" type="varchar(255)">
+            <column name="mailing_city" type="varchar(255)">
                 <constraints nullable="true" />
             </column>
 
-            <column name="state" type="varchar(255)">
+            <column name="mailing_state" type="varchar(255)">
                 <constraints nullable="true" />
             </column>
 
-            <column name="zip_code" type="integer">
+            <column name="mailing_zip_code" type="integer">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="phyisical_address" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="phyisical_city" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="phyisical_state" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="phyisical_zip_code" type="integer">
                 <constraints nullable="true" />
             </column>
 
@@ -51,6 +75,9 @@
 
             <column name="contact_times" type="varchar(255)">
                 <constraints nullable="true" />
+            </column>
+            <column name="user_id" type="bigint">
+                <constraints unique="true" nullable="true" uniqueConstraintName="ux_contact_user_id" />
             </column>
             <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here, do not remove-->
         </createTable>

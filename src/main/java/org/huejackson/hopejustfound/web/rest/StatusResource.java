@@ -28,7 +28,7 @@ public class StatusResource {
 
     private static final String ENTITY_NAME = "status";
 
-    private StatusRepository statusRepository;
+    private final StatusRepository statusRepository;
 
     public StatusResource(StatusRepository statusRepository) {
         this.statusRepository = statusRepository;

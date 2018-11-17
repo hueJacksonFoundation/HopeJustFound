@@ -20,7 +20,7 @@
             "otherEntityRelationshipName": "status"
         }
     ],
-    "changelogDate": "20181031150555",
+    "changelogDate": "20181117152016",
     "entityTableName": "status",
     "dto": "no",
     "pagination": "no",

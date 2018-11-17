@@ -33,7 +33,7 @@ public class DonationResource {
 
     private static final String ENTITY_NAME = "donation";
 
-    private DonationRepository donationRepository;
+    private final DonationRepository donationRepository;
 
     public DonationResource(DonationRepository donationRepository) {
         this.donationRepository = donationRepository;
@@ -93,7 +93,7 @@ public class DonationResource {
         log.debug("REST request to get a page of Donations");
         Page<Donation> page = donationRepository.findAll(pageable);
         HttpHeaders headers = PaginationUtil.generatePaginationHttpHeaders(page, "/api/donations");
-        return new ResponseEntity<>(page.getContent(), headers, HttpStatus.OK);
+        return ResponseEntity.ok().headers(headers).body(page.getContent());
     }
 
     /**

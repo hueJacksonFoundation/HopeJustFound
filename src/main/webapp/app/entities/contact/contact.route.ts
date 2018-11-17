@@ -2,8 +2,8 @@ import { Injectable } from '@angular/core';
 import { HttpResponse } from '@angular/common/http';
 import { Resolve, ActivatedRouteSnapshot, RouterStateSnapshot, Routes } from '@angular/router';
 import { UserRouteAccessService } from 'app/core';
-import { of } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { Observable, of } from 'rxjs';
+import { filter, map } from 'rxjs/operators';
 import { Contact } from 'app/shared/model/contact.model';
 import { ContactService } from './contact.service';
 import { ContactComponent } from './contact.component';
@@ -16,10 +16,13 @@ import { IContact } from 'app/shared/model/contact.model';
 export class ContactResolve implements Resolve<IContact> {
     constructor(private service: ContactService) {}
 
-    resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
+    resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<Contact> {
         const id = route.params['id'] ? route.params['id'] : null;
         if (id) {
-            return this.service.find(id).pipe(map((contact: HttpResponse<Contact>) => contact.body));
+            return this.service.find(id).pipe(
+                filter((response: HttpResponse<Contact>) => response.ok),
+                map((contact: HttpResponse<Contact>) => contact.body)
+            );
         }
         return of(new Contact());
     }

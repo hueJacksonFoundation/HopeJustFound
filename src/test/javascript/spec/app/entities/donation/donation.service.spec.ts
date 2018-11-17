@@ -25,7 +25,7 @@ describe('Service Tests', () => {
             httpMock = injector.get(HttpTestingController);
             currentDate = moment();
 
-            elemDefault = new Donation(0, 'AAAAAAA', currentDate, currentDate, 'AAAAAAA', 'AAAAAAA', 'AAAAAAA', 'AAAAAAA', 'AAAAAAA', 0);
+            elemDefault = new Donation(0, 'AAAAAAA', 'AAAAAAA', 'image/png', 'AAAAAAA', currentDate, currentDate, 'AAAAAAA', 'AAAAAAA', 0);
         });
 
         describe('Service methods', async () => {
@@ -73,14 +73,13 @@ describe('Service Tests', () => {
             it('should update a Donation', async () => {
                 const returnedFromService = Object.assign(
                     {
-                        type: 'BBBBBB',
+                        goodsType: 'BBBBBB',
+                        serviceType: 'BBBBBB',
+                        images: 'BBBBBB',
                         initialDate: currentDate.format(DATE_FORMAT),
                         expireDate: currentDate.format(DATE_FORMAT),
                         condition: 'BBBBBB',
                         description: 'BBBBBB',
-                        experience: 'BBBBBB',
-                        climate: 'BBBBBB',
-                        intensity: 'BBBBBB',
                         numberOfVolunteers: 1
                     },
                     elemDefault
@@ -104,14 +103,13 @@ describe('Service Tests', () => {
             it('should return a list of Donation', async () => {
                 const returnedFromService = Object.assign(
                     {
-                        type: 'BBBBBB',
+                        goodsType: 'BBBBBB',
+                        serviceType: 'BBBBBB',
+                        images: 'BBBBBB',
                         initialDate: currentDate.format(DATE_FORMAT),
                         expireDate: currentDate.format(DATE_FORMAT),
                         condition: 'BBBBBB',
                         description: 'BBBBBB',
-                        experience: 'BBBBBB',
-                        climate: 'BBBBBB',
-                        intensity: 'BBBBBB',
                         numberOfVolunteers: 1
                     },
                     elemDefault
@@ -125,7 +123,10 @@ describe('Service Tests', () => {
                 );
                 service
                     .query(expected)
-                    .pipe(take(1), map(resp => resp.body))
+                    .pipe(
+                        take(1),
+                        map(resp => resp.body)
+                    )
                     .subscribe(body => expect(body).toContainEqual(expected));
                 const req = httpMock.expectOne({ method: 'GET' });
                 req.flush(JSON.stringify([returnedFromService]));

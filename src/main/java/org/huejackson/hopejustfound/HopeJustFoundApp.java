@@ -3,7 +3,6 @@ package org.huejackson.hopejustfound;
 import org.huejackson.hopejustfound.config.ApplicationProperties;
 import org.huejackson.hopejustfound.config.DefaultProfileUtil;
 
-
 import io.github.jhipster.config.JHipsterConstants;
 
 import org.apache.commons.lang3.StringUtils;
@@ -16,7 +15,6 @@ import org.springframework.boot.context.properties.EnableConfigurationProperties
 import org.springframework.core.env.Environment;
 
 import javax.annotation.PostConstruct;
-import javax.annotation.Resource;
 import java.net.InetAddress;
 import java.net.UnknownHostException;
 import java.util.Arrays;
@@ -35,7 +33,7 @@ public class HopeJustFoundApp {
     }
 
     /**
-     * Initializes HopeJustFound.
+     * Initializes hopeJustFound.
      * <p>
      * Spring profiles can be configured with a program argument --spring.profiles.active=your-active-profile
      * <p>
@@ -53,6 +51,7 @@ public class HopeJustFoundApp {
                 "run with both the 'dev' and 'cloud' profiles at the same time.");
         }
     }
+
     /**
      * Main method, used to run the application.
      *

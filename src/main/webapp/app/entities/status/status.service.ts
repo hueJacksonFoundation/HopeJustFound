@@ -49,7 +49,7 @@ export class StatusService {
         return this.http.delete<any>(`${this.resourceUrl}/${id}`, { observe: 'response' });
     }
 
-    private convertDateFromClient(status: IStatus): IStatus {
+    protected convertDateFromClient(status: IStatus): IStatus {
         const copy: IStatus = Object.assign({}, status, {
             approved: status.approved != null && status.approved.isValid() ? status.approved.format(DATE_FORMAT) : null,
             submitted: status.submitted != null && status.submitted.isValid() ? status.submitted.format(DATE_FORMAT) : null
@@ -57,17 +57,21 @@ export class StatusService {
         return copy;
     }
 
-    private convertDateFromServer(res: EntityResponseType): EntityResponseType {
-        res.body.approved = res.body.approved != null ? moment(res.body.approved) : null;
-        res.body.submitted = res.body.submitted != null ? moment(res.body.submitted) : null;
+    protected convertDateFromServer(res: EntityResponseType): EntityResponseType {
+        if (res.body) {
+            res.body.approved = res.body.approved != null ? moment(res.body.approved) : null;
+            res.body.submitted = res.body.submitted != null ? moment(res.body.submitted) : null;
+        }
         return res;
     }
 
-    private convertDateArrayFromServer(res: EntityArrayResponseType): EntityArrayResponseType {
-        res.body.forEach((status: IStatus) => {
-            status.approved = status.approved != null ? moment(status.approved) : null;
-            status.submitted = status.submitted != null ? moment(status.submitted) : null;
-        });
+    protected convertDateArrayFromServer(res: EntityArrayResponseType): EntityArrayResponseType {
+        if (res.body) {
+            res.body.forEach((status: IStatus) => {
+                status.approved = status.approved != null ? moment(status.approved) : null;
+                status.submitted = status.submitted != null ? moment(status.submitted) : null;
+            });
+        }
         return res;
     }
 }

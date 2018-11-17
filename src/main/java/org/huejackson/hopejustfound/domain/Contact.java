@@ -21,20 +21,38 @@ public class Contact implements Serializable {
     @Column(name = "company_name")
     private String companyName;
 
+    @Column(name = "company_ein")
+    private String companyEIN;
+
+    @Column(name = "company_website")
+    private String companyWebsite;
+
     @Column(name = "phone_number")
     private String phoneNumber;
 
-    @Column(name = "address")
-    private String address;
+    @Column(name = "mailing_address")
+    private String mailingAddress;
 
-    @Column(name = "city")
-    private String city;
+    @Column(name = "mailing_city")
+    private String mailingCity;
 
-    @Column(name = "state")
-    private String state;
+    @Column(name = "mailing_state")
+    private String mailingState;
 
-    @Column(name = "zip_code")
-    private Integer zipCode;
+    @Column(name = "mailing_zip_code")
+    private Integer mailingZipCode;
+
+    @Column(name = "phyisical_address")
+    private String phyisicalAddress;
+
+    @Column(name = "phyisical_city")
+    private String phyisicalCity;
+
+    @Column(name = "phyisical_state")
+    private String phyisicalState;
+
+    @Column(name = "phyisical_zip_code")
+    private Integer phyisicalZipCode;
 
     @Column(name = "contact_days")
     private String contactDays;
@@ -68,6 +86,32 @@ public class Contact implements Serializable {
         this.companyName = companyName;
     }
 
+    public String getCompanyEIN() {
+        return companyEIN;
+    }
+
+    public Contact companyEIN(String companyEIN) {
+        this.companyEIN = companyEIN;
+        return this;
+    }
+
+    public void setCompanyEIN(String companyEIN) {
+        this.companyEIN = companyEIN;
+    }
+
+    public String getCompanyWebsite() {
+        return companyWebsite;
+    }
+
+    public Contact companyWebsite(String companyWebsite) {
+        this.companyWebsite = companyWebsite;
+        return this;
+    }
+
+    public void setCompanyWebsite(String companyWebsite) {
+        this.companyWebsite = companyWebsite;
+    }
+
     public String getPhoneNumber() {
         return phoneNumber;
     }
@@ -81,56 +125,108 @@ public class Contact implements Serializable {
         this.phoneNumber = phoneNumber;
     }
 
-    public String getAddress() {
-        return address;
+    public String getMailingAddress() {
+        return mailingAddress;
     }
 
-    public Contact address(String address) {
-        this.address = address;
+    public Contact mailingAddress(String mailingAddress) {
+        this.mailingAddress = mailingAddress;
         return this;
     }
 
-    public void setAddress(String address) {
-        this.address = address;
+    public void setMailingAddress(String mailingAddress) {
+        this.mailingAddress = mailingAddress;
     }
 
-    public String getCity() {
-        return city;
+    public String getMailingCity() {
+        return mailingCity;
     }
 
-    public Contact city(String city) {
-        this.city = city;
+    public Contact mailingCity(String mailingCity) {
+        this.mailingCity = mailingCity;
         return this;
     }
 
-    public void setCity(String city) {
-        this.city = city;
+    public void setMailingCity(String mailingCity) {
+        this.mailingCity = mailingCity;
     }
 
-    public String getState() {
-        return state;
+    public String getMailingState() {
+        return mailingState;
     }
 
-    public Contact state(String state) {
-        this.state = state;
+    public Contact mailingState(String mailingState) {
+        this.mailingState = mailingState;
         return this;
     }
 
-    public void setState(String state) {
-        this.state = state;
+    public void setMailingState(String mailingState) {
+        this.mailingState = mailingState;
     }
 
-    public Integer getZipCode() {
-        return zipCode;
+    public Integer getMailingZipCode() {
+        return mailingZipCode;
     }
 
-    public Contact zipCode(Integer zipCode) {
-        this.zipCode = zipCode;
+    public Contact mailingZipCode(Integer mailingZipCode) {
+        this.mailingZipCode = mailingZipCode;
         return this;
     }
 
-    public void setZipCode(Integer zipCode) {
-        this.zipCode = zipCode;
+    public void setMailingZipCode(Integer mailingZipCode) {
+        this.mailingZipCode = mailingZipCode;
+    }
+
+    public String getPhyisicalAddress() {
+        return phyisicalAddress;
+    }
+
+    public Contact phyisicalAddress(String phyisicalAddress) {
+        this.phyisicalAddress = phyisicalAddress;
+        return this;
+    }
+
+    public void setPhyisicalAddress(String phyisicalAddress) {
+        this.phyisicalAddress = phyisicalAddress;
+    }
+
+    public String getPhyisicalCity() {
+        return phyisicalCity;
+    }
+
+    public Contact phyisicalCity(String phyisicalCity) {
+        this.phyisicalCity = phyisicalCity;
+        return this;
+    }
+
+    public void setPhyisicalCity(String phyisicalCity) {
+        this.phyisicalCity = phyisicalCity;
+    }
+
+    public String getPhyisicalState() {
+        return phyisicalState;
+    }
+
+    public Contact phyisicalState(String phyisicalState) {
+        this.phyisicalState = phyisicalState;
+        return this;
+    }
+
+    public void setPhyisicalState(String phyisicalState) {
+        this.phyisicalState = phyisicalState;
+    }
+
+    public Integer getPhyisicalZipCode() {
+        return phyisicalZipCode;
+    }
+
+    public Contact phyisicalZipCode(Integer phyisicalZipCode) {
+        this.phyisicalZipCode = phyisicalZipCode;
+        return this;
+    }
+
+    public void setPhyisicalZipCode(Integer phyisicalZipCode) {
+        this.phyisicalZipCode = phyisicalZipCode;
     }
 
     public String getContactDays() {
@@ -198,11 +294,17 @@ public class Contact implements Serializable {
         return "Contact{" +
             "id=" + getId() +
             ", companyName='" + getCompanyName() + "'" +
+            ", companyEIN='" + getCompanyEIN() + "'" +
+            ", companyWebsite='" + getCompanyWebsite() + "'" +
             ", phoneNumber='" + getPhoneNumber() + "'" +
-            ", address='" + getAddress() + "'" +
-            ", city='" + getCity() + "'" +
-            ", state='" + getState() + "'" +
-            ", zipCode=" + getZipCode() +
+            ", mailingAddress='" + getMailingAddress() + "'" +
+            ", mailingCity='" + getMailingCity() + "'" +
+            ", mailingState='" + getMailingState() + "'" +
+            ", mailingZipCode=" + getMailingZipCode() +
+            ", phyisicalAddress='" + getPhyisicalAddress() + "'" +
+            ", phyisicalCity='" + getPhyisicalCity() + "'" +
+            ", phyisicalState='" + getPhyisicalState() + "'" +
+            ", phyisicalZipCode=" + getPhyisicalZipCode() +
             ", contactDays='" + getContactDays() + "'" +
             ", contactTimes='" + getContactTimes() + "'" +
             "}";

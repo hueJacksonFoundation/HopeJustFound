@@ -5,9 +5,22 @@
             <hr>
             <jhi-alert-error></jhi-alert-error>
             <dl class="row-md jh-entity-details">
-                <dt><span>Type</span></dt>
+                <dt><span>Goods Type</span></dt>
                 <dd>
-                    <span>{{donation.type}}</span>
+                    <span>{{donation.goodsType}}</span>
+                </dd>
+                <dt><span>Service Type</span></dt>
+                <dd>
+                    <span>{{donation.serviceType}}</span>
+                </dd>
+                <dt><span>Images</span></dt>
+                <dd>
+                    <div *ngIf="donation.images">
+                        <a (click)="openFile(donation.imagesContentType, donation.images)">
+                            <img [src]="'data:' + donation.imagesContentType + ';base64,' + donation.images" style="max-width: 100%;" alt="donation image"/>
+                        </a>
+                        {{donation.imagesContentType}}, {{byteSize(donation.images)}}
+                    </div>
                 </dd>
                 <dt><span>Initial Date</span></dt>
                 <dd>
@@ -24,18 +37,6 @@
                 <dt><span>Description</span></dt>
                 <dd>
                     <span>{{donation.description}}</span>
-                </dd>
-                <dt><span>Experience</span></dt>
-                <dd>
-                    <span>{{donation.experience}}</span>
-                </dd>
-                <dt><span>Climate</span></dt>
-                <dd>
-                    <span>{{donation.climate}}</span>
-                </dd>
-                <dt><span>Intensity</span></dt>
-                <dd>
-                    <span>{{donation.intensity}}</span>
                 </dd>
                 <dt><span>Number Of Volunteers</span></dt>
                 <dd>

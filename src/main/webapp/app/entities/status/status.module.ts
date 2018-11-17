@@ -19,7 +19,6 @@ const ENTITY_STATES = [...statusRoute, ...statusPopupRoute];
     imports: [HopeJustFoundSharedModule, HopeJustFoundAdminModule, RouterModule.forChild(ENTITY_STATES)],
     declarations: [StatusComponent, StatusDetailComponent, StatusUpdateComponent, StatusDeleteDialogComponent, StatusDeletePopupComponent],
     entryComponents: [StatusComponent, StatusUpdateComponent, StatusDeleteDialogComponent, StatusDeletePopupComponent],
-    schemas: [CUSTOM_ELEMENTS_SCHEMA],
-    exports: [StatusComponent]
+    schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class HopeJustFoundStatusModule {}

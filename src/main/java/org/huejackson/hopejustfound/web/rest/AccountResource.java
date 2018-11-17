@@ -17,13 +17,10 @@ import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.multipart.MultipartFile;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
-import java.io.File;
 import java.util.*;
 
 
@@ -61,22 +58,28 @@ public class AccountResource {
     @Timed
     @ResponseStatus(HttpStatus.CREATED)
     public void registerAccount(@Valid @RequestBody ManagedUserVM managedUserVM) {
-            if (!checkPasswordLength(managedUserVM.getPassword())) {
-                throw new InvalidPasswordException();
-            }
-            User user = userService.registerUser(managedUserVM,
-                managedUserVM.getPassword(),
-                managedUserVM.getCompanyName(),
-                managedUserVM.getPhoneNumber(),
-                managedUserVM.getAddress(),
-                managedUserVM.getCity(),
-                managedUserVM.getState(),
-                managedUserVM.getZipCode(),
-                managedUserVM.getContactDays(),
-                managedUserVM.getContactTimes(),
-                managedUserVM.getAuthority());
+        if (!checkPasswordLength(managedUserVM.getPassword())) {
+            throw new InvalidPasswordException();
+        }
+        User user = userService.registerUser(managedUserVM,
+            managedUserVM.getPassword(),
+            managedUserVM.getCompanyName(),
+            managedUserVM.getCompanyWebsite(),
+            managedUserVM.getCompanyEIN(),
+            managedUserVM.getPhoneNumber(),
+            managedUserVM.getMailingAddress(),
+            managedUserVM.getMailingCity(),
+            managedUserVM.getMailingState(),
+            managedUserVM.getMailingZipCode(),
+            managedUserVM.getPhyisicalAddress(),
+            managedUserVM.getPhyisicalCity(),
+            managedUserVM.getPhyisicalState(),
+            managedUserVM.getPhyisicalZipCode(),
+            managedUserVM.getContactDays(),
+            managedUserVM.getContactTimes(),
+            managedUserVM.getAuthority());
 
-            mailService.sendActivationEmail(user);
+        mailService.sendActivationEmail(user);
     }
 
     /**

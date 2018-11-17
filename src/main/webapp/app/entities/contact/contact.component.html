@@ -16,11 +16,17 @@
             <tr>
             <th><span>ID</span></th>
             <th><span>Company Name</span></th>
+            <th><span>Company EIN</span></th>
+            <th><span>Company Website</span></th>
             <th><span>Phone Number</span></th>
-            <th><span>Address</span></th>
-            <th><span>City</span></th>
-            <th><span>State</span></th>
-            <th><span>Zip Code</span></th>
+            <th><span>Mailing Address</span></th>
+            <th><span>Mailing City</span></th>
+            <th><span>Mailing State</span></th>
+            <th><span>Mailing Zip Code</span></th>
+            <th><span>Phyisical Address</span></th>
+            <th><span>Phyisical City</span></th>
+            <th><span>Phyisical State</span></th>
+            <th><span>Phyisical Zip Code</span></th>
             <th><span>Contact Days</span></th>
             <th><span>Contact Times</span></th>
             <th><span>User</span></th>
@@ -31,11 +37,17 @@
             <tr *ngFor="let contact of contacts ;trackBy: trackId">
                 <td><a [routerLink]="['/contact', contact.id, 'view' ]">{{contact.id}}</a></td>
                 <td>{{contact.companyName}}</td>
+                <td>{{contact.companyEIN}}</td>
+                <td>{{contact.companyWebsite}}</td>
                 <td>{{contact.phoneNumber}}</td>
-                <td>{{contact.address}}</td>
-                <td>{{contact.city}}</td>
-                <td>{{contact.state}}</td>
-                <td>{{contact.zipCode}}</td>
+                <td>{{contact.mailingAddress}}</td>
+                <td>{{contact.mailingCity}}</td>
+                <td>{{contact.mailingState}}</td>
+                <td>{{contact.mailingZipCode}}</td>
+                <td>{{contact.phyisicalAddress}}</td>
+                <td>{{contact.phyisicalCity}}</td>
+                <td>{{contact.phyisicalState}}</td>
+                <td>{{contact.phyisicalZipCode}}</td>
                 <td>{{contact.contactDays}}</td>
                 <td>{{contact.contactTimes}}</td>
                 <td>

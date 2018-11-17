@@ -1,11 +1,10 @@
 import './vendor.ts';
 
-import { NgModule, Injector } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { NgbDatepickerConfig } from '@ng-bootstrap/ng-bootstrap';
-import { Ng2Webstorage, LocalStorageService, SessionStorageService } from 'ngx-webstorage';
-import { JhiEventManager } from 'ng-jhipster';
+import { Ng2Webstorage } from 'ngx-webstorage';
 
 import { AuthInterceptor } from './blocks/interceptor/auth.interceptor';
 import { AuthExpiredInterceptor } from './blocks/interceptor/auth-expired.interceptor';
@@ -18,9 +17,8 @@ import { HopeJustFoundHomeModule } from './home/home.module';
 import { HopeJustFoundAccountModule } from './account/account.module';
 import { HopeJustFoundEntityModule } from './entities/entity.module';
 import * as moment from 'moment';
+// jhipster-needle-angular-add-module-import JHipster will add new module here
 import { JhiMainComponent, NavbarComponent, FooterComponent, PageRibbonComponent, ErrorComponent } from './layouts';
-import { StatusComponent } from 'app/entities/status';
-import { HopeJustFoundStatusModule } from 'app/entities/status/status.module';
 
 @NgModule({
     imports: [
@@ -31,6 +29,7 @@ import { HopeJustFoundStatusModule } from 'app/entities/status/status.module';
         HopeJustFoundCoreModule,
         HopeJustFoundHomeModule,
         HopeJustFoundAccountModule,
+        // jhipster-needle-angular-add-module JHipster will add new module here
         HopeJustFoundEntityModule
     ],
     declarations: [JhiMainComponent, NavbarComponent, ErrorComponent, PageRibbonComponent, FooterComponent],
@@ -38,26 +37,22 @@ import { HopeJustFoundStatusModule } from 'app/entities/status/status.module';
         {
             provide: HTTP_INTERCEPTORS,
             useClass: AuthInterceptor,
-            multi: true,
-            deps: [LocalStorageService, SessionStorageService]
+            multi: true
         },
         {
             provide: HTTP_INTERCEPTORS,
             useClass: AuthExpiredInterceptor,
-            multi: true,
-            deps: [Injector]
+            multi: true
         },
         {
             provide: HTTP_INTERCEPTORS,
             useClass: ErrorHandlerInterceptor,
-            multi: true,
-            deps: [JhiEventManager]
+            multi: true
         },
         {
             provide: HTTP_INTERCEPTORS,
             useClass: NotificationInterceptor,
-            multi: true,
-            deps: [Injector]
+            multi: true
         }
     ],
     bootstrap: [JhiMainComponent]

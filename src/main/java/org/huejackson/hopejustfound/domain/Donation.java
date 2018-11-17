@@ -1,6 +1,7 @@
 package org.huejackson.hopejustfound.domain;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import org.springframework.boot.context.properties.ConfigurationProperties;
 
 import javax.persistence.*;
 
@@ -13,6 +14,7 @@ import java.util.Objects;
  */
 @Entity
 @Table(name = "donation")
+@ConfigurationProperties(prefix = "file")
 public class Donation implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -22,8 +24,18 @@ public class Donation implements Serializable {
     @SequenceGenerator(name = "sequenceGenerator")
     private Long id;
 
-    @Column(name = "jhi_type")
-    private String type;
+    @Column(name = "goods_type")
+    private String goodsType;
+
+    @Column(name = "service_type")
+    private String serviceType;
+
+    @Lob
+    @Column(name = "images")
+    private byte[] images;
+
+    @Column(name = "images_content_type")
+    private String imagesContentType;
 
     @Column(name = "initial_date")
     private LocalDate initialDate;
@@ -36,15 +48,6 @@ public class Donation implements Serializable {
 
     @Column(name = "description")
     private String description;
-
-    @Column(name = "experience")
-    private String experience;
-
-    @Column(name = "climate")
-    private String climate;
-
-    @Column(name = "intensity")
-    private String intensity;
 
     @Column(name = "number_of_volunteers")
     private Integer numberOfVolunteers;
@@ -62,17 +65,56 @@ public class Donation implements Serializable {
         this.id = id;
     }
 
-    public String getType() {
-        return type;
+    public String getGoodsType() {
+        return goodsType;
     }
 
-    public Donation type(String type) {
-        this.type = type;
+    public Donation goodsType(String goodsType) {
+        this.goodsType = goodsType;
         return this;
     }
 
-    public void setType(String type) {
-        this.type = type;
+    public void setGoodsType(String goodsType) {
+        this.goodsType = goodsType;
+    }
+
+    public String getServiceType() {
+        return serviceType;
+    }
+
+    public Donation serviceType(String serviceType) {
+        this.serviceType = serviceType;
+        return this;
+    }
+
+    public void setServiceType(String serviceType) {
+        this.serviceType = serviceType;
+    }
+
+    public byte[] getImages() {
+        return images;
+    }
+
+    public Donation images(byte[] images) {
+        this.images = images;
+        return this;
+    }
+
+    public void setImages(byte[] images) {
+        this.images = images;
+    }
+
+    public String getImagesContentType() {
+        return imagesContentType;
+    }
+
+    public Donation imagesContentType(String imagesContentType) {
+        this.imagesContentType = imagesContentType;
+        return this;
+    }
+
+    public void setImagesContentType(String imagesContentType) {
+        this.imagesContentType = imagesContentType;
     }
 
     public LocalDate getInitialDate() {
@@ -127,45 +169,6 @@ public class Donation implements Serializable {
         this.description = description;
     }
 
-    public String getExperience() {
-        return experience;
-    }
-
-    public Donation experience(String experience) {
-        this.experience = experience;
-        return this;
-    }
-
-    public void setExperience(String experience) {
-        this.experience = experience;
-    }
-
-    public String getClimate() {
-        return climate;
-    }
-
-    public Donation climate(String climate) {
-        this.climate = climate;
-        return this;
-    }
-
-    public void setClimate(String climate) {
-        this.climate = climate;
-    }
-
-    public String getIntensity() {
-        return intensity;
-    }
-
-    public Donation intensity(String intensity) {
-        this.intensity = intensity;
-        return this;
-    }
-
-    public void setIntensity(String intensity) {
-        this.intensity = intensity;
-    }
-
     public Integer getNumberOfVolunteers() {
         return numberOfVolunteers;
     }
@@ -217,14 +220,14 @@ public class Donation implements Serializable {
     public String toString() {
         return "Donation{" +
             "id=" + getId() +
-            ", type='" + getType() + "'" +
+            ", goodsType='" + getGoodsType() + "'" +
+            ", serviceType='" + getServiceType() + "'" +
+            ", images='" + getImages() + "'" +
+            ", imagesContentType='" + getImagesContentType() + "'" +
             ", initialDate='" + getInitialDate() + "'" +
             ", expireDate='" + getExpireDate() + "'" +
             ", condition='" + getCondition() + "'" +
             ", description='" + getDescription() + "'" +
-            ", experience='" + getExperience() + "'" +
-            ", climate='" + getClimate() + "'" +
-            ", intensity='" + getIntensity() + "'" +
             ", numberOfVolunteers=" + getNumberOfVolunteers() +
             "}";
     }
