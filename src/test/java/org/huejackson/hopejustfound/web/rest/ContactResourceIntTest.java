@@ -42,20 +42,38 @@ public class ContactResourceIntTest {
     private static final String DEFAULT_COMPANY_NAME = "AAAAAAAAAA";
     private static final String UPDATED_COMPANY_NAME = "BBBBBBBBBB";
 
+    private static final String DEFAULT_COMPANY_EIN = "AAAAAAAAAA";
+    private static final String UPDATED_COMPANY_EIN = "BBBBBBBBBB";
+
+    private static final String DEFAULT_COMPANY_WEBSITE = "AAAAAAAAAA";
+    private static final String UPDATED_COMPANY_WEBSITE = "BBBBBBBBBB";
+
     private static final String DEFAULT_PHONE_NUMBER = "AAAAAAAAAA";
     private static final String UPDATED_PHONE_NUMBER = "BBBBBBBBBB";
 
-    private static final String DEFAULT_ADDRESS = "AAAAAAAAAA";
-    private static final String UPDATED_ADDRESS = "BBBBBBBBBB";
+    private static final String DEFAULT_MAILING_ADDRESS = "AAAAAAAAAA";
+    private static final String UPDATED_MAILING_ADDRESS = "BBBBBBBBBB";
 
-    private static final String DEFAULT_CITY = "AAAAAAAAAA";
-    private static final String UPDATED_CITY = "BBBBBBBBBB";
+    private static final String DEFAULT_MAILING_CITY = "AAAAAAAAAA";
+    private static final String UPDATED_MAILING_CITY = "BBBBBBBBBB";
 
-    private static final String DEFAULT_STATE = "AAAAAAAAAA";
-    private static final String UPDATED_STATE = "BBBBBBBBBB";
+    private static final String DEFAULT_MAILING_STATE = "AAAAAAAAAA";
+    private static final String UPDATED_MAILING_STATE = "BBBBBBBBBB";
 
-    private static final Integer DEFAULT_ZIP_CODE = 1;
-    private static final Integer UPDATED_ZIP_CODE = 2;
+    private static final Integer DEFAULT_MAILING_ZIP_CODE = 1;
+    private static final Integer UPDATED_MAILING_ZIP_CODE = 2;
+
+    private static final String DEFAULT_PHYISICAL_ADDRESS = "AAAAAAAAAA";
+    private static final String UPDATED_PHYISICAL_ADDRESS = "BBBBBBBBBB";
+
+    private static final String DEFAULT_PHYISICAL_CITY = "AAAAAAAAAA";
+    private static final String UPDATED_PHYISICAL_CITY = "BBBBBBBBBB";
+
+    private static final String DEFAULT_PHYISICAL_STATE = "AAAAAAAAAA";
+    private static final String UPDATED_PHYISICAL_STATE = "BBBBBBBBBB";
+
+    private static final Integer DEFAULT_PHYISICAL_ZIP_CODE = 1;
+    private static final Integer UPDATED_PHYISICAL_ZIP_CODE = 2;
 
     private static final String DEFAULT_CONTACT_DAYS = "AAAAAAAAAA";
     private static final String UPDATED_CONTACT_DAYS = "BBBBBBBBBB";
@@ -102,11 +120,17 @@ public class ContactResourceIntTest {
     public static Contact createEntity(EntityManager em) {
         Contact contact = new Contact()
             .companyName(DEFAULT_COMPANY_NAME)
+            .companyEIN(DEFAULT_COMPANY_EIN)
+            .companyWebsite(DEFAULT_COMPANY_WEBSITE)
             .phoneNumber(DEFAULT_PHONE_NUMBER)
-            .address(DEFAULT_ADDRESS)
-            .city(DEFAULT_CITY)
-            .state(DEFAULT_STATE)
-            .zipCode(DEFAULT_ZIP_CODE)
+            .mailingAddress(DEFAULT_MAILING_ADDRESS)
+            .mailingCity(DEFAULT_MAILING_CITY)
+            .mailingState(DEFAULT_MAILING_STATE)
+            .mailingZipCode(DEFAULT_MAILING_ZIP_CODE)
+            .phyisicalAddress(DEFAULT_PHYISICAL_ADDRESS)
+            .phyisicalCity(DEFAULT_PHYISICAL_CITY)
+            .phyisicalState(DEFAULT_PHYISICAL_STATE)
+            .phyisicalZipCode(DEFAULT_PHYISICAL_ZIP_CODE)
             .contactDays(DEFAULT_CONTACT_DAYS)
             .contactTimes(DEFAULT_CONTACT_TIMES);
         return contact;
@@ -133,11 +157,17 @@ public class ContactResourceIntTest {
         assertThat(contactList).hasSize(databaseSizeBeforeCreate + 1);
         Contact testContact = contactList.get(contactList.size() - 1);
         assertThat(testContact.getCompanyName()).isEqualTo(DEFAULT_COMPANY_NAME);
+        assertThat(testContact.getCompanyEIN()).isEqualTo(DEFAULT_COMPANY_EIN);
+        assertThat(testContact.getCompanyWebsite()).isEqualTo(DEFAULT_COMPANY_WEBSITE);
         assertThat(testContact.getPhoneNumber()).isEqualTo(DEFAULT_PHONE_NUMBER);
-        assertThat(testContact.getAddress()).isEqualTo(DEFAULT_ADDRESS);
-        assertThat(testContact.getCity()).isEqualTo(DEFAULT_CITY);
-        assertThat(testContact.getState()).isEqualTo(DEFAULT_STATE);
-        assertThat(testContact.getZipCode()).isEqualTo(DEFAULT_ZIP_CODE);
+        assertThat(testContact.getMailingAddress()).isEqualTo(DEFAULT_MAILING_ADDRESS);
+        assertThat(testContact.getMailingCity()).isEqualTo(DEFAULT_MAILING_CITY);
+        assertThat(testContact.getMailingState()).isEqualTo(DEFAULT_MAILING_STATE);
+        assertThat(testContact.getMailingZipCode()).isEqualTo(DEFAULT_MAILING_ZIP_CODE);
+        assertThat(testContact.getPhyisicalAddress()).isEqualTo(DEFAULT_PHYISICAL_ADDRESS);
+        assertThat(testContact.getPhyisicalCity()).isEqualTo(DEFAULT_PHYISICAL_CITY);
+        assertThat(testContact.getPhyisicalState()).isEqualTo(DEFAULT_PHYISICAL_STATE);
+        assertThat(testContact.getPhyisicalZipCode()).isEqualTo(DEFAULT_PHYISICAL_ZIP_CODE);
         assertThat(testContact.getContactDays()).isEqualTo(DEFAULT_CONTACT_DAYS);
         assertThat(testContact.getContactTimes()).isEqualTo(DEFAULT_CONTACT_TIMES);
     }
@@ -173,11 +203,17 @@ public class ContactResourceIntTest {
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
             .andExpect(jsonPath("$.[*].id").value(hasItem(contact.getId().intValue())))
             .andExpect(jsonPath("$.[*].companyName").value(hasItem(DEFAULT_COMPANY_NAME.toString())))
+            .andExpect(jsonPath("$.[*].companyEIN").value(hasItem(DEFAULT_COMPANY_EIN.toString())))
+            .andExpect(jsonPath("$.[*].companyWebsite").value(hasItem(DEFAULT_COMPANY_WEBSITE.toString())))
             .andExpect(jsonPath("$.[*].phoneNumber").value(hasItem(DEFAULT_PHONE_NUMBER.toString())))
-            .andExpect(jsonPath("$.[*].address").value(hasItem(DEFAULT_ADDRESS.toString())))
-            .andExpect(jsonPath("$.[*].city").value(hasItem(DEFAULT_CITY.toString())))
-            .andExpect(jsonPath("$.[*].state").value(hasItem(DEFAULT_STATE.toString())))
-            .andExpect(jsonPath("$.[*].zipCode").value(hasItem(DEFAULT_ZIP_CODE)))
+            .andExpect(jsonPath("$.[*].mailingAddress").value(hasItem(DEFAULT_MAILING_ADDRESS.toString())))
+            .andExpect(jsonPath("$.[*].mailingCity").value(hasItem(DEFAULT_MAILING_CITY.toString())))
+            .andExpect(jsonPath("$.[*].mailingState").value(hasItem(DEFAULT_MAILING_STATE.toString())))
+            .andExpect(jsonPath("$.[*].mailingZipCode").value(hasItem(DEFAULT_MAILING_ZIP_CODE)))
+            .andExpect(jsonPath("$.[*].phyisicalAddress").value(hasItem(DEFAULT_PHYISICAL_ADDRESS.toString())))
+            .andExpect(jsonPath("$.[*].phyisicalCity").value(hasItem(DEFAULT_PHYISICAL_CITY.toString())))
+            .andExpect(jsonPath("$.[*].phyisicalState").value(hasItem(DEFAULT_PHYISICAL_STATE.toString())))
+            .andExpect(jsonPath("$.[*].phyisicalZipCode").value(hasItem(DEFAULT_PHYISICAL_ZIP_CODE)))
             .andExpect(jsonPath("$.[*].contactDays").value(hasItem(DEFAULT_CONTACT_DAYS.toString())))
             .andExpect(jsonPath("$.[*].contactTimes").value(hasItem(DEFAULT_CONTACT_TIMES.toString())));
     }
@@ -194,11 +230,17 @@ public class ContactResourceIntTest {
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
             .andExpect(jsonPath("$.id").value(contact.getId().intValue()))
             .andExpect(jsonPath("$.companyName").value(DEFAULT_COMPANY_NAME.toString()))
+            .andExpect(jsonPath("$.companyEIN").value(DEFAULT_COMPANY_EIN.toString()))
+            .andExpect(jsonPath("$.companyWebsite").value(DEFAULT_COMPANY_WEBSITE.toString()))
             .andExpect(jsonPath("$.phoneNumber").value(DEFAULT_PHONE_NUMBER.toString()))
-            .andExpect(jsonPath("$.address").value(DEFAULT_ADDRESS.toString()))
-            .andExpect(jsonPath("$.city").value(DEFAULT_CITY.toString()))
-            .andExpect(jsonPath("$.state").value(DEFAULT_STATE.toString()))
-            .andExpect(jsonPath("$.zipCode").value(DEFAULT_ZIP_CODE))
+            .andExpect(jsonPath("$.mailingAddress").value(DEFAULT_MAILING_ADDRESS.toString()))
+            .andExpect(jsonPath("$.mailingCity").value(DEFAULT_MAILING_CITY.toString()))
+            .andExpect(jsonPath("$.mailingState").value(DEFAULT_MAILING_STATE.toString()))
+            .andExpect(jsonPath("$.mailingZipCode").value(DEFAULT_MAILING_ZIP_CODE))
+            .andExpect(jsonPath("$.phyisicalAddress").value(DEFAULT_PHYISICAL_ADDRESS.toString()))
+            .andExpect(jsonPath("$.phyisicalCity").value(DEFAULT_PHYISICAL_CITY.toString()))
+            .andExpect(jsonPath("$.phyisicalState").value(DEFAULT_PHYISICAL_STATE.toString()))
+            .andExpect(jsonPath("$.phyisicalZipCode").value(DEFAULT_PHYISICAL_ZIP_CODE))
             .andExpect(jsonPath("$.contactDays").value(DEFAULT_CONTACT_DAYS.toString()))
             .andExpect(jsonPath("$.contactTimes").value(DEFAULT_CONTACT_TIMES.toString()));
     }
@@ -225,11 +267,17 @@ public class ContactResourceIntTest {
         em.detach(updatedContact);
         updatedContact
             .companyName(UPDATED_COMPANY_NAME)
+            .companyEIN(UPDATED_COMPANY_EIN)
+            .companyWebsite(UPDATED_COMPANY_WEBSITE)
             .phoneNumber(UPDATED_PHONE_NUMBER)
-            .address(UPDATED_ADDRESS)
-            .city(UPDATED_CITY)
-            .state(UPDATED_STATE)
-            .zipCode(UPDATED_ZIP_CODE)
+            .mailingAddress(UPDATED_MAILING_ADDRESS)
+            .mailingCity(UPDATED_MAILING_CITY)
+            .mailingState(UPDATED_MAILING_STATE)
+            .mailingZipCode(UPDATED_MAILING_ZIP_CODE)
+            .phyisicalAddress(UPDATED_PHYISICAL_ADDRESS)
+            .phyisicalCity(UPDATED_PHYISICAL_CITY)
+            .phyisicalState(UPDATED_PHYISICAL_STATE)
+            .phyisicalZipCode(UPDATED_PHYISICAL_ZIP_CODE)
             .contactDays(UPDATED_CONTACT_DAYS)
             .contactTimes(UPDATED_CONTACT_TIMES);
 
@@ -243,11 +291,17 @@ public class ContactResourceIntTest {
         assertThat(contactList).hasSize(databaseSizeBeforeUpdate);
         Contact testContact = contactList.get(contactList.size() - 1);
         assertThat(testContact.getCompanyName()).isEqualTo(UPDATED_COMPANY_NAME);
+        assertThat(testContact.getCompanyEIN()).isEqualTo(UPDATED_COMPANY_EIN);
+        assertThat(testContact.getCompanyWebsite()).isEqualTo(UPDATED_COMPANY_WEBSITE);
         assertThat(testContact.getPhoneNumber()).isEqualTo(UPDATED_PHONE_NUMBER);
-        assertThat(testContact.getAddress()).isEqualTo(UPDATED_ADDRESS);
-        assertThat(testContact.getCity()).isEqualTo(UPDATED_CITY);
-        assertThat(testContact.getState()).isEqualTo(UPDATED_STATE);
-        assertThat(testContact.getZipCode()).isEqualTo(UPDATED_ZIP_CODE);
+        assertThat(testContact.getMailingAddress()).isEqualTo(UPDATED_MAILING_ADDRESS);
+        assertThat(testContact.getMailingCity()).isEqualTo(UPDATED_MAILING_CITY);
+        assertThat(testContact.getMailingState()).isEqualTo(UPDATED_MAILING_STATE);
+        assertThat(testContact.getMailingZipCode()).isEqualTo(UPDATED_MAILING_ZIP_CODE);
+        assertThat(testContact.getPhyisicalAddress()).isEqualTo(UPDATED_PHYISICAL_ADDRESS);
+        assertThat(testContact.getPhyisicalCity()).isEqualTo(UPDATED_PHYISICAL_CITY);
+        assertThat(testContact.getPhyisicalState()).isEqualTo(UPDATED_PHYISICAL_STATE);
+        assertThat(testContact.getPhyisicalZipCode()).isEqualTo(UPDATED_PHYISICAL_ZIP_CODE);
         assertThat(testContact.getContactDays()).isEqualTo(UPDATED_CONTACT_DAYS);
         assertThat(testContact.getContactTimes()).isEqualTo(UPDATED_CONTACT_TIMES);
     }

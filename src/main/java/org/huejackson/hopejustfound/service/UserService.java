@@ -17,7 +17,6 @@ import org.huejackson.hopejustfound.web.rest.errors.*;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.cache.CacheManager;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.scheduling.annotation.Scheduled;
@@ -42,21 +41,20 @@ public class UserService {
 
     private final UserRepository userRepository;
 
-    private final PasswordEncoder passwordEncoder;
-
-    private final AuthorityRepository authorityRepository;
-
     private final ContactRepository contactRepository;
 
     private final StatusRepository statusRepository;
 
+    private final PasswordEncoder passwordEncoder;
 
-    public UserService(UserRepository userRepository, PasswordEncoder passwordEncoder, AuthorityRepository authorityRepository, ContactRepository contactRepository, StatusRepository statusRepository) {
+    private final AuthorityRepository authorityRepository;
+
+    public UserService(UserRepository userRepository, ContactRepository contactRepository, StatusRepository statusRepository, PasswordEncoder passwordEncoder, AuthorityRepository authorityRepository) {
         this.userRepository = userRepository;
+        this.contactRepository = contactRepository;
+        this.statusRepository = statusRepository;
         this.passwordEncoder = passwordEncoder;
         this.authorityRepository = authorityRepository;
-        this.contactRepository = contactRepository;
-        this.statusRepository= statusRepository;
     }
 
     public Optional<User> activateRegistration(String key) {
@@ -96,15 +94,21 @@ public class UserService {
     public User registerUser(UserDTO userDTO,
                              String password,
                              String companyName,
+                             String companyWebsite,
+                             String companyEIN,
                              String phoneNumber,
-                             String address,
-                             String city,
-                             String state,
-                             Integer zipCode,
+                             String mailingAddress,
+                             String mailingCity,
+                             String mailingState,
+                             Integer mailingZipCode,
+                             String phyisicalAddress,
+                             String phyisicalCity,
+                             String phyisicalState,
+                             Integer phyisicalZipCode,
                              String contactDays,
                              String contactTimes,
-                             String authority
-                            ) {
+                             String authority) {
+
         userRepository.findOneByLogin(userDTO.getLogin().toLowerCase()).ifPresent(existingUser -> {
             boolean removed = removeNonActivatedUser(existingUser);
             if (!removed) {
@@ -132,8 +136,8 @@ public class UserService {
         // new user gets registration key
         newUser.setActivationKey(RandomUtil.generateActivationKey());
         Set<Authority> authorities = new HashSet<>();
-            newUser.setAuthorities(authorities);
-            newUser.getAuthorities().add(authorityRepository.getOne(authority));
+        authorityRepository.findById(AuthoritiesConstants.USER).ifPresent(authorities::add);
+        newUser.setAuthorities(authorities);
         userRepository.save(newUser);
         log.debug("Created Information for User: {}", newUser);
 
@@ -141,30 +145,36 @@ public class UserService {
         Contact newContact = new Contact();
         newContact.setUser(newUser);
         newContact.setCompanyName(companyName);
+        newContact.setCompanyWebsite(companyWebsite);
+        newContact.setCompanyEIN(companyEIN);
         newContact.setPhoneNumber(phoneNumber);
-        newContact.setAddress(address);
-        newContact.setCity(city);
-        newContact.setState(state);
-        newContact.setZipCode(zipCode);
+        newContact.setMailingAddress(mailingAddress);
+        newContact.setMailingCity(mailingCity);
+        newContact.setMailingState(mailingState);
+        newContact.setMailingZipCode(mailingZipCode);
+        newContact.setPhyisicalAddress(phyisicalAddress);
+        newContact.setPhyisicalCity(phyisicalCity);
+        newContact.setPhyisicalState(phyisicalState);
+        newContact.setPhyisicalZipCode(phyisicalZipCode);
         newContact.setContactDays(contactDays);
         newContact.setContactTimes(contactTimes);
         contactRepository.save(newContact);
-        log.debug("Created Information for UserExtra: {}", newContact);
+        log.debug("Created Information for Contact: {}", newContact);
 
         // Create and save the Status entity
         Status newStatus = new Status();
         newStatus.setUser(newUser);
         newStatus.setSubmitted(LocalDate.now());
-        if (!newUser.getAuthorities().contains("ROLE_NONPROFIT")){
+        if (!newUser.getAuthorities().contains("ROLE_DONATOR")){
             newStatus.setApproved(LocalDate.now());
         }
         statusRepository.save(newStatus);
-        log.debug("Created Information for UserExtra: {}", newStatus);
+        log.debug("Created Information for Status: {}", newStatus);
 
         return newUser;
     }
     private boolean removeNonActivatedUser(User existingUser){
-        if(existingUser.getActivated()) {
+        if (existingUser.getActivated()) {
              return false;
         }
         userRepository.delete(existingUser);

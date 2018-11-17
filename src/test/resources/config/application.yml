@@ -16,10 +16,10 @@
 
 spring:
     application:
-        name: HopeJustFound
+        name: hopeJustFound
     datasource:
         type: com.zaxxer.hikari.HikariDataSource
-        url: jdbc:h2:mem:HopeJustFound;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+        url: jdbc:h2:mem:hopeJustFound;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
         name:
         username:
         password:
@@ -42,6 +42,7 @@ spring:
             hibernate.cache.use_query_cache: false
             hibernate.generate_statistics: true
             hibernate.hbm2ddl.auto: validate
+            hibernate.jdbc.time_zone: UTC
     liquibase:
         contexts: test
     mail:
@@ -58,10 +59,6 @@ spring:
 server:
     port: 10344
     address: localhost
-
-info:
-    project:
-        version: #project.version#
 
 # ===================================================================
 # JHipster specific properties
@@ -88,7 +85,7 @@ jhipster:
         authentication:
             jwt:
                 # This token must be encoded using Base64 (you can type `echo 'secret-key'|base64` on your command line)
-                base64-secret: ZjhlOTVjZmUxOWRhOWE2ZjI0OTg3YjQ2Mzc0NTQ3MjIzZDZlZDM5NjhhZDk4OGE4ZGNhZjQ4YTZkNjdkZGI1MWUxYTUwNmY0YjYyMWExODcwNThhZDEyMDk5NjZhZTA0MWI2ODJjYWViYzIwNzBiMWQ5Nzc0Nzg0MGQyMDFiNmU=
+                base64-secret: MjliMjBkZDZjZjc1YjlhODAxMDEzMjRlNDkyYTNmMWMyODNlZDMwZTdkNDE5NWU4OWNjZTlkZDQyNWY3NzMyMmFjMDg0MTRjNmFhZGY2ZjY4MjAzYjIwNmVkMGNiMjM4OTFlZmFmNzgwYmZjNjMxYmQ5Y2U4ZTcwZTY2MWQxZjQ=
                 # Token is valid 24 hours
                 token-validity-in-seconds: 86400
     metrics: # DropWizard Metrics configuration, used by MetricsConfiguration

@@ -19,6 +19,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.util.Base64Utils;
 
 import javax.persistence.EntityManager;
 import java.time.LocalDate;
@@ -41,8 +42,16 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @SpringBootTest(classes = HopeJustFoundApp.class)
 public class DonationResourceIntTest {
 
-    private static final String DEFAULT_TYPE = "AAAAAAAAAA";
-    private static final String UPDATED_TYPE = "BBBBBBBBBB";
+    private static final String DEFAULT_GOODS_TYPE = "AAAAAAAAAA";
+    private static final String UPDATED_GOODS_TYPE = "BBBBBBBBBB";
+
+    private static final String DEFAULT_SERVICE_TYPE = "AAAAAAAAAA";
+    private static final String UPDATED_SERVICE_TYPE = "BBBBBBBBBB";
+
+    private static final byte[] DEFAULT_IMAGES = TestUtil.createByteArray(1, "0");
+    private static final byte[] UPDATED_IMAGES = TestUtil.createByteArray(1, "1");
+    private static final String DEFAULT_IMAGES_CONTENT_TYPE = "image/jpg";
+    private static final String UPDATED_IMAGES_CONTENT_TYPE = "image/png";
 
     private static final LocalDate DEFAULT_INITIAL_DATE = LocalDate.ofEpochDay(0L);
     private static final LocalDate UPDATED_INITIAL_DATE = LocalDate.now(ZoneId.systemDefault());
@@ -55,15 +64,6 @@ public class DonationResourceIntTest {
 
     private static final String DEFAULT_DESCRIPTION = "AAAAAAAAAA";
     private static final String UPDATED_DESCRIPTION = "BBBBBBBBBB";
-
-    private static final String DEFAULT_EXPERIENCE = "AAAAAAAAAA";
-    private static final String UPDATED_EXPERIENCE = "BBBBBBBBBB";
-
-    private static final String DEFAULT_CLIMATE = "AAAAAAAAAA";
-    private static final String UPDATED_CLIMATE = "BBBBBBBBBB";
-
-    private static final String DEFAULT_INTENSITY = "AAAAAAAAAA";
-    private static final String UPDATED_INTENSITY = "BBBBBBBBBB";
 
     private static final Integer DEFAULT_NUMBER_OF_VOLUNTEERS = 1;
     private static final Integer UPDATED_NUMBER_OF_VOLUNTEERS = 2;
@@ -106,14 +106,14 @@ public class DonationResourceIntTest {
      */
     public static Donation createEntity(EntityManager em) {
         Donation donation = new Donation()
-            .type(DEFAULT_TYPE)
+            .goodsType(DEFAULT_GOODS_TYPE)
+            .serviceType(DEFAULT_SERVICE_TYPE)
+            .images(DEFAULT_IMAGES)
+            .imagesContentType(DEFAULT_IMAGES_CONTENT_TYPE)
             .initialDate(DEFAULT_INITIAL_DATE)
             .expireDate(DEFAULT_EXPIRE_DATE)
             .condition(DEFAULT_CONDITION)
             .description(DEFAULT_DESCRIPTION)
-            .experience(DEFAULT_EXPERIENCE)
-            .climate(DEFAULT_CLIMATE)
-            .intensity(DEFAULT_INTENSITY)
             .numberOfVolunteers(DEFAULT_NUMBER_OF_VOLUNTEERS);
         return donation;
     }
@@ -138,14 +138,14 @@ public class DonationResourceIntTest {
         List<Donation> donationList = donationRepository.findAll();
         assertThat(donationList).hasSize(databaseSizeBeforeCreate + 1);
         Donation testDonation = donationList.get(donationList.size() - 1);
-        assertThat(testDonation.getType()).isEqualTo(DEFAULT_TYPE);
+        assertThat(testDonation.getGoodsType()).isEqualTo(DEFAULT_GOODS_TYPE);
+        assertThat(testDonation.getServiceType()).isEqualTo(DEFAULT_SERVICE_TYPE);
+        assertThat(testDonation.getImages()).isEqualTo(DEFAULT_IMAGES);
+        assertThat(testDonation.getImagesContentType()).isEqualTo(DEFAULT_IMAGES_CONTENT_TYPE);
         assertThat(testDonation.getInitialDate()).isEqualTo(DEFAULT_INITIAL_DATE);
         assertThat(testDonation.getExpireDate()).isEqualTo(DEFAULT_EXPIRE_DATE);
         assertThat(testDonation.getCondition()).isEqualTo(DEFAULT_CONDITION);
         assertThat(testDonation.getDescription()).isEqualTo(DEFAULT_DESCRIPTION);
-        assertThat(testDonation.getExperience()).isEqualTo(DEFAULT_EXPERIENCE);
-        assertThat(testDonation.getClimate()).isEqualTo(DEFAULT_CLIMATE);
-        assertThat(testDonation.getIntensity()).isEqualTo(DEFAULT_INTENSITY);
         assertThat(testDonation.getNumberOfVolunteers()).isEqualTo(DEFAULT_NUMBER_OF_VOLUNTEERS);
     }
 
@@ -179,14 +179,14 @@ public class DonationResourceIntTest {
             .andExpect(status().isOk())
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
             .andExpect(jsonPath("$.[*].id").value(hasItem(donation.getId().intValue())))
-            .andExpect(jsonPath("$.[*].type").value(hasItem(DEFAULT_TYPE.toString())))
+            .andExpect(jsonPath("$.[*].goodsType").value(hasItem(DEFAULT_GOODS_TYPE.toString())))
+            .andExpect(jsonPath("$.[*].serviceType").value(hasItem(DEFAULT_SERVICE_TYPE.toString())))
+            .andExpect(jsonPath("$.[*].imagesContentType").value(hasItem(DEFAULT_IMAGES_CONTENT_TYPE)))
+            .andExpect(jsonPath("$.[*].images").value(hasItem(Base64Utils.encodeToString(DEFAULT_IMAGES))))
             .andExpect(jsonPath("$.[*].initialDate").value(hasItem(DEFAULT_INITIAL_DATE.toString())))
             .andExpect(jsonPath("$.[*].expireDate").value(hasItem(DEFAULT_EXPIRE_DATE.toString())))
             .andExpect(jsonPath("$.[*].condition").value(hasItem(DEFAULT_CONDITION.toString())))
             .andExpect(jsonPath("$.[*].description").value(hasItem(DEFAULT_DESCRIPTION.toString())))
-            .andExpect(jsonPath("$.[*].experience").value(hasItem(DEFAULT_EXPERIENCE.toString())))
-            .andExpect(jsonPath("$.[*].climate").value(hasItem(DEFAULT_CLIMATE.toString())))
-            .andExpect(jsonPath("$.[*].intensity").value(hasItem(DEFAULT_INTENSITY.toString())))
             .andExpect(jsonPath("$.[*].numberOfVolunteers").value(hasItem(DEFAULT_NUMBER_OF_VOLUNTEERS)));
     }
     
@@ -201,14 +201,14 @@ public class DonationResourceIntTest {
             .andExpect(status().isOk())
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
             .andExpect(jsonPath("$.id").value(donation.getId().intValue()))
-            .andExpect(jsonPath("$.type").value(DEFAULT_TYPE.toString()))
+            .andExpect(jsonPath("$.goodsType").value(DEFAULT_GOODS_TYPE.toString()))
+            .andExpect(jsonPath("$.serviceType").value(DEFAULT_SERVICE_TYPE.toString()))
+            .andExpect(jsonPath("$.imagesContentType").value(DEFAULT_IMAGES_CONTENT_TYPE))
+            .andExpect(jsonPath("$.images").value(Base64Utils.encodeToString(DEFAULT_IMAGES)))
             .andExpect(jsonPath("$.initialDate").value(DEFAULT_INITIAL_DATE.toString()))
             .andExpect(jsonPath("$.expireDate").value(DEFAULT_EXPIRE_DATE.toString()))
             .andExpect(jsonPath("$.condition").value(DEFAULT_CONDITION.toString()))
             .andExpect(jsonPath("$.description").value(DEFAULT_DESCRIPTION.toString()))
-            .andExpect(jsonPath("$.experience").value(DEFAULT_EXPERIENCE.toString()))
-            .andExpect(jsonPath("$.climate").value(DEFAULT_CLIMATE.toString()))
-            .andExpect(jsonPath("$.intensity").value(DEFAULT_INTENSITY.toString()))
             .andExpect(jsonPath("$.numberOfVolunteers").value(DEFAULT_NUMBER_OF_VOLUNTEERS));
     }
 
@@ -233,14 +233,14 @@ public class DonationResourceIntTest {
         // Disconnect from session so that the updates on updatedDonation are not directly saved in db
         em.detach(updatedDonation);
         updatedDonation
-            .type(UPDATED_TYPE)
+            .goodsType(UPDATED_GOODS_TYPE)
+            .serviceType(UPDATED_SERVICE_TYPE)
+            .images(UPDATED_IMAGES)
+            .imagesContentType(UPDATED_IMAGES_CONTENT_TYPE)
             .initialDate(UPDATED_INITIAL_DATE)
             .expireDate(UPDATED_EXPIRE_DATE)
             .condition(UPDATED_CONDITION)
             .description(UPDATED_DESCRIPTION)
-            .experience(UPDATED_EXPERIENCE)
-            .climate(UPDATED_CLIMATE)
-            .intensity(UPDATED_INTENSITY)
             .numberOfVolunteers(UPDATED_NUMBER_OF_VOLUNTEERS);
 
         restDonationMockMvc.perform(put("/api/donations")
@@ -252,14 +252,14 @@ public class DonationResourceIntTest {
         List<Donation> donationList = donationRepository.findAll();
         assertThat(donationList).hasSize(databaseSizeBeforeUpdate);
         Donation testDonation = donationList.get(donationList.size() - 1);
-        assertThat(testDonation.getType()).isEqualTo(UPDATED_TYPE);
+        assertThat(testDonation.getGoodsType()).isEqualTo(UPDATED_GOODS_TYPE);
+        assertThat(testDonation.getServiceType()).isEqualTo(UPDATED_SERVICE_TYPE);
+        assertThat(testDonation.getImages()).isEqualTo(UPDATED_IMAGES);
+        assertThat(testDonation.getImagesContentType()).isEqualTo(UPDATED_IMAGES_CONTENT_TYPE);
         assertThat(testDonation.getInitialDate()).isEqualTo(UPDATED_INITIAL_DATE);
         assertThat(testDonation.getExpireDate()).isEqualTo(UPDATED_EXPIRE_DATE);
         assertThat(testDonation.getCondition()).isEqualTo(UPDATED_CONDITION);
         assertThat(testDonation.getDescription()).isEqualTo(UPDATED_DESCRIPTION);
-        assertThat(testDonation.getExperience()).isEqualTo(UPDATED_EXPERIENCE);
-        assertThat(testDonation.getClimate()).isEqualTo(UPDATED_CLIMATE);
-        assertThat(testDonation.getIntensity()).isEqualTo(UPDATED_INTENSITY);
         assertThat(testDonation.getNumberOfVolunteers()).isEqualTo(UPDATED_NUMBER_OF_VOLUNTEERS);
     }
 

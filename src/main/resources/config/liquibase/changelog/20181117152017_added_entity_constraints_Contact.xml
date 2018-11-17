@@ -4,13 +4,13 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
     <!--
-        Added the constraints for entity Status.
+        Added the constraints for entity Contact.
     -->
-    <changeSet id="20181031150555-2" author="jhipster">
+    <changeSet id="20181117152017-2" author="jhipster">
         
         <addForeignKeyConstraint baseColumnNames="user_id"
-                                 baseTableName="status"
-                                 constraintName="fk_status_user_id"
+                                 baseTableName="contact"
+                                 constraintName="fk_contact_user_id"
                                  referencedColumnNames="id"
                                  referencedTableName="jhi_user"/>
 

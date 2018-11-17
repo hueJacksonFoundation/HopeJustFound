@@ -4,13 +4,13 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
     <!--
-        Added the constraints for entity Donation.
+        Added the constraints for entity DonationRequest.
     -->
-    <changeSet id="20181031150554-2" author="jhipster">
+    <changeSet id="20181117152014-2" author="jhipster">
         
         <addForeignKeyConstraint baseColumnNames="user_id"
-                                 baseTableName="donation"
-                                 constraintName="fk_donation_user_id"
+                                 baseTableName="donation_request"
+                                 constraintName="fk_donation_request_user_id"
                                  referencedColumnNames="id"
                                  referencedTableName="jhi_user"/>
 

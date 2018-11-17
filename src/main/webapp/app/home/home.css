@@ -2,11 +2,50 @@
 Main page styles
 ========================================================================== */
 
-.row {
-    margin-top: 150px;
+#info {
+    display: grid;
+    margin-top: 5rem;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: auto;
+    grid-template-areas: '. mission vision .';
+    grid-column-gap: 5rem;
 }
-h2 {
-    color: #fe6b10;
+#info h1 {
+    color: darkorange;
+}
+#mission {
+    grid-area: mission;
+}
+#vision {
+    grid-area: vision;
+}
+.home {
+    display: grid;
+    margin: auto;
+    grid-template-columns: repeat(10, 1fr);
+    grid-auto-rows: minmax(10rem, auto);
+    grid-template-areas:
+        '. . map map map map map map . .'
+        'status status map map map map map map info info'
+        'status status map map map map map map info info'
+        'status status map map map map map map info info'
+        '. . map map map map map map . .';
+
+    grid-column-gap: 2rem;
+}
+
+.leftBox {
+    grid-area: status;
+    background: gray;
+}
+.middleBox {
+    grid-area: map;
+    background: gray;
+}
+
+.rightBox {
+    grid-area: info;
+    background: gray;
 }
 
 /* wait autoprefixer update to allow simple generation of high pixel density media query */
@@ -15,8 +54,4 @@ h2 {
     only screen and (-o-min-device-pixel-ratio: 2/1),
     only screen and (min-resolution: 192dpi),
     only screen and (min-resolution: 2dppx) {
-    .hipster {
-        background: url('../../content/images/hipster2x.png') no-repeat center top;
-        background-size: contain;
-    }
 }

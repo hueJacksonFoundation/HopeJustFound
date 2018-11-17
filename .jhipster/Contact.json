@@ -6,23 +6,47 @@
             "fieldType": "String"
         },
         {
+            "fieldName": "companyEIN",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "companyWebsite",
+            "fieldType": "String"
+        },
+        {
             "fieldName": "phoneNumber",
             "fieldType": "String"
         },
         {
-            "fieldName": "address",
+            "fieldName": "mailingAddress",
             "fieldType": "String"
         },
         {
-            "fieldName": "city",
+            "fieldName": "mailingCity",
             "fieldType": "String"
         },
         {
-            "fieldName": "state",
+            "fieldName": "mailingState",
             "fieldType": "String"
         },
         {
-            "fieldName": "zipCode",
+            "fieldName": "mailingZipCode",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "phyisicalAddress",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "phyisicalCity",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "phyisicalState",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "phyisicalZipCode",
             "fieldType": "Integer"
         },
         {
@@ -44,7 +68,7 @@
             "otherEntityRelationshipName": "contact"
         }
     ],
-    "changelogDate": "20181031150556",
+    "changelogDate": "20181117152017",
     "entityTableName": "contact",
     "dto": "no",
     "pagination": "no",

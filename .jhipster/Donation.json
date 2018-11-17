@@ -2,8 +2,17 @@
     "name": "Donation",
     "fields": [
         {
-            "fieldName": "type",
+            "fieldName": "goodsType",
             "fieldType": "String"
+        },
+        {
+            "fieldName": "serviceType",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "images",
+            "fieldType": "byte[]",
+            "fieldTypeBlobContent": "image"
         },
         {
             "fieldName": "initialDate",
@@ -22,18 +31,6 @@
             "fieldType": "String"
         },
         {
-            "fieldName": "experience",
-            "fieldType": "String"
-        },
-        {
-            "fieldName": "climate",
-            "fieldType": "String"
-        },
-        {
-            "fieldName": "intensity",
-            "fieldType": "String"
-        },
-        {
             "fieldName": "numberOfVolunteers",
             "fieldType": "Integer"
         }
@@ -46,7 +43,7 @@
             "otherEntityField": "id"
         }
     ],
-    "changelogDate": "20181031150554",
+    "changelogDate": "20181117152015",
     "entityTableName": "donation",
     "dto": "no",
     "pagination": "infinite-scroll",

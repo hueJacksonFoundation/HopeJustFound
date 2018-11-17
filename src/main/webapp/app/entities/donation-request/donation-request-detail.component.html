@@ -1,0 +1,55 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="donationRequest">
+            <h2><span>Donation Request</span> {{donationRequest.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span>Type</span></dt>
+                <dd>
+                    <span>{{donationRequest.type}}</span>
+                </dd>
+                <dt><span>Initial Date</span></dt>
+                <dd>
+                    <span>{{donationRequest.initialDate}}</span>
+                </dd>
+                <dt><span>Expire Date</span></dt>
+                <dd>
+                    <span>{{donationRequest.expireDate}}</span>
+                </dd>
+                <dt><span>Condition</span></dt>
+                <dd>
+                    <span>{{donationRequest.condition}}</span>
+                </dd>
+                <dt><span>Description</span></dt>
+                <dd>
+                    <span>{{donationRequest.description}}</span>
+                </dd>
+                <dt><span>Experience</span></dt>
+                <dd>
+                    <span>{{donationRequest.experience}}</span>
+                </dd>
+                <dt><span>Number Of Volunteers</span></dt>
+                <dd>
+                    <span>{{donationRequest.numberOfVolunteers}}</span>
+                </dd>
+                <dt><span>User</span></dt>
+                <dd>
+                    {{donationRequest.user?.id}}
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/donation-request', donationRequest.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

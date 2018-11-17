@@ -36,7 +36,7 @@ spring:
     datasource:
         type: com.zaxxer.hikari.HikariDataSource
         url: jdbc:h2:mem:hopejustfound;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
-        username: HopeJustFound
+        username: hopeJustFound
         password:
         hikari:
             auto-commit: false
@@ -89,18 +89,18 @@ jhipster:
         authentication:
             jwt:
                 # This token must be encoded using Base64 (you can type `echo 'secret-key'|base64` on your command line)
-                base64-secret: ZjhlOTVjZmUxOWRhOWE2ZjI0OTg3YjQ2Mzc0NTQ3MjIzZDZlZDM5NjhhZDk4OGE4ZGNhZjQ4YTZkNjdkZGI1MWUxYTUwNmY0YjYyMWExODcwNThhZDEyMDk5NjZhZTA0MWI2ODJjYWViYzIwNzBiMWQ5Nzc0Nzg0MGQyMDFiNmU=
+                base64-secret: MjliMjBkZDZjZjc1YjlhODAxMDEzMjRlNDkyYTNmMWMyODNlZDMwZTdkNDE5NWU4OWNjZTlkZDQyNWY3NzMyMmFjMDg0MTRjNmFhZGY2ZjY4MjAzYjIwNmVkMGNiMjM4OTFlZmFmNzgwYmZjNjMxYmQ5Y2U4ZTcwZTY2MWQxZjQ=
                 # Token is valid 24 hours
                 token-validity-in-seconds: 86400
                 token-validity-in-seconds-for-remember-me: 2592000
     mail: # specific JHipster mail property, for standard properties see MailProperties
-        from: HopeJustFound@localhost
+        from: hopeJustFound@localhost
         base-url: http://127.0.0.1:8080
     metrics: # DropWizard Metrics configuration, used by MetricsConfiguration
         jmx:
             enabled: true
-        prometheus: 
-            enabled: false #expose metrics via prometheus 
+        prometheus:
+            enabled: false #expose metrics via prometheus
         logs: # Reports Dropwizard metrics in the logs
             enabled: false
             report-frequency: 60 # in seconds

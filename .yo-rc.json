@@ -3,9 +3,9 @@
     "promptValues": {
       "packageName": "org.huejackson.hopejustfound"
     },
-    "jhipsterVersion": "5.5.0",
+    "jhipsterVersion": "5.6.1",
     "applicationType": "monolith",
-    "baseName": "HopeJustFound",
+    "baseName": "hopeJustFound",
     "packageName": "org.huejackson.hopejustfound",
     "packageFolder": "org/huejackson/hopejustfound",
     "serverPort": "8080",
@@ -20,7 +20,7 @@
     "serviceDiscoveryType": false,
     "buildTool": "maven",
     "enableSwaggerCodegen": false,
-    "jwtSecretKey": "ZjhlOTVjZmUxOWRhOWE2ZjI0OTg3YjQ2Mzc0NTQ3MjIzZDZlZDM5NjhhZDk4OGE4ZGNhZjQ4YTZkNjdkZGI1MWUxYTUwNmY0YjYyMWExODcwNThhZDEyMDk5NjZhZTA0MWI2ODJjYWViYzIwNzBiMWQ5Nzc0Nzg0MGQyMDFiNmU=",
+    "jwtSecretKey": "MjliMjBkZDZjZjc1YjlhODAxMDEzMjRlNDkyYTNmMWMyODNlZDMwZTdkNDE5NWU4OWNjZTlkZDQyNWY3NzMyMmFjMDg0MTRjNmFhZGY2ZjY4MjAzYjIwNmVkMGNiMjM4OTFlZmFmNzgwYmZjNjMxYmQ5Y2U4ZTcwZTY2MWQxZjQ=",
     "clientFramework": "angularX",
     "useSass": false,
     "clientPackageManager": "npm",

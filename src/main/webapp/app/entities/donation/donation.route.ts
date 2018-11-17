@@ -2,8 +2,8 @@ import { Injectable } from '@angular/core';
 import { HttpResponse } from '@angular/common/http';
 import { Resolve, ActivatedRouteSnapshot, RouterStateSnapshot, Routes } from '@angular/router';
 import { UserRouteAccessService } from 'app/core';
-import { of } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { Observable, of } from 'rxjs';
+import { filter, map } from 'rxjs/operators';
 import { Donation } from 'app/shared/model/donation.model';
 import { DonationService } from './donation.service';
 import { DonationComponent } from './donation.component';
@@ -16,10 +16,13 @@ import { IDonation } from 'app/shared/model/donation.model';
 export class DonationResolve implements Resolve<IDonation> {
     constructor(private service: DonationService) {}
 
-    resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
+    resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<Donation> {
         const id = route.params['id'] ? route.params['id'] : null;
         if (id) {
-            return this.service.find(id).pipe(map((donation: HttpResponse<Donation>) => donation.body));
+            return this.service.find(id).pipe(
+                filter((response: HttpResponse<Donation>) => response.ok),
+                map((donation: HttpResponse<Donation>) => donation.body)
+            );
         }
         return of(new Donation());
     }

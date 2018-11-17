@@ -1,5 +1,6 @@
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 
+import { HopeJustFoundDonationRequestModule } from './donation-request/donation-request.module';
 import { HopeJustFoundDonationModule } from './donation/donation.module';
 import { HopeJustFoundStatusModule } from './status/status.module';
 import { HopeJustFoundContactModule } from './contact/contact.module';
@@ -8,6 +9,7 @@ import { HopeJustFoundContactModule } from './contact/contact.module';
 @NgModule({
     // prettier-ignore
     imports: [
+        HopeJustFoundDonationRequestModule,
         HopeJustFoundDonationModule,
         HopeJustFoundStatusModule,
         HopeJustFoundContactModule,

@@ -49,7 +49,7 @@ export class DonationService {
         return this.http.delete<any>(`${this.resourceUrl}/${id}`, { observe: 'response' });
     }
 
-    private convertDateFromClient(donation: IDonation): IDonation {
+    protected convertDateFromClient(donation: IDonation): IDonation {
         const copy: IDonation = Object.assign({}, donation, {
             initialDate: donation.initialDate != null && donation.initialDate.isValid() ? donation.initialDate.format(DATE_FORMAT) : null,
             expireDate: donation.expireDate != null && donation.expireDate.isValid() ? donation.expireDate.format(DATE_FORMAT) : null
@@ -57,17 +57,21 @@ export class DonationService {
         return copy;
     }
 
-    private convertDateFromServer(res: EntityResponseType): EntityResponseType {
-        res.body.initialDate = res.body.initialDate != null ? moment(res.body.initialDate) : null;
-        res.body.expireDate = res.body.expireDate != null ? moment(res.body.expireDate) : null;
+    protected convertDateFromServer(res: EntityResponseType): EntityResponseType {
+        if (res.body) {
+            res.body.initialDate = res.body.initialDate != null ? moment(res.body.initialDate) : null;
+            res.body.expireDate = res.body.expireDate != null ? moment(res.body.expireDate) : null;
+        }
         return res;
     }
 
-    private convertDateArrayFromServer(res: EntityArrayResponseType): EntityArrayResponseType {
-        res.body.forEach((donation: IDonation) => {
-            donation.initialDate = donation.initialDate != null ? moment(donation.initialDate) : null;
-            donation.expireDate = donation.expireDate != null ? moment(donation.expireDate) : null;
-        });
+    protected convertDateArrayFromServer(res: EntityArrayResponseType): EntityArrayResponseType {
+        if (res.body) {
+            res.body.forEach((donation: IDonation) => {
+                donation.initialDate = donation.initialDate != null ? moment(donation.initialDate) : null;
+                donation.expireDate = donation.expireDate != null ? moment(donation.expireDate) : null;
+            });
+        }
         return res;
     }
 }

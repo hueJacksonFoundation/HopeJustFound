@@ -26,27 +26,27 @@
     </div>
     <div class="row justify-content-center">
         <div class="col-md-6">
-            <form name="form" role="form" (ngSubmit)="register()" #registerForm="ngForm" *ngIf="!success" enctype="multipart/form-data">
+            <form name="form" role="form" (ngSubmit)="register()" #registerForm="ngForm" *ngIf="!success" >
 
                 <!--UserName-->
                 <div class="form-group">
                     <label class="form-control-label" for="login">Username</label>
                     <input type="text" class="form-control" [(ngModel)]="registerAccount.login" id="login" name="login" #login="ngModel" placeholder="Your username"
-                            required minlength="1" maxlength="50" pattern="^[_.@A-Za-z0-9-]*$">
+                           required minlength="1" maxlength="50" pattern="^[_.@A-Za-z0-9-]*$">
                     <div *ngIf="login.dirty && login.invalid">
                         <small class="form-text text-danger" *ngIf="login.errors.required">
                             Your username is required.
                         </small>
                         <small class="form-text text-danger" *ngIf="login.errors.minlength"
-                               >
+                        >
                             Your username is required to be at least 1 character.
                         </small>
                         <small class="form-text text-danger" *ngIf="login.errors.maxlength"
-                               >
+                        >
                             Your username cannot be longer than 50 characters.
                         </small>
                         <small class="form-text text-danger" *ngIf="login.errors.pattern"
-                              >
+                        >
                             Your username can only contain letters and digits.
                         </small>
                     </div>
@@ -77,22 +77,22 @@
                 <div class="form-group">
                     <label class="form-control-label" for="email">Email</label>
                     <input type="email" class="form-control" id="email" name="email" #email="ngModel" placeholder="Your email"
-                            [(ngModel)]="registerAccount.email" minlength=5 maxlength=254 email required>
+                           [(ngModel)]="registerAccount.email" minlength=5 maxlength=254 email required>
                     <div *ngIf="email.dirty && email.invalid">
                         <small class="form-text text-danger" *ngIf="email.errors.required"
-                               >
+                        >
                             Your email is required.
                         </small>
                         <small class="form-text text-danger" *ngIf="email.errors.invalid"
-                              >
+                        >
                             Your email is invalid.
                         </small>
                         <small class="form-text text-danger" *ngIf="email.errors.minlength"
-                              >
+                        >
                             Your email is required to be at least 5 characters.
                         </small>
                         <small class="form-text text-danger" *ngIf="email.errors.maxlength"
-                              >
+                        >
                             Your email cannot be longer than 100 characters.
                         </small>
                     </div>
@@ -101,18 +101,18 @@
                 <div class="form-group">
                     <label class="form-control-label" for="password">New password</label>
                     <input type="password" class="form-control" id="password" name="password" #password="ngModel" placeholder="New password"
-                            [(ngModel)]="registerAccount.password" minlength=4 maxlength=50 required>
+                           [(ngModel)]="registerAccount.password" minlength=4 maxlength=50 required>
                     <div *ngIf="password.dirty && password.invalid">
                         <small class="form-text text-danger" *ngIf="password.errors.required"
-                               >
+                        >
                             Your password is required.
                         </small>
                         <small class="form-text text-danger" *ngIf="password.errors.minlength"
-                               >
+                        >
                             Your password is required to be at least 4 characters.
                         </small>
                         <small class="form-text text-danger" *ngIf="password.errors.maxlength"
-                               >
+                        >
                             Your password cannot be longer than 50 characters.
                         </small>
                     </div>
@@ -122,18 +122,18 @@
                 <div class="form-group">
                     <label class="form-control-label" for="confirmPassword">New password confirmation</label>
                     <input type="password" class="form-control" id="confirmPassword" name="confirmPassword" #confirmPasswordInput="ngModel" placeholder="Confirm the new password"
-                            [(ngModel)]="confirmPassword" minlength=4 maxlength=50 required>
+                           [(ngModel)]="confirmPassword" minlength=4 maxlength=50 required>
                     <div *ngIf="confirmPasswordInput.dirty && confirmPasswordInput.invalid">
                         <small class="form-text text-danger" *ngIf="confirmPasswordInput.errors.required"
-                              >
+                        >
                             Your confirmation password is required.
                         </small>
                         <small class="form-text text-danger" *ngIf="confirmPasswordInput.errors.minlength"
-                             >
+                        >
                             Your confirmation password is required to be at least 4 characters.
                         </small>
                         <small class="form-text text-danger" *ngIf="confirmPasswordInput.errors.maxlength"
-                              >
+                        >
                             Your confirmation password cannot be longer than 50 characters.
                         </small>
                     </div>
@@ -142,31 +142,69 @@
                 <div class="form-group">
                     <label class="form-control-label" for="phoneNumber" >Phone number</label>
                     <input type="tel" class="form-control" id="phoneNumber" name="phoneNumber" #phoneNumber="ngModel" placeholder="000-000-0000"
-                           [(ngModel)]="registerAccount.phoneNumber" phoneNumber required>
+                           [(ngModel)]="registerAccount.phoneNumber" required>
                 </div>
-                <!-- Address -->
+                <!-- Company Webiste -->
                 <div class="form-group">
-                    <label class="form-control-label" for="address" >Address</label>
-                    <input type="text" class="form-control" id="address" name="address" #address="ngModel" placeholder="123 Main St"
-                           [(ngModel)]="registerAccount.address">
+                    <label class="form-control-label" for="companyWebsite" >Company Website URL</label>
+                    <input type="tel" class="form-control" id="companyWebsite" name="companyWebsite" #companyWebsite="ngModel" placeholder="https://yourDomain.com"
+                           [(ngModel)]="registerAccount.companyWebsite" required>
                 </div>
-                <!-- City -->
+                <!-- Company EIN -->
                 <div class="form-group">
-                    <label class="form-control-label" for="city" >City</label>
-                    <input type="text" class="form-control" id="city" name="city" #city="ngModel" placeholder="Any Town"
-                           [(ngModel)]="registerAccount.city">
+                    <label class="form-control-label" for="companyEIN" >Company EIN</label>
+                    <input type="tel" class="form-control" id="companyEIN" name="companyEIN" #companyEIN="ngModel" placeholder="XX-XXXXXXX"
+                           [(ngModel)]="registerAccount.companyEIN" required>
                 </div>
-                <!-- State -->
+
+                <!-- mailingAddress -->
                 <div class="form-group">
-                    <label class="form-control-label" for="state" >State</label>
-                    <input type="text" class="form-control" id="state" name="state" #state="ngModel" placeholder="OH"
-                           [(ngModel)]="registerAccount.state">
+                    <label class="form-control-label" for="mailingAddress" >Mailing Address</label>
+                    <input type="text" class="form-control" id="mailingAddress" name="mailingAddress" #mailingAddress="ngModel" placeholder="123 Main St"
+                           [(ngModel)]="registerAccount.mailingAddress">
                 </div>
-                <!-- ZipCode -->
+                <!-- mailingCity -->
                 <div class="form-group">
-                    <label class="form-control-label" for="zipCode" >Zip code</label>
-                    <input type="number" class="form-control" id="zipCode" name="zipCode" #zipCode="ngModel" placeholder="44123"
-                           [(ngModel)]="registerAccount.zipCode">
+                    <label class="form-control-label" for="mailingCity" >Mailing City</label>
+                    <input type="text" class="form-control" id="mailingCity" name="mailingCity" #mailingCity="ngModel" placeholder="Any Town"
+                           [(ngModel)]="registerAccount.mailingCity">
+                </div>
+                <!-- mailingState -->
+                <div class="form-group">
+                    <label class="form-control-label" for="mailingState" >Mailing State</label>
+                    <input type="text" class="form-control" id="mailingState" name="mailingState" #mailingState="ngModel" placeholder="OH"
+                           [(ngModel)]="registerAccount.mailingState">
+                </div>
+                <!-- mailingZipCode -->
+                <div class="form-group">
+                    <label class="form-control-label" for="mailingZipCode" >Mailing ZipCode</label>
+                    <input type="number" class="form-control" id="mailingZipCode" name="mailingZipCode" #mailingZipCode="ngModel" placeholder="44123"
+                           [(ngModel)]="registerAccount.mailingZipCode">
+                </div>
+
+                <!-- phyisicalAddress -->
+                <div class="form-group">
+                    <label class="form-control-label" for="phyisicalAddress" >Phyisical Address</label>
+                    <input type="text" class="form-control" id="phyisicalAddress" name="phyisicalAddress" #phyisicalAddress="ngModel" placeholder="123 Main St"
+                           [(ngModel)]="registerAccount.phyisicalAddress">
+                </div>
+                <!-- phyisicalCity -->
+                <div class="form-group">
+                    <label class="form-control-label" for="phyisicalCity" >Phyisical City</label>
+                    <input type="text" class="form-control" id="phyisicalCity" name="phyisicalCity" #phyisicalCity="ngModel" placeholder="Any Town"
+                           [(ngModel)]="registerAccount.phyisicalCity">
+                </div>
+                <!-- phyisicalState -->
+                <div class="form-group">
+                    <label class="form-control-label" for="phyisicalState" >Phyisical State</label>
+                    <input type="text" class="form-control" id="phyisicalState" name="phyisicalState" #state="ngModel" placeholder="OH"
+                           [(ngModel)]="registerAccount.phyisicalState">
+                </div>
+                <!-- phyisicalZipCode -->
+                <div class="form-group">
+                    <label class="form-control-label" for="phyisicalZipCode" >phyisical ZipCode</label>
+                    <input type="number" class="form-control" id="phyisicalZipCode" name="phyisicalZipCode" #phyisicalZipCode="ngModel" placeholder="44123"
+                           [(ngModel)]="registerAccount.phyisicalZipCode">
                 </div>
                 <!-- Contact Days -->
                 <div class="form-group">
@@ -182,24 +220,16 @@
                 </div>
                 <!-- Role -->
                 <div class="form-group">
-                    <label class="form-control-label" for="Donator" data-translate="global.form.role">Donator</label>
-
+                    <label class="form-control-label" for="Donator" >Donator</label>
                     <input type="radio" class="authority" id="Donator" name="authority" value="ROLE_DONATOR"
-                           [(ngModel)]="registerAccount.authority">
-                    <label class="form-control-label" for="NonProfit" data-translate="global.form.role">NonProfit</label>
+                           [(ngModel)]="registerAccount.authority" >
 
-                    <input type="radio" class="authority" id="NonProfit" name="authority" value="ROLE_USER"
-                           [(ngModel)]="registerAccount.authority">
+                    <label class="form-control-label" for="USER" >NonProfit</label>
+                    <input type="radio" class="authority" id="USER" name="authority" value="ROLE_USER"
+                           [(ngModel)]="registerAccount.authority" >
                 </div>
-                <div class="form-group">
-                    <label class="form-control-label" for="supportingDocuments" >Supporting Document</label>
-                    <input type="file" class="form-control" id="supportingDocuments" name="supportingDocuments" >
-                </div>
-                <!--<div>
-                    <router-outlet name="navbar"></router-outlet>
-                </div>-->
 
-                <button type="submit" class="btn btn-primary">Register</button>
+                <button class="submit btn btn-success" >Submit</button>
             </form>
         </div>
     </div>

@@ -21,7 +21,23 @@ describe('Service Tests', () => {
             service = injector.get(ContactService);
             httpMock = injector.get(HttpTestingController);
 
-            elemDefault = new Contact(0, 'AAAAAAA', 'AAAAAAA', 'AAAAAAA', 'AAAAAAA', 'AAAAAAA', 0, 'AAAAAAA', 'AAAAAAA');
+            elemDefault = new Contact(
+                0,
+                'AAAAAAA',
+                'AAAAAAA',
+                'AAAAAAA',
+                'AAAAAAA',
+                'AAAAAAA',
+                'AAAAAAA',
+                'AAAAAAA',
+                0,
+                'AAAAAAA',
+                'AAAAAAA',
+                'AAAAAAA',
+                0,
+                'AAAAAAA',
+                'AAAAAAA'
+            );
         });
 
         describe('Service methods', async () => {
@@ -56,11 +72,17 @@ describe('Service Tests', () => {
                 const returnedFromService = Object.assign(
                     {
                         companyName: 'BBBBBB',
+                        companyEIN: 'BBBBBB',
+                        companyWebsite: 'BBBBBB',
                         phoneNumber: 'BBBBBB',
-                        address: 'BBBBBB',
-                        city: 'BBBBBB',
-                        state: 'BBBBBB',
-                        zipCode: 1,
+                        mailingAddress: 'BBBBBB',
+                        mailingCity: 'BBBBBB',
+                        mailingState: 'BBBBBB',
+                        mailingZipCode: 1,
+                        phyisicalAddress: 'BBBBBB',
+                        phyisicalCity: 'BBBBBB',
+                        phyisicalState: 'BBBBBB',
+                        phyisicalZipCode: 1,
                         contactDays: 'BBBBBB',
                         contactTimes: 'BBBBBB'
                     },
@@ -80,11 +102,17 @@ describe('Service Tests', () => {
                 const returnedFromService = Object.assign(
                     {
                         companyName: 'BBBBBB',
+                        companyEIN: 'BBBBBB',
+                        companyWebsite: 'BBBBBB',
                         phoneNumber: 'BBBBBB',
-                        address: 'BBBBBB',
-                        city: 'BBBBBB',
-                        state: 'BBBBBB',
-                        zipCode: 1,
+                        mailingAddress: 'BBBBBB',
+                        mailingCity: 'BBBBBB',
+                        mailingState: 'BBBBBB',
+                        mailingZipCode: 1,
+                        phyisicalAddress: 'BBBBBB',
+                        phyisicalCity: 'BBBBBB',
+                        phyisicalState: 'BBBBBB',
+                        phyisicalZipCode: 1,
                         contactDays: 'BBBBBB',
                         contactTimes: 'BBBBBB'
                     },
@@ -93,7 +121,10 @@ describe('Service Tests', () => {
                 const expected = Object.assign({}, returnedFromService);
                 service
                     .query(expected)
-                    .pipe(take(1), map(resp => resp.body))
+                    .pipe(
+                        take(1),
+                        map(resp => resp.body)
+                    )
                     .subscribe(body => expect(body).toContainEqual(expected));
                 const req = httpMock.expectOne({ method: 'GET' });
                 req.flush(JSON.stringify([returnedFromService]));
